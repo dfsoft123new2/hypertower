@@ -8991,7 +8991,7 @@ const lateOldOptions=P.opt.html;
 const lateOldOptionsSig=P.opt.sig;
 P.opt.sig=()=>lateOldOptionsSig()+'|'+JSON.stringify([S.legacy.round,S.eras['19']?.choice,S.eras['19']?.choiceUndoId,!!lateDevBackup]);
 P.opt.html=()=>lateOldOptions().replace(/<div class="frame"><span class="ft">v5\.0 · 九头纪<\/span>[\s\S]*$/,'')+`<div class="frame"><span class="ft">v6.0.1 · 绝对纪</span><p class="p">I–XX 已接通：九个新纪元、216 道参数化验证题、六项研究与十二层挑战/纪元、离线生产、选择公理和遗产轮回。兼容 HT3、HT4、HT5，继续使用 hypertower.v5 保存位置。</p><p class="p">数学内核的范围见「旧纪元档案」。这是全纪元可玩实现，尚未达到规划中原始 Buchholz 算法、通用 ψ 比较器和完整判定器的研究级目标。</p></div>`+lateDeveloperHTML();
-document.querySelector('.version').textContent='VI · 绝对纪';
+document.querySelector('.version').textContent='VII · 群星纪';
 
 function lateBlueprintHTML(b){const id=esc(b.id),current=b.era===S.era;return `<div class="xi-blueprint ${ls().active===b.id?"active":""}"><b>${esc(H.Era.get(b.era).roman+" · "+b.name)}</b><small>${esc(b.verified.summary||b.verified.cuts+" 刀 · "+b.verified.reward+" 蛇鳞")} · q ×${b.quality.toFixed(2)}</small><div class="row-btns"><button class="btn sm" data-act="lbpload" data-id="${id}" ${current?"":"disabled"}>用于生产</button><button class="btn sm" data-act="lbpsandbox" data-id="${id}" ${current?"":"disabled"}>载入沙盒</button><button class="btn sm" data-act="xbpexport" data-id="${id}">导出</button><button class="btn sm" data-act="lbpdelete" data-id="${id}">删除</button></div></div>`;}
 ACT.lbpall=()=>{lateLibraryAll=!lateLibraryAll;afterChange();};
