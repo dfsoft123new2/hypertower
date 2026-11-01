@@ -1,0 +1,1082 @@
+{
+  "sources": [
+    {
+      "file": "source-v3.html",
+      "sha256": "9771740885390970fc05a8b2bf6d6b2967a4e2fdbe0de7b9b576d5b881c1f8d3"
+    },
+    {
+      "file": "vendor/omega-num.js",
+      "sha256": "5ee16dd8c396199ecc3df63a369c78b92a6a59082377007610358c4f3994e4f7"
+    },
+    {
+      "file": "src/beyond.js",
+      "sha256": "102cb3bac6430e4846b05f86e04d40ddf3f3c38aaa83516c119dea07387646f9"
+    },
+    {
+      "file": "src/gr-shadow.js",
+      "sha256": "4013c952901296a991a56ef2b420affea8ed112da385d0e6a8aaaf90f078c2ba"
+    },
+    {
+      "file": "tests/engine.cjs",
+      "sha256": "d9af9ed2f153848ef2a23dc9bd3bb806bbeb2f66d40b924da7056dad810cf8e6"
+    },
+    {
+      "file": "tests/gr-helper.cjs",
+      "sha256": "7c97417aaae44e9ba77839665fc482e7c4a3720a3855419e437e433b9e9b1bf5"
+    }
+  ],
+  "policy": {
+    "campaign": "omegaSave is an explicit completed-V seed, not a measured fresh run. From first collapse onward only real Meta.tick(1), every 5s one balanced purchase pass drive/flux/devour/operator/auto/memory for each unlocked stage, stabilize each second and enter next stage at ceiling; growth focus, arrange=true, no challenges.",
+    "continuation": "Starting exactly at first naturally simulated epsilon=10, enable built-in shop and advance, disable prestige, retain growth focus and auto arrangement. No grants, manual upgrades, challenges, resets or layout edits after baseline. G.Shadow.p1 executes actual event integration in chunks <=259200s. No fitted forecasts and no formula extrapolation.",
+    "checkpointsDays": [
+      1,
+      7,
+      30,
+      365,
+      3650,
+      36500
+    ],
+    "yearDays": 365
+  },
+  "campaign": {
+    "entries": [
+      {
+        "era": 6,
+        "seconds": 0
+      },
+      {
+        "era": 7,
+        "seconds": 3745
+      },
+      {
+        "era": 8,
+        "seconds": 7571
+      },
+      {
+        "era": 9,
+        "seconds": 11270
+      },
+      {
+        "era": 10,
+        "seconds": 14726
+      }
+    ],
+    "rungs": [
+      {
+        "seconds": 1,
+        "era": 6,
+        "rank": 0
+      },
+      {
+        "seconds": 1531,
+        "era": 6,
+        "rank": 1
+      },
+      {
+        "seconds": 2693,
+        "era": 6,
+        "rank": 2
+      },
+      {
+        "seconds": 3745,
+        "era": 7,
+        "rank": 0
+      },
+      {
+        "seconds": 3807,
+        "era": 7,
+        "rank": 1
+      },
+      {
+        "seconds": 3867,
+        "era": 7,
+        "rank": 2
+      },
+      {
+        "seconds": 3926,
+        "era": 7,
+        "rank": 3
+      },
+      {
+        "seconds": 5322,
+        "era": 7,
+        "rank": 4
+      },
+      {
+        "seconds": 6501,
+        "era": 7,
+        "rank": 5
+      },
+      {
+        "seconds": 7571,
+        "era": 8,
+        "rank": 0
+      },
+      {
+        "seconds": 7574,
+        "era": 8,
+        "rank": 1
+      },
+      {
+        "seconds": 7577,
+        "era": 8,
+        "rank": 2
+      },
+      {
+        "seconds": 7580,
+        "era": 8,
+        "rank": 3
+      },
+      {
+        "seconds": 7643,
+        "era": 8,
+        "rank": 4
+      },
+      {
+        "seconds": 7703,
+        "era": 8,
+        "rank": 5
+      },
+      {
+        "seconds": 7763,
+        "era": 8,
+        "rank": 6
+      },
+      {
+        "seconds": 9097,
+        "era": 8,
+        "rank": 7
+      },
+      {
+        "seconds": 10235,
+        "era": 8,
+        "rank": 8
+      },
+      {
+        "seconds": 11270,
+        "era": 9,
+        "rank": 0
+      },
+      {
+        "seconds": 11271,
+        "era": 9,
+        "rank": 1
+      },
+      {
+        "seconds": 11272,
+        "era": 9,
+        "rank": 2
+      },
+      {
+        "seconds": 11273,
+        "era": 9,
+        "rank": 3
+      },
+      {
+        "seconds": 11276,
+        "era": 9,
+        "rank": 4
+      },
+      {
+        "seconds": 11279,
+        "era": 9,
+        "rank": 5
+      },
+      {
+        "seconds": 11282,
+        "era": 9,
+        "rank": 6
+      },
+      {
+        "seconds": 11342,
+        "era": 9,
+        "rank": 7
+      },
+      {
+        "seconds": 11400,
+        "era": 9,
+        "rank": 8
+      },
+      {
+        "seconds": 11457,
+        "era": 9,
+        "rank": 9
+      },
+      {
+        "seconds": 12691,
+        "era": 9,
+        "rank": 10
+      },
+      {
+        "seconds": 13758,
+        "era": 9,
+        "rank": 11
+      },
+      {
+        "seconds": 14726,
+        "era": 10,
+        "rank": 0
+      },
+      {
+        "seconds": 14727,
+        "era": 10,
+        "rank": 1
+      },
+      {
+        "seconds": 14728,
+        "era": 10,
+        "rank": 2
+      },
+      {
+        "seconds": 14729,
+        "era": 10,
+        "rank": 3
+      },
+      {
+        "seconds": 14730,
+        "era": 10,
+        "rank": 4
+      },
+      {
+        "seconds": 14731,
+        "era": 10,
+        "rank": 5
+      },
+      {
+        "seconds": 14732,
+        "era": 10,
+        "rank": 6
+      },
+      {
+        "seconds": 14735,
+        "era": 10,
+        "rank": 7
+      },
+      {
+        "seconds": 14738,
+        "era": 10,
+        "rank": 8
+      },
+      {
+        "seconds": 14741,
+        "era": 10,
+        "rank": 9
+      },
+      {
+        "seconds": 14794,
+        "era": 10,
+        "rank": 10
+      },
+      {
+        "seconds": 14845,
+        "era": 10,
+        "rank": 11
+      },
+      {
+        "seconds": 14896,
+        "era": 10,
+        "rank": 12
+      },
+      {
+        "seconds": 16060,
+        "era": 10,
+        "rank": 13
+      },
+      {
+        "seconds": 17067,
+        "era": 10,
+        "rank": 14
+      },
+      {
+        "seconds": 17973,
+        "era": 10,
+        "rank": 15
+      }
+    ],
+    "totalSeconds": 26291,
+    "runtimeMs": 2934.784,
+    "baseline": {
+      "time": 33491,
+      "era": 10,
+      "rank": 15,
+      "epsilon": "10",
+      "progress": 0,
+      "hero": "H⟨ε_10⟩(10)",
+      "lambda": "H⟨ε₀[100]⟩(100)",
+      "rate": 0.12269387618767671,
+      "echo": 29.97620771382694,
+      "swallows": 1428,
+      "devourInterval": 12.295081967213115,
+      "currency": [
+        0.3140499999991072,
+        8.256049999999222,
+        12.403849999999055,
+        6.287049999998775,
+        16.398999999999486
+      ],
+      "total": [
+        124.02502000001586,
+        109.34440000001125,
+        92.99557000001289,
+        76.05805000001415,
+        127.39899999997408
+      ],
+      "up": [
+        {
+          "drive": 6,
+          "flux": 3,
+          "devour": 3,
+          "operator": 1,
+          "auto": 1,
+          "memory": 1
+        },
+        {
+          "drive": 6,
+          "flux": 3,
+          "devour": 2,
+          "operator": 1,
+          "auto": 1,
+          "memory": 1
+        },
+        {
+          "drive": 5,
+          "flux": 3,
+          "devour": 2,
+          "operator": 1,
+          "auto": 1,
+          "memory": 1
+        },
+        {
+          "drive": 5,
+          "flux": 2,
+          "devour": 2,
+          "operator": 1,
+          "auto": 1,
+          "memory": 1
+        },
+        {
+          "drive": 6,
+          "flux": 3,
+          "devour": 3,
+          "operator": 1,
+          "auto": 1,
+          "memory": 1
+        }
+      ],
+      "clears": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "proofs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "auto": {
+        "advance": true,
+        "shop": true,
+        "prestige": false
+      },
+      "focus": "growth",
+      "layout": 1.82934693877551
+    },
+    "campaignSeed": {
+      "file": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\simulation-p1\\campaign-completed-V-input.json",
+      "sha256": "7773cc2114b7f7eb6f1c23473af2f1fd9dd7c9380d37716cf13d5f9c2f86a7cd",
+      "bytes": 2545
+    },
+    "baselineSave": {
+      "file": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\simulation-p1\\baseline-X-epsilon10.json",
+      "sha256": "ff5d747b22ad82b03849e3c976b1655cc0db57625201c26c8ff41e06dba076df",
+      "bytes": 8235
+    }
+  },
+  "equivalence": {
+    "seconds": 86400,
+    "rank": 15,
+    "epsilon": "148",
+    "swallows": 10652,
+    "progressError": 9.947598300641403e-14,
+    "echoError": 0,
+    "currencyErrors": [
+      7.489120434911456e-12,
+      7.350564601438236e-12,
+      7.114309141798003e-12,
+      7.226219622680219e-12,
+      3.8767211663071066e-11
+    ],
+    "runtimeMs": 19302.3879,
+    "passed": true
+  },
+  "checkpoints": [
+    {
+      "days": 1,
+      "seconds": 86400,
+      "epsilonGained": "138",
+      "swallowsGained": 9224,
+      "time": 119891,
+      "era": 10,
+      "rank": 15,
+      "epsilon": "148",
+      "progress": 78.94836901157885,
+      "hero": "H⟨ε_148⟩(81.05)",
+      "lambda": "H⟨ε₀[100]⟩(100)",
+      "rate": 0.18904266787035082,
+      "echo": 60,
+      "swallows": 10652,
+      "devourInterval": 8.522727272727273,
+      "currency": [
+        46.4607649999974,
+        30.285294999997603,
+        15.727224999997894,
+        59.84588499999788,
+        131.969000000005
+      ],
+      "total": [
+        577.1717350001555,
+        558.3736450001537,
+        538.3189450001626,
+        513.6168850001712,
+        1648.9690000002777
+      ],
+      "up": [
+        {
+          "drive": 9,
+          "flux": 5,
+          "devour": 4,
+          "operator": 3,
+          "auto": 1,
+          "memory": 3
+        },
+        {
+          "drive": 9,
+          "flux": 5,
+          "devour": 4,
+          "operator": 3,
+          "auto": 1,
+          "memory": 3
+        },
+        {
+          "drive": 9,
+          "flux": 5,
+          "devour": 4,
+          "operator": 3,
+          "auto": 1,
+          "memory": 3
+        },
+        {
+          "drive": 8,
+          "flux": 5,
+          "devour": 4,
+          "operator": 3,
+          "auto": 1,
+          "memory": 3
+        },
+        {
+          "drive": 11,
+          "flux": 7,
+          "devour": 5,
+          "operator": 4,
+          "auto": 1,
+          "memory": 4
+        }
+      ],
+      "clears": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "proofs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "auto": {
+        "advance": true,
+        "shop": true,
+        "prestige": false
+      },
+      "focus": "growth",
+      "layout": 1.82934693877551,
+      "save": {
+        "file": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\simulation-p1\\checkpoint-1d.json",
+        "sha256": "46174a2bb3c20cf6cf9be5ab6c049d89325d65f94be387d7b4c1768bdad79c48",
+        "bytes": 8254
+      },
+      "runtimeMs": 1.636399999999412
+    },
+    {
+      "days": 7,
+      "seconds": 604800,
+      "epsilonGained": "1294",
+      "swallowsGained": 89288,
+      "time": 638291,
+      "era": 10,
+      "rank": 15,
+      "epsilon": "1304",
+      "progress": 63.89628069707906,
+      "hero": "H⟨ε_1304⟩(67.51)",
+      "lambda": "H⟨ε₀[100]⟩(100)",
+      "rate": 0.24419301098217275,
+      "echo": 60,
+      "swallows": 90716,
+      "devourInterval": 6,
+      "currency": [
+        147.33402499972448,
+        124.98234999972507,
+        104.86547499971837,
+        69.10352999970473,
+        292.21920000017934
+      ],
+      "total": [
+        4383.0449949991125,
+        4358.070699999095,
+        4332.4571949991105,
+        4297.874529999036,
+        14405.219200020263
+      ],
+      "up": [
+        {
+          "drive": 12,
+          "flux": 8,
+          "devour": 7,
+          "operator": 5,
+          "auto": 1,
+          "memory": 6
+        },
+        {
+          "drive": 12,
+          "flux": 8,
+          "devour": 7,
+          "operator": 5,
+          "auto": 1,
+          "memory": 6
+        },
+        {
+          "drive": 12,
+          "flux": 8,
+          "devour": 7,
+          "operator": 5,
+          "auto": 1,
+          "memory": 6
+        },
+        {
+          "drive": 12,
+          "flux": 8,
+          "devour": 7,
+          "operator": 5,
+          "auto": 1,
+          "memory": 6
+        },
+        {
+          "drive": 15,
+          "flux": 10,
+          "devour": 9,
+          "operator": 5,
+          "auto": 1,
+          "memory": 7
+        }
+      ],
+      "clears": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "proofs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "auto": {
+        "advance": true,
+        "shop": true,
+        "prestige": false
+      },
+      "focus": "growth",
+      "layout": 1.82934693877551,
+      "save": {
+        "file": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\simulation-p1\\checkpoint-7d.json",
+        "sha256": "5753cc45fce5d15ea594bd061a675245aafeb344052473daff33fdd0951bbee5",
+        "bytes": 8402
+      },
+      "runtimeMs": 423.1902000000009
+    },
+    {
+      "days": 30,
+      "seconds": 2592000,
+      "epsilonGained": "6847",
+      "swallowsGained": 420488,
+      "time": 2625491,
+      "era": 10,
+      "rank": 15,
+      "epsilon": "6857",
+      "progress": 68.56632873561661,
+      "hero": "H⟨ε_6857⟩(71.71)",
+      "lambda": "H⟨ε₀[100]⟩(100)",
+      "rate": 0.30196711205734733,
+      "echo": 60,
+      "swallows": 421916,
+      "devourInterval": 6,
+      "currency": [
+        3063.7177800112454,
+        3037.2486350112003,
+        3013.4258900111595,
+        2971.076140011083,
+        10831.773700021602
+      ],
+      "total": [
+        22547.428749989944,
+        22518.336984989408,
+        22489.017609988856,
+        22447.847139988116,
+        73600.7736997425
+      ],
+      "up": [
+        {
+          "drive": 16,
+          "flux": 10,
+          "devour": 9,
+          "operator": 5,
+          "auto": 1,
+          "memory": 8
+        },
+        {
+          "drive": 16,
+          "flux": 10,
+          "devour": 9,
+          "operator": 5,
+          "auto": 1,
+          "memory": 8
+        },
+        {
+          "drive": 16,
+          "flux": 10,
+          "devour": 9,
+          "operator": 5,
+          "auto": 1,
+          "memory": 8
+        },
+        {
+          "drive": 16,
+          "flux": 10,
+          "devour": 9,
+          "operator": 5,
+          "auto": 1,
+          "memory": 8
+        },
+        {
+          "drive": 18,
+          "flux": 12,
+          "devour": 11,
+          "operator": 5,
+          "auto": 1,
+          "memory": 9
+        }
+      ],
+      "clears": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "proofs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "auto": {
+        "advance": true,
+        "shop": true,
+        "prestige": false
+      },
+      "focus": "growth",
+      "layout": 1.82934693877551,
+      "save": {
+        "file": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\simulation-p1\\checkpoint-30d.json",
+        "sha256": "dbe0fccebc503ac6dc551a297c15d40d187fa484b3cd416181ab9a2c2b04a341",
+        "bytes": 8507
+      },
+      "runtimeMs": 2055.406899999998
+    },
+    {
+      "days": 365,
+      "seconds": 31536000,
+      "epsilonGained": "103580",
+      "swallowsGained": 5244488,
+      "time": 31569491,
+      "era": 10,
+      "rank": 15,
+      "epsilon": "103590",
+      "progress": 69.7566714310451,
+      "hero": "H⟨ε_103590⟩(72.78)",
+      "lambda": "H⟨ε₀[100]⟩(100)",
+      "rate": 0.3345879869489528,
+      "echo": 60,
+      "swallows": 5245916,
+      "devourInterval": 6,
+      "currency": [
+        200875.7024697946,
+        200845.11585479285,
+        200817.58723979126,
+        200768.65041978844,
+        840466.573630644
+      ],
+      "total": [
+        337075.4133800844,
+        337042.2041451123,
+        337009.17890014005,
+        336961.4213601803,
+        976653.573577655
+      ],
+      "up": [
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        }
+      ],
+      "clears": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "proofs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "auto": {
+        "advance": true,
+        "shop": true,
+        "prestige": false
+      },
+      "focus": "growth",
+      "layout": 1.82934693877551,
+      "save": {
+        "file": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\simulation-p1\\checkpoint-365d.json",
+        "sha256": "ed0add5592b8f4480b7b7435b24e4feea2911d9ed12445f95e3d3162b3bb8177",
+        "bytes": 8793
+      },
+      "runtimeMs": 26093.911900000003
+    },
+    {
+      "days": 3650,
+      "seconds": 315360000,
+      "epsilonGained": "996261",
+      "swallowsGained": 52548488,
+      "time": 315393491,
+      "era": 10,
+      "rank": 15,
+      "epsilon": "996271",
+      "progress": 47.973488128669864,
+      "hero": "H⟨ε_996271⟩(53.18)",
+      "lambda": "H⟨ε₀[100]⟩(100)",
+      "rate": 0.3086173958455121,
+      "echo": 60,
+      "swallows": 52549916,
+      "devourInterval": 6,
+      "currency": [
+        3300233.7765756785,
+        3300203.1899608127,
+        3300175.6613459336,
+        3300126.7245261497,
+        9695775.376171926
+      ],
+      "total": [
+        3436433.486947894,
+        3436400.27771304,
+        3436367.2524681846,
+        3436319.4949283944,
+        9831962.37517333
+      ],
+      "up": [
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        }
+      ],
+      "clears": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "proofs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "auto": {
+        "advance": true,
+        "shop": true,
+        "prestige": false
+      },
+      "focus": "growth",
+      "layout": 1.82934693877551,
+      "save": {
+        "file": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\simulation-p1\\checkpoint-3650d.json",
+        "sha256": "aa638d930e366a073e4054067a5184c9b6b833f48d2c2ba8e6a8be313280397b",
+        "bytes": 8899
+      },
+      "runtimeMs": 265177.997
+    },
+    {
+      "days": 36500,
+      "seconds": 3153600000,
+      "epsilonGained": "9275776",
+      "swallowsGained": 525588488,
+      "time": 3153633491,
+      "era": 10,
+      "rank": 15,
+      "epsilon": "9275786",
+      "progress": 11.419224648755444,
+      "hero": "H⟨ε_9275786⟩(20.28)",
+      "lambda": "H⟨ε₀[100]⟩(100)",
+      "rate": 0.281129920630941,
+      "echo": 42.50713662878638,
+      "swallows": 525589916,
+      "devourInterval": 6,
+      "currency": [
+        34293814.538064666,
+        34293783.95144804,
+        34293756.42283158,
+        34293707.48600898,
+        98248865.25924127
+      ],
+      "total": [
+        34430014.256269574,
+        34429981.0470328,
+        34429948.02178604,
+        34429900.264243506,
+        98385052.26650599
+      ],
+      "up": [
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        },
+        {
+          "drive": 20,
+          "flux": 12,
+          "devour": 12,
+          "operator": 5,
+          "auto": 1,
+          "memory": 10
+        }
+      ],
+      "clears": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "proofs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "auto": {
+        "advance": true,
+        "shop": true,
+        "prestige": false
+      },
+      "focus": "growth",
+      "layout": 1.82934693877551,
+      "save": {
+        "file": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\simulation-p1\\checkpoint-36500d.json",
+        "sha256": "77473d1292ad2b84810749b3ce3e6d3b04ba8cce5418c76a029032df29aaf653",
+        "bytes": 9104
+      },
+      "runtimeMs": 3974989.1844
+    }
+  ],
+  "complete": true
+}

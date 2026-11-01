@@ -1,0 +1,51 @@
+{
+  "complete": true,
+  "checked": [
+    {
+      "days": 1,
+      "epsilon": "148",
+      "bytes": 8254,
+      "sha256": "46174a2bb3c20cf6cf9be5ab6c049d89325d65f94be387d7b4c1768bdad79c48",
+      "roundtrip": true
+    },
+    {
+      "days": 7,
+      "epsilon": "1304",
+      "bytes": 8402,
+      "sha256": "5753cc45fce5d15ea594bd061a675245aafeb344052473daff33fdd0951bbee5",
+      "roundtrip": true
+    },
+    {
+      "days": 30,
+      "epsilon": "6857",
+      "bytes": 8507,
+      "sha256": "dbe0fccebc503ac6dc551a297c15d40d187fa484b3cd416181ab9a2c2b04a341",
+      "roundtrip": true
+    },
+    {
+      "days": 365,
+      "epsilon": "103590",
+      "bytes": 8793,
+      "sha256": "ed0add5592b8f4480b7b7435b24e4feea2911d9ed12445f95e3d3162b3bb8177",
+      "roundtrip": true
+    },
+    {
+      "days": 3650,
+      "epsilon": "996271",
+      "bytes": 8899,
+      "sha256": "aa638d930e366a073e4054067a5184c9b6b833f48d2c2ba8e6a8be313280397b",
+      "roundtrip": true
+    },
+    {
+      "days": 36500,
+      "epsilon": "9275786",
+      "bytes": 9104,
+      "sha256": "77473d1292ad2b84810749b3ce3e6d3b04ba8cce5418c76a029032df29aaf653",
+      "roundtrip": true
+    }
+  ],
+  "allSourceHashesMatch": true,
+  "baselineHashesMatch": true,
+  "resultSha256": "db8c9fc745e8e8a441dee3315c4a6bd716ffaa9ad9d0b95e26e38d62e508ebbf",
+  "verified": "2026-11-01"
+}

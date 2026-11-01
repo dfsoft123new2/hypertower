@@ -1,0 +1,289 @@
+{
+  "kind": "exact repeated-state cycle batching, not fitted forecasting",
+  "baseline": {
+    "historicalProfile": true,
+    "description": "用户历史明确提出的225000次归一、6600万太一；隔离重建为XX已完成、720星、10张手动代表、携带MA+natural+fixed，无挑战/工坊规则。初态本轮年龄600秒，先正常执行归一，获得61太一，再开始计未来时间。仅模拟未来推进，不声称模拟了之前22.5万轮或实际解题耗时。",
+    "round": "225000",
+    "points": "66000000",
+    "stars": 720,
+    "blueprints": 10,
+    "carry": [
+      "MA",
+      "natural",
+      "fixed"
+    ],
+    "initialAction": {
+      "normalize": true,
+      "earned": "61"
+    },
+    "initialRawSha256": "a308eccddbc6609f71373f943607af8833b0e403c07e51263c07a7e824fb37e1"
+  },
+  "units": {
+    "day": 86400,
+    "week": 604800,
+    "monthDays": 30,
+    "yearDays": 365
+  },
+  "cycle": {
+    "rounds": 5,
+    "seconds": 155.08364343555778,
+    "points": "3005",
+    "rows": [
+      {
+        "axiom": 2,
+        "seconds": 31.016728687111556,
+        "earned": "601",
+        "freshCanonicalHash": "91c34197372042cd732ce7b292090f406a04950bff9c49010b615bf6d906aacd"
+      },
+      {
+        "axiom": 3,
+        "seconds": 31.016728687111556,
+        "earned": "601",
+        "freshCanonicalHash": "be87994fff474ca649d9d77aafa11c6cc5a9010c8dca2c479784e34b4f33ded3"
+      },
+      {
+        "axiom": 4,
+        "seconds": 31.016728687111556,
+        "earned": "601",
+        "freshCanonicalHash": "6436bd622ea12613f76fd52b5623133d2112dd3bb91f829246fa603a7d5d72cf"
+      },
+      {
+        "axiom": 0,
+        "seconds": 31.016728687111556,
+        "earned": "601",
+        "freshCanonicalHash": "bba6555761c4440b3fd9858307e4b3444e61f1b509077f679227fb7d43afcd84"
+      },
+      {
+        "axiom": 1,
+        "seconds": 31.016728687111556,
+        "earned": "601",
+        "freshCanonicalHash": "ae9537e29726835dc76771912369b1baebc0ca0b7061af1d9402e6488647d773"
+      }
+    ],
+    "fullPersistentCoreRecurs": true,
+    "canonicalExcludedDomains": [
+      "time",
+      "last (wall-clock timestamp)",
+      "log (current normalization message)",
+      "legacy.round",
+      "legacy.points",
+      "legacy.roundStart",
+      "legacy.bestSeconds"
+    ],
+    "proof": [
+      "遗产倍率只依赖点数、元公理和携带项；6600万起已达到4000硬上限，未来点数单增不会离开此上限。",
+      "归一用H.newState重建；只保留blueprints/archive/workshop/ach/ui/time/legacy累积字段。工坊禁用且无规则，蓝图档案不再修改，没有新ID。",
+      "各轮不同只由round%5元公理影响；五轮后全部持久核心逐字段一致，source中的其它round使用均为显示或未启用的传感器。",
+      "五轮均小于60秒，结算使用max(60,轮秒)，故每轮严格floor(36000/60)+1=601；floor无需拟合或近似。",
+      "批处理只跳过完整5轮，更新轮数、整数遗产、绝对时钟、当前归一日志与bestSeconds；不足5轮的末段由同一原生H.tick事件积分。",
+      "远距离原生重放核验完整非累积持久状态、整数计数、archive、蓝图ID和规则时钟。浮点绝对时间和best显示域保留显式误差记录；不把IEEE浮点加法重排说成逐bit相等。"
+    ],
+    "sourceFiles": [
+      {
+        "file": "src/era11.js",
+        "sha256": "adb22e6cf6304044973d42285590a224274d8f847b1a898fdea03e18bc3c2a78"
+      },
+      {
+        "file": "src/late-eras.js",
+        "sha256": "941e35a6e1ef73fd79dd0e2633847377f0260a122c3b26440e12a85cb26b3243"
+      },
+      {
+        "file": "src/systems.js",
+        "sha256": "efb59cd9f6f803bae5c2c2b2a9af3b1f60112c64909d666f7c6643c0bd2a160d"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "label": "1day",
+      "seconds": 86400,
+      "file": "checkpoint-1day.ht5",
+      "sha256": "b937c884856e945344b87d56e5ad8e0b1b961367b69fa6a6bae689dcb200450e",
+      "round": "227786",
+      "roundsAdded": "2786",
+      "points": "67673846",
+      "pointsAdded": "1673846",
+      "era": 17,
+      "axiom": 1,
+      "multiplier": 4000,
+      "currentRoundSeconds": 18.410606393867056,
+      "bestSeconds": 60,
+      "stars": 720,
+      "blueprints": 10,
+      "legalNativeImport": true,
+      "blocks": 557,
+      "skippedRounds": 2785,
+      "nativeSteps": 295,
+      "roundingRemainder": 0
+    },
+    {
+      "label": "1week",
+      "seconds": 604800,
+      "file": "checkpoint-1week.ht5",
+      "sha256": "df8a4f95ee88b82324c4976c03fc58f199b6c465081d8c10a0241f69e5ca7eb4",
+      "round": "244500",
+      "roundsAdded": "19500",
+      "points": "77718960",
+      "pointsAdded": "11718960",
+      "era": 12,
+      "axiom": 0,
+      "multiplier": 4000,
+      "currentRoundSeconds": 4.80733001162298,
+      "bestSeconds": 60,
+      "stars": 720,
+      "blueprints": 10,
+      "legalNativeImport": true,
+      "blocks": 3899,
+      "skippedRounds": 19495,
+      "nativeSteps": 2263,
+      "roundingRemainder": 0
+    },
+    {
+      "label": "1month",
+      "seconds": 2592000,
+      "file": "checkpoint-1month.ht5",
+      "sha256": "7129b15383ecf981683e6b3f9410e2eb04f399104eae7d393086b88052451795",
+      "round": "308568",
+      "roundsAdded": "83568",
+      "points": "116223828",
+      "pointsAdded": "50223828",
+      "era": 19,
+      "axiom": 3,
+      "multiplier": 4000,
+      "currentRoundSeconds": 25.033804177306592,
+      "bestSeconds": 60,
+      "stars": 720,
+      "blueprints": 10,
+      "legalNativeImport": true,
+      "blocks": 16713,
+      "skippedRounds": 83565,
+      "nativeSteps": 1463,
+      "roundingRemainder": 0
+    },
+    {
+      "label": "1year",
+      "seconds": 31536000,
+      "file": "checkpoint-1year.ht5",
+      "sha256": "f11be86ae4d00a79d769f5fe5d6b41833f042f93cc666313a6074615b71a92f9",
+      "round": "1241742",
+      "roundsAdded": "1016742",
+      "points": "677061402",
+      "pointsAdded": "611061402",
+      "era": 17,
+      "axiom": 2,
+      "multiplier": 4000,
+      "currentRoundSeconds": 20.257937494665384,
+      "bestSeconds": 60,
+      "stars": 720,
+      "blueprints": 10,
+      "legalNativeImport": true,
+      "blocks": 203348,
+      "skippedRounds": 1016740,
+      "nativeSteps": 857,
+      "roundingRemainder": 0
+    },
+    {
+      "label": "10years",
+      "seconds": 315360000,
+      "file": "checkpoint-10years.ht5",
+      "sha256": "07e86df461be2a8628a55da2a294b7534cf07d421f6d5f9a0b451a4af44679ac",
+      "round": "10392417",
+      "roundsAdded": "10167417",
+      "points": "6176617077",
+      "pointsAdded": "6110617077",
+      "era": 16,
+      "axiom": 2,
+      "multiplier": 4000,
+      "currentRoundSeconds": 16.47900277376175,
+      "bestSeconds": 60,
+      "stars": 720,
+      "blueprints": 10,
+      "legalNativeImport": true,
+      "blocks": 2033483,
+      "skippedRounds": 10167415,
+      "nativeSteps": 802,
+      "roundingRemainder": 0
+    },
+    {
+      "label": "100years",
+      "seconds": 3153600000,
+      "file": "checkpoint-100years.ht5",
+      "sha256": "1369415492208743ca3908d56d3c1fb687db21656d9521c2d1cb7cacdc45db3f",
+      "round": "101899166",
+      "roundsAdded": "101674166",
+      "points": "61172173226",
+      "pointsAdded": "61106173226",
+      "era": 14,
+      "axiom": 1,
+      "multiplier": 4000,
+      "currentRoundSeconds": 9.706389904022217,
+      "bestSeconds": 60,
+      "stars": 720,
+      "blueprints": 10,
+      "legalNativeImport": true,
+      "blocks": 20334833,
+      "skippedRounds": 101674165,
+      "nativeSteps": 163,
+      "roundingRemainder": 0
+    }
+  ],
+  "farReplays": [
+    {
+      "offsetCycles": 0,
+      "offsetSeconds": 0,
+      "additionalNativeRounds": 5,
+      "coreEqual": true,
+      "counterEqual": true,
+      "clockAbsoluteErrorSeconds": 3.728928277269006e-11,
+      "bestAbsoluteErrorSeconds": 0,
+      "legalNativeImport": true,
+      "blueprintIdsEqual": true,
+      "archiveEqual": true,
+      "workshopEqual": true,
+      "canonicalHash": "ae9537e29726835dc76771912369b1baebc0ca0b7061af1d9402e6488647d773"
+    },
+    {
+      "offsetCycles": 1000,
+      "offsetSeconds": 155083.64343555778,
+      "additionalNativeRounds": 5,
+      "coreEqual": true,
+      "counterEqual": true,
+      "clockAbsoluteErrorSeconds": 2.1245796233415604e-9,
+      "bestAbsoluteErrorSeconds": 0,
+      "legalNativeImport": true,
+      "blueprintIdsEqual": true,
+      "archiveEqual": true,
+      "workshopEqual": true,
+      "canonicalHash": "ae9537e29726835dc76771912369b1baebc0ca0b7061af1d9402e6488647d773"
+    },
+    {
+      "offsetCycles": 100000,
+      "offsetSeconds": 15508364.343555778,
+      "additionalNativeRounds": 5,
+      "coreEqual": true,
+      "counterEqual": true,
+      "clockAbsoluteErrorSeconds": 1.73225998878479e-7,
+      "bestAbsoluteErrorSeconds": 0,
+      "legalNativeImport": true,
+      "blueprintIdsEqual": true,
+      "archiveEqual": true,
+      "workshopEqual": true,
+      "canonicalHash": "ae9537e29726835dc76771912369b1baebc0ca0b7061af1d9402e6488647d773"
+    },
+    {
+      "offsetCycles": 20334833,
+      "offsetSeconds": 3153599990.2936134,
+      "additionalNativeRounds": 5,
+      "coreEqual": true,
+      "counterEqual": true,
+      "clockAbsoluteErrorSeconds": 0.00011301040649414062,
+      "bestAbsoluteErrorSeconds": 0,
+      "legalNativeImport": true,
+      "blueprintIdsEqual": true,
+      "archiveEqual": true,
+      "workshopEqual": true,
+      "canonicalHash": "ae9537e29726835dc76771912369b1baebc0ca0b7061af1d9402e6488647d773"
+    }
+  ],
+  "wallSeconds": 2.893232
+}

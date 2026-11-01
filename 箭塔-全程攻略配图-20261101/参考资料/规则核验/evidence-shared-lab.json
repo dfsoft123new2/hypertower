@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "method": "Independent isolated fixtures exercise actual purchase, injection, magnetic, confinement, univalence and evaporation actions; not player save progress.",
+  "checks": [
+    {
+      "case": "firstInstrumentPurchases",
+      "apertureGamma": 30,
+      "apertureFunds": 100,
+      "area": 2.25,
+      "efficiency": 0.45,
+      "queue": 10
+    },
+    {
+      "case": "fiveManualInjections",
+      "D": 0,
+      "spent": 395.2399999999998,
+      "E": 5,
+      "sixthAllowed": false
+    },
+    {
+      "case": "fiveManualInjections",
+      "D": 2,
+      "spent": 316.1920000000009,
+      "E": 5,
+      "sixthAllowed": false
+    },
+    {
+      "case": "magneticG2",
+      "tenSecondPhotons": 0.4,
+      "removalCooldown": 600
+    },
+    {
+      "case": "rgbConfinement",
+      "distinctMaterials": 3,
+      "factor": 1,
+      "dismantleCooldown": 1800
+    },
+    {
+      "case": "g2Univalence",
+      "addedMass": 0.6931471805599453,
+      "addedHorizonS": 1.3862943611198906
+    }
+  ],
+  "evaporation": [
+    {
+      "M": 1,
+      "seconds": 0.0574712643678161
+    },
+    {
+      "M": 2,
+      "seconds": 0.4597701149425288
+    },
+    {
+      "M": 5,
+      "seconds": 7.183908045977012
+    },
+    {
+      "M": 10,
+      "seconds": 57.4712643678161
+    },
+    {
+      "M": 20,
+      "seconds": 459.7701149425288
+    },
+    {
+      "M": 50,
+      "seconds": 7183.908045977012
+    },
+    {
+      "M": 100,
+      "seconds": 57471.2643678161
+    },
+    {
+      "M": 1000,
+      "seconds": 57471264.3678161
+    }
+  ],
+  "sourceSHA256": "6e72cad798a5358f3fe04fd52b2e38f5104efafc74aca63c4675c79cb219137d"
+}

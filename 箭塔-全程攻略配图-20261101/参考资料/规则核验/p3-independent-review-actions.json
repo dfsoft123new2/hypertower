@@ -1,0 +1,125 @@
+{
+  "frameProduct": {
+    "inputA": {
+      "torus": true,
+      "orders": {}
+    },
+    "inputB": {
+      "torus": true,
+      "orders": {}
+    },
+    "outputOptions": {
+      "orders": {}
+    },
+    "outputTorus": false,
+    "outputTwist": 2
+  },
+  "c12": {
+    "Q": 3.9785327433199713,
+    "available": 2,
+    "zhoutian": true,
+    "beforeC12": false,
+    "afterC12": {
+      "mass": 2,
+      "returnedStars": 0
+    },
+    "phase": "huai",
+    "noMass": {
+      "actualRewind": true,
+      "n": "2",
+      "coverage": true,
+      "seedCount": 0,
+      "positiveMassStillRequired": true
+    }
+  },
+  "coverages": [
+    {
+      "n": 1,
+      "gears": [
+        2
+      ],
+      "counts": [
+        2
+      ],
+      "stars": 2
+    },
+    {
+      "n": 3,
+      "gears": [
+        8,
+        3
+      ],
+      "counts": [
+        8,
+        3
+      ],
+      "stars": 8
+    },
+    {
+      "n": 7,
+      "gears": [
+        16,
+        3,
+        5
+      ],
+      "counts": [
+        16,
+        3,
+        5
+      ],
+      "stars": 16
+    },
+    {
+      "n": 11,
+      "gears": [
+        8,
+        9,
+        7
+      ],
+      "counts": [
+        8,
+        9,
+        7
+      ],
+      "stars": 9
+    }
+  ],
+  "baselines": [
+    {
+      "ring": 42,
+      "levels": [
+        13,
+        27,
+        41,
+        55
+      ]
+    },
+    {
+      "ring": 52,
+      "levels": [
+        12,
+        26,
+        40,
+        54
+      ]
+    },
+    {
+      "ring": 40,
+      "levels": [
+        13,
+        27,
+        41,
+        55
+      ]
+    },
+    {
+      "ring": 400,
+      "levels": [
+        3,
+        17,
+        31,
+        45
+      ]
+    }
+  ]
+}

@@ -1,0 +1,803 @@
+{
+  "created": "2026-11-01",
+  "scope": "P3 guide claims: isolated constructed states, actual API actions; not natural campaign or global optimality proof",
+  "files": {
+    "gr-core": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-core.js",
+      "sha256": "ab6ec03864b0b8bc4d0d68eaf9b43ffee6fcb6858f9f778c7e24c568d0fdde48"
+    },
+    "gr-data": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-data.js",
+      "sha256": "2935c81a6bbfad1c4ec1ef392f914e08485dd7d9b32847b065ed2ac03bd31f50"
+    },
+    "gr-shadow": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-shadow.js",
+      "sha256": "4013c952901296a991a56ef2b420affea8ed112da385d0e6a8aaaf90f078c2ba"
+    },
+    "gr-obs": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-obs.js",
+      "sha256": "c0ba7523a98cac532ca20f81bbc18b5791107d45f990b3a5d2316859799dcb59"
+    },
+    "gr-deg": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-deg.js",
+      "sha256": "6e72cad798a5358f3fe04fd52b2e38f5104efafc74aca63c4675c79cb219137d"
+    },
+    "gr-era21": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-era21.js",
+      "sha256": "55ee601a353e49666a8321a7f22ce0fd67873c3db3eb384eeb50f0839e506b68"
+    },
+    "gr-era22": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-era22.js",
+      "sha256": "b32f2433aee74d718dc9c85603df53d97639682003b80065171ea6cc6371e4eb"
+    },
+    "gr-era23": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-era23.js",
+      "sha256": "ff0f3437c00f02fde5f4e2780bbcee6c68ef06c2e60c2aadfe926fd560e5b8d4"
+    },
+    "gr-era24": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-era24.js",
+      "sha256": "92e5f4e1fa958dacca0c7d670a12a3f73c98ed231f2f8964f2406e2bdf85a486"
+    },
+    "gr-inf": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-inf.js",
+      "sha256": "453e64353fd54705955aca7715ff1f00f8c80f5cdb2e90b06061e6de81d5a8c6"
+    },
+    "gr-inf-auto": {
+      "path": "D:/hypertower-recovery-20261026/hypertower/src/gr-inf-auto.js",
+      "sha256": "8b5adab5602467b3c19ce1606774f1570c54e5745f060c7c5c820e445424ed52"
+    }
+  },
+  "checks": {
+    "grades": [
+      {
+        "I": 24.999,
+        "grade": 0
+      },
+      {
+        "I": 25,
+        "grade": 1
+      },
+      {
+        "I": 399.999,
+        "grade": 1
+      },
+      {
+        "I": 400,
+        "grade": 2
+      },
+      {
+        "I": 2499.999,
+        "grade": 2
+      },
+      {
+        "I": 2500,
+        "grade": 3
+      }
+    ],
+    "levels": {
+      "21": {
+        "labels": [
+          "Berkeley 余晖",
+          "V",
+          "V[G]",
+          "S4.2",
+          "按钮与开关",
+          "泛型多重宇宙",
+          "基岩",
+          "地幔",
+          "元绝对 𝔐"
+        ],
+        "steps": 8,
+        "excitationHours": 14,
+        "constantMultiplierOnePerJumpSeconds": 10080
+      },
+      "22": {
+        "labels": [
+          "ω（序数也是博弈）",
+          "∗（第一个不是数的值）",
+          "↑∗（无穷小）",
+          "±1（第一场热战）",
+          "1/ω",
+          "ω − 1",
+          "ε₀ + 1/ω",
+          "√ω",
+          "On（全体序数）",
+          "No（超现实数之类）"
+        ],
+        "steps": 9,
+        "excitationHours": 16,
+        "constantMultiplierOnePerJumpSeconds": 10240
+      },
+      "23": {
+        "labels": [
+          "箭塔",
+          "复合",
+          "交换图",
+          "函子",
+          "自然变换",
+          "伴随",
+          "单子",
+          "米田",
+          "极限",
+          "Kan 扩张",
+          "Cat（范畴的范畴）",
+          "∞-范畴"
+        ],
+        "steps": 11,
+        "excitationHours": 18,
+        "constantMultiplierOnePerJumpSeconds": 9425.454545454546
+      },
+      "24": {
+        "labels": [
+          "Ω（环路空间）",
+          "π₁",
+          "安培",
+          "交换子",
+          "挂画",
+          "辫群",
+          "覆叠",
+          "闭合相位",
+          "群胚",
+          "晶格环面",
+          "Hopf",
+          "单值",
+          "Freudenthal（稳定化前夜）"
+        ],
+        "steps": 12,
+        "excitationHours": 20,
+        "constantMultiplierOnePerJumpSeconds": 9600
+      }
+    },
+    "requirements": {
+      "21": [
+        {
+          "level": 0,
+          "label": "Berkeley 余晖",
+          "requirements": [
+            "完成开篇演示",
+            "从 L 航行"
+          ]
+        },
+        {
+          "level": 1,
+          "label": "V",
+          "requirements": [
+            "发现六站",
+            "使用三种卡"
+          ]
+        },
+        {
+          "level": 2,
+          "label": "V[G]",
+          "requirements": [
+            "发现十六站",
+            "危宿亮"
+          ]
+        },
+        {
+          "level": 3,
+          "label": "S4.2",
+          "requirements": [
+            "B2 B3 B4 同时按下",
+            "CH 切换三次"
+          ]
+        },
+        {
+          "level": 4,
+          "label": "按钮与开关",
+          "requirements": [
+            "三个根",
+            "六十四站",
+            "可测层八站"
+          ]
+        },
+        {
+          "level": 5,
+          "label": "泛型多重宇宙",
+          "requirements": [
+            "下钻五层",
+            "室宿亮"
+          ]
+        },
+        {
+          "level": 6,
+          "label": "基岩",
+          "requirements": [
+            "室宿明",
+            "八个站三构型",
+            "空处样本"
+          ]
+        },
+        {
+          "level": 7,
+          "label": "地幔",
+          "requirements": [
+            "一百六十站",
+            "最高棘轮",
+            "八个地幔",
+            "恒星核质量"
+          ]
+        }
+      ],
+      "22": [
+        {
+          "level": 0,
+          "label": "ω（序数也是博弈）",
+          "requirements": [
+            "非零绿色局面",
+            "赢下一局"
+          ]
+        },
+        {
+          "level": 1,
+          "label": "∗（第一个不是数的值）",
+          "requirements": [
+            "↑∗ 局面",
+            "胃宿亮"
+          ]
+        },
+        {
+          "level": 2,
+          "label": "↑∗（无穷小）",
+          "requirements": [
+            "温度至少一",
+            "淬火达到一半最优"
+          ]
+        },
+        {
+          "level": 3,
+          "label": "±1（第一场热战）",
+          "requirements": [
+            "1/ω",
+            "十二个双构型值"
+          ]
+        },
+        {
+          "level": 4,
+          "label": "1/ω",
+          "requirements": [
+            "ω−1",
+            "毕宿亮"
+          ]
+        },
+        {
+          "level": 5,
+          "label": "ω − 1",
+          "requirements": [
+            "ε₀+1/ω 标签",
+            "导入 XI 与 XIII"
+          ]
+        },
+        {
+          "level": 6,
+          "label": "ε₀ + 1/ω",
+          "requirements": [
+            "三十次淬火",
+            "参宿亮",
+            "对抗航图胜两局"
+          ]
+        },
+        {
+          "level": 7,
+          "label": "√ω",
+          "requirements": [
+            "昴宿明",
+            "进入过恒纪元"
+          ]
+        },
+        {
+          "level": 8,
+          "label": "On（全体序数）",
+          "requirements": [
+            "两百局面星",
+            "五宿亮",
+            "恒星质量"
+          ]
+        }
+      ],
+      "23": [
+        {
+          "level": 0,
+          "label": "箭塔",
+          "requirements": [
+            "开篇演示",
+            "箭塔编目",
+            "购买第一支箭"
+          ]
+        },
+        {
+          "level": 1,
+          "label": "复合",
+          "requirements": [
+            "六对象八箭",
+            "三步路径",
+            "角宿亮"
+          ]
+        },
+        {
+          "level": 2,
+          "label": "交换图",
+          "requirements": [
+            "三个结构",
+            "三路径完全相干",
+            "暗纹"
+          ]
+        },
+        {
+          "level": 3,
+          "label": "函子",
+          "requirements": [
+            "XXII 到 XXIII 函子",
+            "覆盖三纪元",
+            "白虎玄武箭"
+          ]
+        },
+        {
+          "level": 4,
+          "label": "自然变换",
+          "requirements": [
+            "自然变换",
+            "五光谱"
+          ]
+        },
+        {
+          "level": 5,
+          "label": "伴随",
+          "requirements": [
+            "伴随桥并产生回流",
+            "角宿一视向速度"
+          ]
+        },
+        {
+          "level": 6,
+          "label": "单子",
+          "requirements": [
+            "单子外流损失 ≤ 20%",
+            "覆盖十纪元",
+            "函子简并"
+          ]
+        },
+        {
+          "level": 7,
+          "label": "米田",
+          "requirements": [
+            "同构简并",
+            "心宿三色"
+          ]
+        },
+        {
+          "level": 8,
+          "label": "极限",
+          "requirements": [
+            "有界八对象",
+            "三个重子"
+          ]
+        },
+        {
+          "level": 9,
+          "label": "Kan 扩张",
+          "requirements": [
+            "三次 Kan 扩张",
+            "覆盖二十纪元"
+          ]
+        },
+        {
+          "level": 10,
+          "label": "Cat（范畴的范畴）",
+          "requirements": [
+            "两百本征源",
+            "五宿亮",
+            "十重子",
+            "恒星质量"
+          ]
+        }
+      ],
+      "24": [
+        {
+          "level": 0,
+          "label": "Ω（环路空间）",
+          "requirements": [
+            "开篇演示",
+            "首条绕钉闭路编目"
+          ]
+        },
+        {
+          "level": 1,
+          "label": "π₁",
+          "requirements": [
+            "两种同伦画法",
+            "井宿四星"
+          ]
+        },
+        {
+          "level": 2,
+          "label": "安培",
+          "requirements": [
+            "一百回路",
+            "绕过三钉"
+          ]
+        },
+        {
+          "level": 3,
+          "label": "交换子",
+          "requirements": [
+            "交换子编目"
+          ]
+        },
+        {
+          "level": 4,
+          "label": "挂画",
+          "requirements": [
+            "三钉挂画",
+            "三垣博罗梅安测光"
+          ]
+        },
+        {
+          "level": 5,
+          "label": "辫群",
+          "requirements": [
+            "搅拌率至少二",
+            "辫简并"
+          ]
+        },
+        {
+          "level": 6,
+          "label": "覆叠",
+          "requirements": [
+            "三叶覆叠",
+            "十和乐"
+          ]
+        },
+        {
+          "level": 7,
+          "label": "闭合相位",
+          "requirements": [
+            "四台站",
+            "三源闭合相位"
+          ]
+        },
+        {
+          "level": 8,
+          "label": "群胚",
+          "requirements": [
+            "群胚 b₁≥3",
+            "纪元环闭合"
+          ]
+        },
+        {
+          "level": 9,
+          "label": "晶格环面",
+          "requirements": [
+            "环面 (1,1)",
+            "五百回路五十和乐"
+          ]
+        },
+        {
+          "level": 10,
+          "label": "Hopf",
+          "requirements": [
+            "四象成像",
+            "朱雀五宿亮"
+          ]
+        },
+        {
+          "level": 11,
+          "label": "单值",
+          "requirements": [
+            "八次单值化",
+            "极端黑洞十分钟",
+            "三百本征源"
+          ]
+        }
+      ]
+    },
+    "games": {
+      "nim": {
+        "status": "exact",
+        "value": "*",
+        "birthday": 1,
+        "temperature": "0",
+        "mean": "0",
+        "t": 0,
+        "numeric": null,
+        "left": 1,
+        "right": 1,
+        "id": 1,
+        "source": "src:22:bpmfuu0dhjoz"
+      },
+      "match": {
+        "winner": "L",
+        "history": [
+          {
+            "side": "L",
+            "move": 0
+          }
+        ]
+      },
+      "hot": {
+        "status": "exact",
+        "value": "{1|-1}",
+        "birthday": 2,
+        "temperature": "1",
+        "mean": "0",
+        "t": 1,
+        "numeric": null,
+        "left": 1,
+        "right": 1,
+        "id": 4,
+        "source": "src:22:9sq2qf841ufg"
+      },
+      "tau": 0.5,
+      "quench": {
+        "yield": 30,
+        "best": 30,
+        "fraction": 1
+      }
+    },
+    "category": {
+      "square": {
+        "paths": 2,
+        "intensity": 4
+      },
+      "triple": {
+        "paths": 3,
+        "intensity": 9
+      },
+      "chain8SingletonAdjoint": true
+    },
+    "loops": {
+      "empty": [],
+      "sameClass": [
+        1
+      ],
+      "commutator": [
+        1,
+        2,
+        -1,
+        -2
+      ],
+      "picture": [
+        1,
+        2,
+        3,
+        -2,
+        -3,
+        -1,
+        3,
+        2,
+        -3,
+        -2
+      ],
+      "deletedPegLengths": [
+        0,
+        0,
+        0
+      ],
+      "braid": {
+        "status": "exact",
+        "word": [
+          1,
+          3,
+          -1
+        ]
+      }
+    },
+    "infinity": {
+      "orders": [
+        {
+          "n": "1",
+          "m": "2",
+          "gears": [
+            2
+          ]
+        },
+        {
+          "n": "2",
+          "m": "1",
+          "gears": []
+        },
+        {
+          "n": "3",
+          "m": "24",
+          "gears": [
+            8,
+            3
+          ]
+        },
+        {
+          "n": "7",
+          "m": "240",
+          "gears": [
+            16,
+            3,
+            5
+          ]
+        },
+        {
+          "n": "250000",
+          "m": "2",
+          "gears": [
+            2
+          ]
+        },
+        {
+          "n": "1000000",
+          "m": "2",
+          "gears": [
+            2
+          ]
+        }
+      ],
+      "teachingChain": {
+        "h": 1,
+        "J": "1",
+        "coherent": true
+      },
+      "m1Empty": false,
+      "m1One": true,
+      "octal03": {
+        "status": "exact",
+        "p": 2,
+        "n0": 0,
+        "source": "oct:0.3"
+      },
+      "treeFirstRowPrices": [
+        1000,
+        2000,
+        4000,
+        8000,
+        16000,
+        32000,
+        64000,
+        128000
+      ],
+      "treeFullFirstRowPrice": 255000,
+      "evaporationBase": [
+        {
+          "M": 1,
+          "seconds": 0.0574712643678161
+        },
+        {
+          "M": 10,
+          "seconds": 57.4712643678161
+        },
+        {
+          "M": 100,
+          "seconds": 57471.2643678161
+        }
+      ]
+    }
+  },
+  "sourceLines": {
+    "gates": "src/gr-core.js:51-96",
+    "excitation": "src/gr-core.js:116-123",
+    "observation": "src/gr-obs.js:4-6,74-98",
+    "nuclear": "src/gr-deg.js:72-87,176-203",
+    "era21": "src/gr-era21.js:31-64",
+    "era22": "src/gr-era22.js:61-77",
+    "era23": "src/gr-era23.js:31-90,102-137",
+    "era24": "src/gr-era24.js:27-50",
+    "infinity": "src/gr-inf.js:18-24,42-70,72-97",
+    "automation": "src/gr-inf-auto.js:39-49",
+    "limitations": "BACKEND_STATUS.md:182-198"
+  },
+  "document": {
+    "path": "D:/hypertower-recovery-20261026/walkthrough-work-20261101/p3.md",
+    "characters": 47860,
+    "hanCharacters": 33917,
+    "bytes": 123241,
+    "sha256": "80a840283e690c339eaa83c83ee2032d582adf88190dc7bdd00dc7664c017c82",
+    "figures": [
+      "intro-99",
+      "intro-100",
+      "intro-102",
+      "intro-103",
+      "intro-105",
+      "intro-108",
+      "intro-106",
+      "intro-107",
+      "intro-151",
+      "intro-109",
+      "intro-113",
+      "intro-110",
+      "intro-111",
+      "intro-112",
+      "intro-118",
+      "intro-119",
+      "intro-120",
+      "intro-121",
+      "intro-115",
+      "intro-116",
+      "intro-117",
+      "intro-114",
+      "intro-123",
+      "intro-124",
+      "intro-125",
+      "intro-126",
+      "intro-129",
+      "intro-128",
+      "intro-127",
+      "intro-130",
+      "intro-131",
+      "intro-132",
+      "intro-133",
+      "intro-134",
+      "intro-135",
+      "intro-137",
+      "intro-136",
+      "intro-139",
+      "intro-138",
+      "intro-140",
+      "intro-141",
+      "intro-142",
+      "intro-143",
+      "intro-144",
+      "intro-145",
+      "intro-146",
+      "intro-147",
+      "intro-148",
+      "intro-149",
+      "intro-150",
+      "intro-151",
+      "intro-152",
+      "intro-153",
+      "intro-154",
+      "intro-155",
+      "intro-157",
+      "intro-156",
+      "intro-158",
+      "intro-159",
+      "intro-160",
+      "intro-161",
+      "intro-162",
+      "intro-163",
+      "intro-164",
+      "intro-165",
+      "intro-172",
+      "intro-173",
+      "intro-168",
+      "intro-170",
+      "intro-171",
+      "intro-166",
+      "intro-174",
+      "intro-175",
+      "intro-176",
+      "intro-167",
+      "intro-169",
+      "intro-177",
+      "intro-178",
+      "intro-179",
+      "intro-180",
+      "intro-189",
+      "intro-190",
+      "intro-191",
+      "intro-192",
+      "intro-193",
+      "intro-194"
+    ],
+    "captures": [
+      "obs-queued",
+      "obs-one-star",
+      "nova-ready",
+      "nova-done",
+      "travel-before",
+      "travel-after",
+      "match-start",
+      "match-won",
+      "furnace-0",
+      "furnace-1",
+      "furnace-2",
+      "square-free",
+      "square-glued",
+      "loop-cancels",
+      "loop-commutator",
+      "infinity-step-0",
+      "infinity-step-1",
+      "infinity-step-2",
+      "infinity-step-3",
+      "infinity-step-4",
+      "infinity-step-5",
+      "infinity-step-6"
+    ]
+  }
+}

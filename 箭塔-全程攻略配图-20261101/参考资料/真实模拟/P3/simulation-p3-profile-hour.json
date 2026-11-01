@@ -1,0 +1,88 @@
+{
+  "scope": "one-hour clone of genuine week checkpoint; inclusive component timings, wrapping overhead included",
+  "wallMs": 2464.8778,
+  "stats": {
+    "era21": {
+      "calls": 3600,
+      "milliseconds": 418.44609999999375
+    },
+    "era22": {
+      "calls": 3600,
+      "milliseconds": 395.8926000000011
+    },
+    "era23": {
+      "calls": 3600,
+      "milliseconds": 365.6152999999988
+    },
+    "era24": {
+      "calls": 3600,
+      "milliseconds": 509.1107999999896
+    },
+    "p1": {
+      "calls": 3600,
+      "milliseconds": 32.89429999999237
+    },
+    "p2": {
+      "calls": 3600,
+      "milliseconds": 156.27640000000633
+    },
+    "obsTick": {
+      "calls": 3600,
+      "milliseconds": 84.86290000001725
+    },
+    "obsNextEvent": {
+      "calls": 3600,
+      "milliseconds": 89.2905999999972
+    },
+    "deg": {
+      "calls": 3600,
+      "milliseconds": 25.12650000000133
+    },
+    "infTick": {
+      "calls": 3600,
+      "milliseconds": 85.37319999999295
+    },
+    "infAutomatic": {
+      "calls": 3600,
+      "milliseconds": 5.311900000002083
+    }
+  },
+  "after": {
+    "n": "12",
+    "phase": "zhu",
+    "epsilon": "1324",
+    "p2Round": "25",
+    "stars": 9,
+    "lit": 0
+  },
+  "queues": [
+    [
+      {
+        "mode": "point",
+        "target": "ds:3:7",
+        "grade": 1
+      }
+    ],
+    [
+      {
+        "mode": "point",
+        "target": "ds:3:7",
+        "grade": 1
+      }
+    ],
+    [
+      {
+        "mode": "point",
+        "target": "ds:3:7",
+        "grade": 1
+      }
+    ],
+    [
+      {
+        "mode": "point",
+        "target": "ds:3:7",
+        "grade": 1
+      }
+    ]
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "nativeWholeDaySteps": 1506980,
+  "discreteAndStringMismatchCount": 0,
+  "hardMismatchCount": 1,
+  "hardMismatches": [
+    {
+      "path": "state.ord.h.$O.1.0",
+      "type": "numeric",
+      "error": 2590.4649780206382,
+      "limit": 0.04534863360824067
+    }
+  ],
+  "floatingValuesWithinTolerance": 74,
+  "maxAbsoluteFloatingDifference": 6.044720066711307e-7,
+  "numericTolerance": "1e-5 absolute + 2e-9 relative; wall-clock last excluded; all structure/string/discrete counters must match",
+  "roundsExactlyEqual": true,
+  "pointsExactlyEqual": true,
+  "eraExactlyEqual": true,
+  "archiveExactlyEqual": true,
+  "blueprintIDsExactlyEqual": true,
+  "workshopExactlyEqual": true
+}

@@ -1,0 +1,2 @@
+const fs=require('node:fs'),{engine,epoch}=require('./hypertower/tests/gr-helper.cjs');const {H,G}=engine(),D=G.Era24,s=epoch(H,G,24);s.p3.ep[24].up[4]=4;const checks=[];for(const b of [[1,-2],[1,-2,1,-1],[1,1,-1,-2],[1,-2,2,-2],[1,2,1],[2,1,2]]){try{checks.push({beta:b,report:D.addBraid(s,b,3,[1]),key:D.braidKey(b,3).key});}catch(e){checks.push({beta:b,error:e.message});}}
+console.log(JSON.stringify(checks,null,2));fs.writeFileSync('walkthrough-work-20261101/p3-braid-equivalences.json',JSON.stringify(checks,null,2));

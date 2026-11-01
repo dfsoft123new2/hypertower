@@ -1,0 +1,91 @@
+{
+  "baselineSha256": "c19fb75b3071daa0b5bd204d61436f6248c37c8af5adffd02917622e9c375c5f",
+  "rows": [
+    {
+      "name": "day1",
+      "days": 1,
+      "save": "simulation-p3-day1-save.json",
+      "saveSha256": "81122be2fff4b3c4ed7dcdb8085916bc1607ab145afd5a2b9701e90b7b3dc678",
+      "reloadValidated": true,
+      "exact": true,
+      "last": {
+        "simulatedSeconds": 86400,
+        "wallSeconds": 50.7201793,
+        "gameTime": 93600,
+        "circle": "7",
+        "phase": "zhu",
+        "m": "240",
+        "dust": "1.0000000000310612e16",
+        "gamma": "18313.524078059898",
+        "epsilon": "133",
+        "p2Round": "12",
+        "chain": 1,
+        "stars": 23,
+        "lit": 13,
+        "zhoutian": false,
+        "bh": 0,
+        "autoError": null,
+        "seedNext": 0
+      }
+    },
+    {
+      "name": "week",
+      "days": 7,
+      "save": "simulation-p3-latest-save.json",
+      "saveSha256": "e46f2d56dccd49ea3191a7b9bd899b0291ba780141267f910d0135ce2e87b3eb",
+      "reloadValidated": true,
+      "exact": true,
+      "last": {
+        "simulatedSeconds": 604800,
+        "wallSeconds": 548.1475359,
+        "gameTime": 612000,
+        "circle": "12",
+        "phase": "zhu",
+        "m": "1",
+        "dust": "1.0000000002298781e16",
+        "gamma": "185147.86125447636",
+        "epsilon": "1315",
+        "p2Round": "25",
+        "stars": 9,
+        "lit": 0,
+        "zhoutian": false,
+        "bh": 0,
+        "autoError": null
+      }
+    },
+    {
+      "name": "month",
+      "days": 30,
+      "save": "simulation-p3-month-latest-save.json",
+      "saveSha256": "d0db61f64f8cefe89239f7f103bfdf36ac0afba04d8ccc88ee9a3a4e84d4ddcb",
+      "reloadValidated": true,
+      "exact": true,
+      "last": {
+        "simulatedSeconds": 2592000,
+        "wallSeconds": 2493.3445769,
+        "gameTime": 2599200,
+        "circle": "13",
+        "phase": "zhu",
+        "m": "1",
+        "dust": "1.0000000012766372e16",
+        "gamma": "1542804.3369066976",
+        "epsilon": "7043",
+        "p2Round": "131",
+        "stars": 9,
+        "lit": 0,
+        "zhoutian": false,
+        "bh": 0,
+        "autoError": null
+      }
+    }
+  ],
+  "resume8DayReportFieldsEqualExcludingWallTime": true,
+  "resumePointerHashAndTimeValidated": true,
+  "fullNative8DayStateComparison": false,
+  "pendingDays": [
+    365,
+    3650,
+    36500
+  ],
+  "method": "native G.offline dt<=3600; exact P2; no trajectory modifications"
+}

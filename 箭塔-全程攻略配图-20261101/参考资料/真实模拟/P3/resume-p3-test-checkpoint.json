@@ -1,0 +1,9 @@
+{
+  "save": "resume-p3-test-691200-save.json",
+  "report": "resume-p3-test-691200-report.json",
+  "saveSha256": "5a16ad505caf8b3f450170a7099d13f8f785089f145f8da7c4a38c6bfd943ce3",
+  "simulatedSeconds": 691200,
+  "targetDays": 8,
+  "complete": true,
+  "baselineSha256": "c19fb75b3071daa0b5bd204d61436f6248c37c8af5adffd02917622e9c375c5f"
+}

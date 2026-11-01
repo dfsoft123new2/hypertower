@@ -1,0 +1,537 @@
+{
+  "date": "2026-11-01",
+  "files": [
+    {
+      "path": "P1/baseline-X-epsilon10.json",
+      "bytes": 8235,
+      "sha256": "ff5d747b22ad82b03849e3c976b1655cc0db57625201c26c8ff41e06dba076df"
+    },
+    {
+      "path": "P1/campaign-completed-V-input.json",
+      "bytes": 2545,
+      "sha256": "7773cc2114b7f7eb6f1c23473af2f1fd9dd7c9380d37716cf13d5f9c2f86a7cd"
+    },
+    {
+      "path": "P1/campaign.json",
+      "bytes": 5739,
+      "sha256": "dc7732b95ec247ae376a90c74a920553e7db2cedd64949ccf2f12f75ed0221f8"
+    },
+    {
+      "path": "P1/checkpoint-1d.json",
+      "bytes": 8254,
+      "sha256": "46174a2bb3c20cf6cf9be5ab6c049d89325d65f94be387d7b4c1768bdad79c48"
+    },
+    {
+      "path": "P1/checkpoint-30d.json",
+      "bytes": 8507,
+      "sha256": "dbe0fccebc503ac6dc551a297c15d40d187fa484b3cd416181ab9a2c2b04a341"
+    },
+    {
+      "path": "P1/checkpoint-36500d.json",
+      "bytes": 9104,
+      "sha256": "77473d1292ad2b84810749b3ce3e6d3b04ba8cce5418c76a029032df29aaf653"
+    },
+    {
+      "path": "P1/checkpoint-3650d.json",
+      "bytes": 8899,
+      "sha256": "aa638d930e366a073e4054067a5184c9b6b833f48d2c2ba8e6a8be313280397b"
+    },
+    {
+      "path": "P1/checkpoint-365d.json",
+      "bytes": 8793,
+      "sha256": "ed0add5592b8f4480b7b7435b24e4feea2911d9ed12445f95e3d3162b3bb8177"
+    },
+    {
+      "path": "P1/checkpoint-7d.json",
+      "bytes": 8402,
+      "sha256": "5753cc45fce5d15ea594bd061a675245aafeb344052473daff33fdd0951bbee5"
+    },
+    {
+      "path": "P1/equivalence.json",
+      "bytes": 345,
+      "sha256": "76a765496371c2afff928ad27ad2c49201bcd97b32570ac27a2b6918b1a2ab11"
+    },
+    {
+      "path": "P1/results.json",
+      "bytes": 22676,
+      "sha256": "db8c9fc745e8e8a441dee3315c4a6bd716ffaa9ad9d0b95e26e38d62e508ebbf"
+    },
+    {
+      "path": "P1/results.partial.json",
+      "bytes": 22497,
+      "sha256": "29793db7697fcbbc4532dae8261e9c5846837ff09a818f505ca13a89df33895c"
+    },
+    {
+      "path": "P1/verification.json",
+      "bytes": 1339,
+      "sha256": "55a8091d2e8929005cc8cf0fbb797b28df7474d122e05739a7feb566e0b8b382"
+    },
+    {
+      "path": "P2/baseline-XX.ht5",
+      "bytes": 22208,
+      "sha256": "becef728ecefe39b4ba7cee96a67225ba6bcda2830e01450508d60fd364c8f8e"
+    },
+    {
+      "path": "P2/benchmark-rounds.json",
+      "bytes": 4262,
+      "sha256": "9e54c45d45c912a16f6e81a774c7319fd6494cc6c5108da20e6060e5b13e1f21"
+    },
+    {
+      "path": "P2/checkpoint-100years.ht5",
+      "bytes": 18844,
+      "sha256": "1369415492208743ca3908d56d3c1fb687db21656d9521c2d1cb7cacdc45db3f"
+    },
+    {
+      "path": "P2/checkpoint-10years.ht5",
+      "bytes": 22976,
+      "sha256": "07e86df461be2a8628a55da2a294b7534cf07d421f6d5f9a0b451a4af44679ac"
+    },
+    {
+      "path": "P2/checkpoint-1day-native-compensated.ht5",
+      "bytes": 25060,
+      "sha256": "93d1dc3ee83c1f64c88889c64df05d6de3e153bceaa5be62fd6d0630662bf910"
+    },
+    {
+      "path": "P2/checkpoint-1day-native.ht5",
+      "bytes": 25084,
+      "sha256": "f9db07790ef970b529526ab26f8d0b50a2977c05803e120fd27a5c5c3696a47d"
+    },
+    {
+      "path": "P2/checkpoint-1day.ht5",
+      "bytes": 25088,
+      "sha256": "b937c884856e945344b87d56e5ad8e0b1b961367b69fa6a6bae689dcb200450e"
+    },
+    {
+      "path": "P2/checkpoint-1month.ht5",
+      "bytes": 29640,
+      "sha256": "7129b15383ecf981683e6b3f9410e2eb04f399104eae7d393086b88052451795"
+    },
+    {
+      "path": "P2/checkpoint-1week.ht5",
+      "bytes": 15040,
+      "sha256": "df8a4f95ee88b82324c4976c03fc58f199b6c465081d8c10a0241f69e5ca7eb4"
+    },
+    {
+      "path": "P2/checkpoint-1year.ht5",
+      "bytes": 25420,
+      "sha256": "f11be86ae4d00a79d769f5fe5d6b41833f042f93cc666313a6074615b71a92f9"
+    },
+    {
+      "path": "P2/long-horizons.json",
+      "bytes": 9506,
+      "sha256": "f4dc60b2cd38eb20f72f50dfecd13467c462741d6b8e3c683a0ccd8a8b1255d1"
+    },
+    {
+      "path": "P2/low-baseline-first-XX.ht5",
+      "bytes": 33760,
+      "sha256": "ef2af328b7bacadb3c350ba7e3c6710192142938703e30438b95433518bc46c6"
+    },
+    {
+      "path": "P2/low-checkpoint-1day.ht5",
+      "bytes": 25448,
+      "sha256": "1fb526b1f9801f290d42b47d334cbc0a8fed8223913be263ad83ccc4c8eb2e1f"
+    },
+    {
+      "path": "P2/low-checkpoint-1week.ht5",
+      "bytes": 30936,
+      "sha256": "1bc5b40c8e9442b0ee284c768215eee49fa4f80ef373326a4538c05d3202a535"
+    },
+    {
+      "path": "P2/low-progress-and-route.json",
+      "bytes": 17529,
+      "sha256": "ecf4278c9cd2849dee92ce46f04e2365b8c55a135a785236e4abacd67f3af726"
+    },
+    {
+      "path": "P2/native-1day-compensated.json",
+      "bytes": 516,
+      "sha256": "cbcc982966727804ac81bdbed88dbffad1aa4a2c4a55c6fad4f65f5b46961188"
+    },
+    {
+      "path": "P2/native-1day.json",
+      "bytes": 513,
+      "sha256": "77aeb7cc9f1131c42ba35a969a1bec71c405ef240c14f0704e687711fe52bd31"
+    },
+    {
+      "path": "P2/native-compensated-versus-cycle-day.json",
+      "bytes": 685,
+      "sha256": "62feb4e5dd4a9cd36f75429c1f3380fafb5a875d952f71a5aedf3181654b2da0"
+    },
+    {
+      "path": "P2/native-versus-cycle-day.json",
+      "bytes": 991,
+      "sha256": "916d34328f1f5cd250c5a7b185e0a0ba495e505ac11bf0e50401fd9921d18292"
+    },
+    {
+      "path": "P3/resume-p3-test-691200-report.json",
+      "bytes": 6078,
+      "sha256": "32f197c3a4dd4f67411623be2791e9313df314a826c1d0726f74fdb3b6db8fc3"
+    },
+    {
+      "path": "P3/resume-p3-test-691200-save.json",
+      "bytes": 126650,
+      "sha256": "5a16ad505caf8b3f450170a7099d13f8f785089f145f8da7c4a38c6bfd943ce3"
+    },
+    {
+      "path": "P3/resume-p3-test-checkpoint.json",
+      "bytes": 337,
+      "sha256": "4f2f913c4c3d4341ead439a2e55d25f9577897794f799c989c15f89fee5a4902"
+    },
+    {
+      "path": "P3/simulation-p3-baseline.json",
+      "bytes": 85765,
+      "sha256": "c19fb75b3071daa0b5bd204d61436f6248c37c8af5adffd02917622e9c375c5f"
+    },
+    {
+      "path": "P3/simulation-p3-cache-module-verification.json",
+      "bytes": 294,
+      "sha256": "7c1bae28886e885dbfa8b3dfe4276a324a973d79ac0faf02afadcb59e236f050"
+    },
+    {
+      "path": "P3/simulation-p3-cache-verification.json",
+      "bytes": 370,
+      "sha256": "f43783a10b8452abb397c5bfcea5aa99ec67118b2da43ba51bf6371a7f0519ad"
+    },
+    {
+      "path": "P3/simulation-p3-day1-save.json",
+      "bytes": 126368,
+      "sha256": "81122be2fff4b3c4ed7dcdb8085916bc1607ab145afd5a2b9701e90b7b3dc678"
+    },
+    {
+      "path": "P3/simulation-p3-day1.json",
+      "bytes": 3302,
+      "sha256": "bd778437e912f9a7ebddcbba903df7eaf5410831e103ca17e65e8efbe1365531"
+    },
+    {
+      "path": "P3/simulation-p3-latest-save.json",
+      "bytes": 129128,
+      "sha256": "e46f2d56dccd49ea3191a7b9bd899b0291ba780141267f910d0135ce2e87b3eb"
+    },
+    {
+      "path": "P3/simulation-p3-month-latest-save.json",
+      "bytes": 142867,
+      "sha256": "d0db61f64f8cefe89239f7f103bfdf36ac0afba04d8ccc88ee9a3a4e84d4ddcb"
+    },
+    {
+      "path": "P3/simulation-p3-month-progress.json",
+      "bytes": 14675,
+      "sha256": "a6af6de7f643d1794da9297f94b8a037da52ac33aa7bf6ecf52e3e65aba134ae"
+    },
+    {
+      "path": "P3/simulation-p3-month.json",
+      "bytes": 14681,
+      "sha256": "ebc021aa6d97e8bb597b6876c0129df4ab57e6a587c38d3e88399c19206037e3"
+    },
+    {
+      "path": "P3/simulation-p3-profile-hour.json",
+      "bytes": 1627,
+      "sha256": "09afb3398d72ad90e035d70898d980d4ce793e7fe6cb537b97b599a0dfe50458"
+    },
+    {
+      "path": "P3/simulation-p3-progress.json",
+      "bytes": 3271,
+      "sha256": "1c6a0f78ecd8c347f3ff1c12fb5696de4dc70f3308b0b175b0ee3f1f9916f48c"
+    },
+    {
+      "path": "P3/simulation-p3-validation.json",
+      "bytes": 2444,
+      "sha256": "b851253c2eb123633108f03515e08c219a4d9f752d1cfed09ec9b29f6c02377e"
+    },
+    {
+      "path": "P3/simulation-p3-week-progress.json",
+      "bytes": 5660,
+      "sha256": "f5cd06445fe637c4a9ab30cf78f256074516a6d947392a54e96884dcdbbdcfc5"
+    },
+    {
+      "path": "P3/simulation-p3-week.json",
+      "bytes": 5660,
+      "sha256": "e6c1f96bde00bdc9bb037a8d41f81d118f94572da3826000b3077dbfcbf91eae"
+    },
+    {
+      "path": "P3/实验说明.md",
+      "bytes": 7872,
+      "sha256": "bb8c69acb16c010e1bb6a75022b22cb841a8380d4b658f11e040d3ffea4d8354"
+    },
+    {
+      "path": "内核快照/hypertower/source-v3.html",
+      "bytes": 108510,
+      "sha256": "9771740885390970fc05a8b2bf6d6b2967a4e2fdbe0de7b9b576d5b881c1f8d3"
+    },
+    {
+      "path": "内核快照/hypertower/src/beyond.js",
+      "bytes": 29180,
+      "sha256": "102cb3bac6430e4846b05f86e04d40ddf3f3c38aaa83516c119dea07387646f9"
+    },
+    {
+      "path": "内核快照/hypertower/src/era11.js",
+      "bytes": 17523,
+      "sha256": "adb22e6cf6304044973d42285590a224274d8f847b1a898fdea03e18bc3c2a78"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-api.js",
+      "bytes": 47469,
+      "sha256": "66dd4c43faf778737c7ad6c5a84e8cf22747767e95e32d975aee8e49565504a9"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-core.js",
+      "bytes": 23381,
+      "sha256": "ab6ec03864b0b8bc4d0d68eaf9b43ffee6fcb6858f9f778c7e24c568d0fdde48"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-data.js",
+      "bytes": 36709,
+      "sha256": "2935c81a6bbfad1c4ec1ef392f914e08485dd7d9b32847b065ed2ac03bd31f50"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-deg.js",
+      "bytes": 39974,
+      "sha256": "6e72cad798a5358f3fe04fd52b2e38f5104efafc74aca63c4675c79cb219137d"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-era21.js",
+      "bytes": 15578,
+      "sha256": "55ee601a353e49666a8321a7f22ce0fd67873c3db3eb384eeb50f0839e506b68"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-era22.js",
+      "bytes": 28355,
+      "sha256": "b32f2433aee74d718dc9c85603df53d97639682003b80065171ea6cc6371e4eb"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-era23.js",
+      "bytes": 30656,
+      "sha256": "ff0f3437c00f02fde5f4e2780bbcee6c68ef06c2e60c2aadfe926fd560e5b8d4"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-era24.js",
+      "bytes": 21753,
+      "sha256": "92e5f4e1fa958dacca0c7d670a12a3f73c98ed231f2f8964f2406e2bdf85a486"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-hearts.js",
+      "bytes": 11953,
+      "sha256": "3c41b9410a24a1dbeed913061ddfebb0ca3b0668b4d8bb06b453bcdedf7f7ab0"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-inf-auto.js",
+      "bytes": 6237,
+      "sha256": "8b5adab5602467b3c19ce1606774f1570c54e5745f060c7c5c820e445424ed52"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-inf.js",
+      "bytes": 34444,
+      "sha256": "453e64353fd54705955aca7715ff1f00f8c80f5cdb2e90b06061e6de81d5a8c6"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-jobs.js",
+      "bytes": 4191,
+      "sha256": "27e10152c500a9cb8c0b824936fec34824009e7aa22fad95e279254aa7ccd21b"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-legacy.js",
+      "bytes": 11846,
+      "sha256": "b1b7b6c1530e8232903bfdccaab499fb22d40e0e8d6e8d9ff4d40ba06b4b5608"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-links.js",
+      "bytes": 12019,
+      "sha256": "964e087723b1ad1b271bfb83aded03ba0d195a9c276cb62eeb34ac5217f6ef8f"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-loopy.js",
+      "bytes": 10302,
+      "sha256": "0cfe0b2f71b56b542f4de026a2c8fefc9f678ed2988ba9b9380393cbc7a6c2eb"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-obs.js",
+      "bytes": 33221,
+      "sha256": "c0ba7523a98cac532ca20f81bbc18b5791107d45f990b3a5d2316859799dcb59"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-shadow.js",
+      "bytes": 14622,
+      "sha256": "4013c952901296a991a56ef2b420affea8ed112da385d0e6a8aaaf90f078c2ba"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-systems.js",
+      "bytes": 18280,
+      "sha256": "12e45254f8567b138d1ee7e100c145b044c2f061065c49ab1a9527397a4ab8ee"
+    },
+    {
+      "path": "内核快照/hypertower/src/gr-values.js",
+      "bytes": 4268,
+      "sha256": "ce9f4d441f60e24ffccbca278c4a6e2f2e813d01490b464520b0ad2bb775be67"
+    },
+    {
+      "path": "内核快照/hypertower/src/hydra.js",
+      "bytes": 4565,
+      "sha256": "b6548d4c8f436932cdfccc3b19d88754e07ca8d9387220460a3aadeb21bf8964"
+    },
+    {
+      "path": "内核快照/hypertower/src/late-eras.js",
+      "bytes": 32528,
+      "sha256": "941e35a6e1ef73fd79dd0e2633847377f0260a122c3b26440e12a85cb26b3243"
+    },
+    {
+      "path": "内核快照/hypertower/src/late-jobs.js",
+      "bytes": 2752,
+      "sha256": "d1b5d3c9cd89512a7acf343c87c9e805fc0c3ec506837aab8aa258564bdd2390"
+    },
+    {
+      "path": "内核快照/hypertower/src/late-math.js",
+      "bytes": 28454,
+      "sha256": "29a2a8a0d9987f3fff1151e303b61dfaf53052bb7e1b4e2bc4148fe5e0663891"
+    },
+    {
+      "path": "内核快照/hypertower/src/ord.js",
+      "bytes": 4760,
+      "sha256": "b327e8173f09b8ba3da77c0f6029f9ced978836eaee97cbdd7ae7c127dffa39b"
+    },
+    {
+      "path": "内核快照/hypertower/src/puzzles.js",
+      "bytes": 4727,
+      "sha256": "5bc9c31d5b805d203f091e99fede5ac461efc5ad5f61d189c7c8e38c173c4f28"
+    },
+    {
+      "path": "内核快照/hypertower/src/solver.js",
+      "bytes": 2192,
+      "sha256": "e1bc4d70759aaa5101fab2f13ca83e73f4b1b785582613f26667947dc89738c3"
+    },
+    {
+      "path": "内核快照/hypertower/src/systems.js",
+      "bytes": 12735,
+      "sha256": "efb59cd9f6f803bae5c2c2b2a9af3b1f60112c64909d666f7c6643c0bd2a160d"
+    },
+    {
+      "path": "内核快照/hypertower/tests/engine.cjs",
+      "bytes": 8128,
+      "sha256": "d9af9ed2f153848ef2a23dc9bd3bb806bbeb2f66d40b924da7056dad810cf8e6"
+    },
+    {
+      "path": "内核快照/hypertower/tests/gr-helper.cjs",
+      "bytes": 2907,
+      "sha256": "7c97417aaae44e9ba77839665fc482e7c4a3720a3855419e437e433b9e9b1bf5"
+    },
+    {
+      "path": "内核快照/hypertower/vendor/omega-num.js",
+      "bytes": 68831,
+      "sha256": "5ee16dd8c396199ecc3df63a369c78b92a6a59082377007610358c4f3994e4f7"
+    },
+    {
+      "path": "原始脚本/compose-walkthrough-p2-simulation-20261101.cjs",
+      "bytes": 10961,
+      "sha256": "54cabd3596e77df76c9a6716e1f1f631a46160e39863515f840ed5b06d345ef3"
+    },
+    {
+      "path": "原始脚本/p3-lazy-module.cjs",
+      "bytes": 2412,
+      "sha256": "7caf2a332a22a964045338b30a70beb1040ade726b2e0b7d14175bd65898dc0a"
+    },
+    {
+      "path": "原始脚本/p3-lazy-summary.cjs",
+      "bytes": 2318,
+      "sha256": "a280be634c3bce1d3a81efc56138d616b1c9de3d2a53d9f5d5216f0a5c824c63"
+    },
+    {
+      "path": "原始脚本/profile-p3-hour.cjs",
+      "bytes": 1414,
+      "sha256": "e305c0eb95d294e28a2c7822d831061a61067843e7aa7bc9e488e099672ed5be"
+    },
+    {
+      "path": "原始脚本/resume-p3-exact.cjs",
+      "bytes": 3981,
+      "sha256": "ffbe1dad0f5ecb6895c4dcd2713deec24ec2b035f8c719000e8a076ecb60b281"
+    },
+    {
+      "path": "原始脚本/simulate-p1-longterm.cjs",
+      "bytes": 6795,
+      "sha256": "cb0b3009b1a7ee94de968393407329758fcd7ca100233f0d285c5958a0dd81ca"
+    },
+    {
+      "path": "原始脚本/simulate-p3-day1.cjs",
+      "bytes": 3178,
+      "sha256": "2ed3d7558b10f1c7a12ca670cb5fc439a2e67e8b4f58bb6397376ee9ec7f58fe"
+    },
+    {
+      "path": "原始脚本/simulate-p3-month.cjs",
+      "bytes": 1514,
+      "sha256": "5e2fb538ec5c76268bc68d90b29052aee7f50d2fe57a109ddafd55545d70c26a"
+    },
+    {
+      "path": "原始脚本/simulate-p3-week.cjs",
+      "bytes": 1500,
+      "sha256": "fd39964b183a6abbc3dcc8e137d8259698f03f3abcc5e8d44bf81843717489b4"
+    },
+    {
+      "path": "原始脚本/simulate-walkthrough-p2-20261101.cjs",
+      "bytes": 3683,
+      "sha256": "03d7866b93c000912bb79a9492698e7551f70b75e41f98659876802b17753751"
+    },
+    {
+      "path": "原始脚本/simulate-walkthrough-p2-compensated-day-20261101.cjs",
+      "bytes": 1453,
+      "sha256": "1aac3485a7463c625e43036d917674c186a4c6efaf8c9123c662d7a38906e2e1"
+    },
+    {
+      "path": "原始脚本/simulate-walkthrough-p2-horizons-20261101.cjs",
+      "bytes": 6409,
+      "sha256": "605ed89c596eaf52a0e19ab6088e2635127eb58967bbd7c9752709b72ee460cb"
+    },
+    {
+      "path": "原始脚本/simulate-walkthrough-p2-low-20261101.cjs",
+      "bytes": 3527,
+      "sha256": "c145871fa4073c5fd979b335406a006f17dcbcd3b366f78a35c123544b30fb0b"
+    },
+    {
+      "path": "原始脚本/simulate-walkthrough-p2-native-day-20261101.cjs",
+      "bytes": 1288,
+      "sha256": "0b4a663226ef45c45eb749ec0388c11d8d85c52c680c3a56e01b000efcc5fc38"
+    },
+    {
+      "path": "原始脚本/validate-p3-simulation.cjs",
+      "bytes": 2582,
+      "sha256": "78317db136b9119d7ef1846084fff859c2f35f017adc5fe0ac3b8158f573a830"
+    },
+    {
+      "path": "原始脚本/verify-walkthrough-p2-compensated-cycle-20261101.cjs",
+      "bytes": 2157,
+      "sha256": "0e27ffe5aa8d61ee8b02eb3334b84054f2e133b9981e69c395ba227ecf311786"
+    },
+    {
+      "path": "原始脚本/verify-walkthrough-p2-cycle-20261101.cjs",
+      "bytes": 2121,
+      "sha256": "8e23a529091586deda94eef8201cec58356f0ea180bd68fc671a567cd6518c08"
+    },
+    {
+      "path": "原始脚本/walkthrough-p2-challenges-20261101.cjs",
+      "bytes": 2410,
+      "sha256": "59c1cad4e4f529aa5ebb2309c4c2c357a43e42a706ca60cae81adad971c09306"
+    },
+    {
+      "path": "原始脚本/walkthrough-p2-extract-20261101.cjs",
+      "bytes": 5577,
+      "sha256": "863b0d7b58ebc487ba8cc450c6a5f085780541495931b8f3892845f97359d67f"
+    },
+    {
+      "path": "原始脚本/walkthrough-p2-finalize-20261101.cjs",
+      "bytes": 9883,
+      "sha256": "00256bbe059a1cce5756643fb47dfc3b44fa0e73c45cb59ca1718304ff80141c"
+    },
+    {
+      "path": "原始脚本/walkthrough-p2-shared-blueprints-20261101.cjs",
+      "bytes": 2083,
+      "sha256": "13899db6c9630543dbb9a1d73950b7189e1e92d017c615fee20b7983b7cea2e8"
+    },
+    {
+      "path": "复跑.cjs",
+      "bytes": 2408,
+      "sha256": "8131b0f2bc2be694f0b77e045e3b0cc8d7aab952b6842bd8afd5acb17b3624b6"
+    },
+    {
+      "path": "说明.md",
+      "bytes": 5318,
+      "sha256": "353734a0536f8856bf5b1469611c2f1a50b0c65d85a68625434e337b89c2b0e1"
+    }
+  ],
+  "count": 106,
+  "onlySyntheticStudySaves": true
+}

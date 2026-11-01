@@ -1,0 +1,16 @@
+const fs=require('node:fs'),assert=require('node:assert/strict');const {H,L,K,E,seed,next,step,OUT,sha}=require('./simulate-walkthrough-p2-20261101.cjs');
+const book=seed('0','0'),s=require('D:/hypertower-recovery-20261026/hypertower/tests/engine.cjs').omegaSave(H);H.Meta.prestige(s,0);s.era=10;s.meta.rank=s.meta.bestRank=15;s.meta.epsilon=s.meta.bestEpsilon='10';s.blueprints=book.blueprints;s.archive=book.archive;s.workshop.serial=book.workshop.serial;assert(E.enter(s));s.legacy.roundStart=s.time;s.workshop.enabled=false;s.workshop.rules=[];
+const route=[],t0=s.time,start=performance.now();let totalSteps=0;
+for(let era=11;era<=20;era++){
+ if(era>11)assert(L.enter(s,era));const api=era===11?E:L,a=api.state(s),begin=s.time;a.auto={harvest:true,buy:true,diagonal:true,next:false};
+ if(era===18){a.design=K.clone(K.puzzles(18)[0].solution);a.aided=false;L.submit(s,'首轮路线·MA+notCH');}
+ while(!a.complete){if(era>=19&&!L.choice(s)&&a.up[5]===0&&L.canBuy(s,5))L.buy(s,5);if(era===19&&s.ord.index>=11&&a.choice)L.setChoice(s,false);step(s,next(s));totalSteps++;if(totalSteps>100000)throw Error('first route stalled');}
+ route.push({era,seconds:s.time-begin,hours:(s.time-begin)/3600,quality:api.quality(s),stars:s.archive[String(era)].stars.reduce((n,x)=>n+x,0),upgrades:a.up.slice(),choice:era===19?a.choice:null});
+}
+const a=L.state(s);a.puzzle=16;a.design={carry:['MA','natural','fixed']};a.aided=false;L.submit(s,'首个XX终点·三项遗产');s.blueprints=s.blueprints.filter((b,i,arr)=>arr.findLastIndex(x=>x.era===b.era)===i);s.legacy.auto=true;a.auto.next=true;H.checkAch(s);fs.writeFileSync(OUT+'/low-baseline-first-XX.ht5',H.exportStr(s));const before=BigInt(s.legacy.points);L.normalize(s);const firstEarned=String(BigInt(s.legacy.points)-before),base=H.save(s),rows=[];
+for(const [label,seconds]of [['1day',86400],['1week',604800]]){
+ const x=H.load(base);let left=seconds,n=0;const begin=performance.now();while(left>1e-7){const dt=Math.min(left,next(x));step(x,dt);left=Math.max(0,left-dt);n++;if(n>10000000)throw Error('low horizon budget exceeded');}
+ const raw=H.exportStr(x),file='low-checkpoint-'+label+'.ht5';fs.writeFileSync(OUT+'/'+file,raw);assert.equal(H.importStr(raw).legacy.round,x.legacy.round);rows.push({label,seconds,round:x.legacy.round,points:x.legacy.points,era:x.era,axiom:x.legacy.axiom,multiplier:L.legacyMultiplier(x),nativeSteps:n,wallSeconds:(performance.now()-begin)/1000,file,sha256:sha(raw),currentRoundSeconds:x.time-x.legacy.roundStart,legalNativeImport:true});
+}
+const existingBalance={};for(const name of ['xi-balance-results.json','late-balance-results.json']){const p='D:/hypertower-recovery-20261026/hypertower/tests/'+name;const raw=fs.readFileSync(p,'utf8');existingBalance[name]={sha256:sha(raw),data:JSON.parse(raw),provenance:'现有测试元数据，未把它重新标为本次实测；测试策略见对应.cjs文件。'};}
+const result={baseline:'首个XX终点、归一0、太一0、720星、代表蓝图已备；先原生事件实跑XI→XX并封存MA+natural+fixed，然后开始未来1天/1周。720星与各题设计知识预先提供，解题的现实操作时间不计入。',firstRoute:{seconds:s.time-t0,stageSumSeconds:route.reduce((n,r)=>n+r.seconds,0),stages:route,nativeSteps:totalSteps,firstNormalizeEarned:firstEarned,wallSeconds:(performance.now()-start)/1000},rows,existingBalance};fs.writeFileSync(OUT+'/low-progress-and-route.json',JSON.stringify(result,null,2));console.log(JSON.stringify({firstRoute:result.firstRoute,rows},null,2));

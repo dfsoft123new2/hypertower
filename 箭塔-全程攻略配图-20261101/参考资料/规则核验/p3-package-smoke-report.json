@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "packageFilesHashVerified": 104,
+  "protectedOriginalFilesUnchanged": 35,
+  "default30DayReload": {
+    "args": [
+      "--days",
+      "30"
+    ],
+    "stdout": "隔离复跑目录：D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\package-smoke\\复跑输出\\2026-11-01T12-57-06-820Z-p3-resume\n原始资料不变；结果仅保存在以上目录。\nCOMPLETE exact P3 30 days\n",
+    "stderr": "",
+    "runRoot": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\package-smoke\\复跑输出\\2026-11-01T12-57-06-820Z-p3-resume",
+    "noAdvanceToDay31": true,
+    "monthSaveUnchanged": true
+  },
+  "relativeOldRunCheckpoint": {
+    "args": [
+      "--days",
+      "8",
+      "--checkpoint",
+      "复跑输出\\2026-11-01T12-57-06-820Z-p3-resume\\walkthrough-work-20261101\\resume-p3-test-checkpoint.json"
+    ],
+    "stdout": "隔离复跑目录：D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\package-smoke\\复跑输出\\2026-11-01T12-57-07-245Z-p3-resume\n原始资料不变；结果仅保存在以上目录。\nCOMPLETE exact P3 8 days\n",
+    "stderr": "",
+    "runRoot": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\package-smoke\\复跑输出\\2026-11-01T12-57-07-245Z-p3-resume",
+    "pointerUnchanged": true
+  },
+  "packagedValidationScriptRan": true,
+  "validationSummaries": [
+    {
+      "name": "day1",
+      "days": 1,
+      "reloadValidated": true,
+      "exact": true,
+      "saveSha256": "81122be2fff4b3c4ed7dcdb8085916bc1607ab145afd5a2b9701e90b7b3dc678"
+    },
+    {
+      "name": "week",
+      "days": 7,
+      "reloadValidated": true,
+      "exact": true,
+      "saveSha256": "e46f2d56dccd49ea3191a7b9bd899b0291ba780141267f910d0135ce2e87b3eb"
+    },
+    {
+      "name": "month",
+      "days": 30,
+      "reloadValidated": true,
+      "exact": true,
+      "saveSha256": "d0db61f64f8cefe89239f7f103bfdf36ac0afba04d8ccc88ee9a3a4e84d4ddcb"
+    }
+  ]
+}

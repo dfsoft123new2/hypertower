@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+const base='D:/hypertower-recovery-20261026',work=path.join(base,'walkthrough-work-20261101'),out=path.join(work,'simulation-p1');
+const resultPath=path.join(out,fs.existsSync(path.join(out,'results.json'))?'results.json':'results.partial.json');
+const r=JSON.parse(fs.readFileSync(resultPath,'utf8')),{H,G}=require(path.join(base,'hypertower/tests/gr-helper.cjs')).engine();
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex'),checked=[];
+assert.deepEqual(r.checkpoints.map(x=>x.days),r.policy.checkpointsDays.slice(0,r.checkpoints.length));if(r.complete){assert.equal(r.checkpoints.length,6);assert.equal(sha(fs.readFileSync(path.join(work,'simulate-p1-longterm.cjs'))),r.scriptSha256);}for(const x of [r.campaign.campaignSeed,r.campaign.baselineSave])assert.equal(sha(fs.readFileSync(x.file)),x.sha256);
+for(const x of r.checkpoints){const b=fs.readFileSync(x.save.file);assert.equal(sha(b),x.save.sha256);const s=G.old.load(b.toString('utf8'));assert.equal(s.era,10);assert.equal(s.meta.rank,15);assert.equal(s.meta.epsilon,x.epsilon);assert.equal(s.time,x.time);assert.equal(s.meta.swallows,x.swallows);assert.equal(s.meta.progress,x.progress);assert.equal(s.meta.focus,'growth');assert.deepEqual(JSON.parse(JSON.stringify(s.meta.auto)),{advance:true,shop:true,prestige:false});assert.equal(BigInt(s.meta.epsilon)-10n,BigInt(x.epsilonGained));assert.equal(s.time-r.campaign.baseline.time,x.days*86400);checked.push({days:x.days,epsilon:x.epsilon,bytes:b.length,sha256:x.save.sha256,roundtrip:true});}
+for(const x of r.sources)assert.equal(sha(fs.readFileSync(path.join(base,'hypertower',x.file))),x.sha256);
+const verification={complete:r.complete,checked,allSourceHashesMatch:true,baselineHashesMatch:true,resultSha256:sha(fs.readFileSync(resultPath)),verified:'2026-11-01'};fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify(verification,null,2)+'\n');console.log(JSON.stringify(verification));

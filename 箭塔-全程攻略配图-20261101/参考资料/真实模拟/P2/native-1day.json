@@ -1,0 +1,17 @@
+{
+  "label": "1day",
+  "seconds": 86400,
+  "native": true,
+  "wallSeconds": 189.79284239999998,
+  "steps": 1506980,
+  "round": "227786",
+  "points": "67673846",
+  "era": 17,
+  "axiom": 1,
+  "currentRoundSeconds": 18.41060697309149,
+  "canonicalHash": "3d1cc26b876228d1cbf58cdaafd15bd75730107705197b0e1991d3795c1eb615",
+  "sha256": "f9db07790ef970b529526ab26f8d0b50a2977c05803e120fd27a5c5c3696a47d",
+  "file": "checkpoint-1day-native.ht5",
+  "stateTime": 86999.99999997459,
+  "clockError": -2.5407643988728523e-8
+}

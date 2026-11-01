@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "seconds": 3600,
+  "completeSerializedStateEqual": true,
+  "beforeMs": 2631.5567,
+  "afterMs": 2284.066,
+  "speedup": 1.1521368909654977,
+  "scope": "Pure-query caching only. Fixed-star signature guards bright/clear/fraction/mansions; quality/catalogued/limMag lazy and exact; no dt change, no automation flags disabled, no game source mutation."
+}

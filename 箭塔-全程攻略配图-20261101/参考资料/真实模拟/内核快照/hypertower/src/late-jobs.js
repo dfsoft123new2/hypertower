@@ -1,0 +1,13 @@
+/* Cancellable worker jobs. Unsupported Blob workers fall back to short generator slices. */
+(function(root){
+'use strict';const H=root.HT,K=H.LateMath;let serial=0,worker=null,pending=null,mode='未启动';
+const now=()=>typeof performance!=='undefined'?performance.now():Date.now();
+function cancel(){serial++;if(worker){worker.terminate();worker=null;}if(pending){pending.resolve({cancelled:true});pending=null;}}
+function generator(kind,data){if(kind==='solve')return K.solveJob(data.era,data.puzzle,data.options||{});if(kind==='evaluate')return K.evaluateJob(data.era,data.design,data.puzzle,data.options||{});if(kind==='life')return K.lifeJob(data.design,data.options||{});if(kind==='machine')return K.machineJob(data.design);if(kind==='enumerate')return K.enumerateJob(data);if(kind==='classify')return K.classifyJob(data.design);if(kind==='soup')return K.soupJob(data);throw Error('未知计算任务');}
+function run(kind,data,progress=()=>{},forceFallback=false){cancel();const id=serial,start=now();return new Promise((resolve,reject)=>{pending={resolve,reject};function done(result){if(id!==serial)return;if(worker){worker.terminate();worker=null;}pending=null;resolve({result,mode,ms:now()-start});}function fail(error){if(id!==serial)return;if(worker){worker.terminate();worker=null;}pending=null;reject(error);}
+  function fallback(){mode='分片回退';let g;try{g=generator(kind,data);}catch(e){fail(e);return;}const slice=()=>{if(id!==serial)return;const deadline=now()+1;try{let r;do{r=g.next();}while(!r.done&&now()<deadline);if(r.done)done(r.value);else{progress(r.value);setTimeout(slice,4);}}catch(e){fail(e);}};setTimeout(slice,0);}
+  if(forceFallback||typeof Worker==='undefined'||typeof Blob==='undefined'){fallback();return;}let url;
+  try{const source='const K=('+K.kernelSource+')();const make='+generator.toString().replaceAll('K.','K.')+';onmessage=e=>{try{const g=make(e.data.kind,e.data.data);let r,n=0;do{r=g.next();if(!r.done&&++n%64===0)postMessage({progress:r.value});}while(!r.done);postMessage({result:r.value});}catch(e){postMessage({error:e.message})}}';url=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));worker=new Worker(url);URL.revokeObjectURL(url);mode='Web Worker';worker.onmessage=e=>{if(id!==serial)return;if(e.data.progress)progress(e.data.progress);else if(e.data.error)fail(Error(e.data.error));else done(e.data.result);};worker.onerror=e=>{e.preventDefault();if(id!==serial)return;worker.terminate();worker=null;fallback();};worker.postMessage({kind,data});}catch(e){if(url)URL.revokeObjectURL(url);if(worker){worker.terminate();worker=null;}fallback();}
+});}
+H.LateJobs={run,cancel,get busy(){return !!pending;},get mode(){return mode;}};
+})(typeof self!=='undefined'?self:this);

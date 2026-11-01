@@ -1,0 +1,1598 @@
+{
+  "orders": [
+    {
+      "n": 1,
+      "m": "2",
+      "gears": [
+        2
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 14,
+          "k": 1
+        }
+      ],
+      "count": 2,
+      "lit": [
+        2
+      ],
+      "full": true
+    },
+    {
+      "n": 2,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 3,
+      "m": "24",
+      "gears": [
+        8,
+        3
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 3,
+          "k": 1
+        },
+        {
+          "mansion": 9,
+          "k": 1
+        },
+        {
+          "mansion": 10,
+          "k": 1
+        },
+        {
+          "mansion": 14,
+          "k": 1
+        },
+        {
+          "mansion": 17,
+          "k": 1
+        },
+        {
+          "mansion": 21,
+          "k": 1
+        },
+        {
+          "mansion": 24,
+          "k": 1
+        }
+      ],
+      "count": 8,
+      "lit": [
+        8,
+        3
+      ],
+      "full": true
+    },
+    {
+      "n": 4,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 5,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 6,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 7,
+      "m": "240",
+      "gears": [
+        16,
+        3,
+        5
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 1,
+          "k": 1
+        },
+        {
+          "mansion": 3,
+          "k": 1
+        },
+        {
+          "mansion": 5,
+          "k": 1
+        },
+        {
+          "mansion": 6,
+          "k": 1
+        },
+        {
+          "mansion": 9,
+          "k": 1
+        },
+        {
+          "mansion": 11,
+          "k": 2
+        },
+        {
+          "mansion": 14,
+          "k": 2
+        },
+        {
+          "mansion": 17,
+          "k": 1
+        },
+        {
+          "mansion": 19,
+          "k": 1
+        },
+        {
+          "mansion": 21,
+          "k": 1
+        },
+        {
+          "mansion": 23,
+          "k": 1
+        },
+        {
+          "mansion": 24,
+          "k": 1
+        },
+        {
+          "mansion": 26,
+          "k": 1
+        }
+      ],
+      "count": 16,
+      "lit": [
+        16,
+        3,
+        5
+      ],
+      "full": true
+    },
+    {
+      "n": 8,
+      "m": "2",
+      "gears": [
+        2
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 14,
+          "k": 1
+        }
+      ],
+      "count": 2,
+      "lit": [
+        2
+      ],
+      "full": true
+    },
+    {
+      "n": 9,
+      "m": "2",
+      "gears": [
+        2
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 14,
+          "k": 1
+        }
+      ],
+      "count": 2,
+      "lit": [
+        2
+      ],
+      "full": true
+    },
+    {
+      "n": 10,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 11,
+      "m": "504",
+      "gears": [
+        8,
+        9,
+        7
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 4,
+          "k": 1
+        },
+        {
+          "mansion": 7,
+          "k": 1
+        },
+        {
+          "mansion": 11,
+          "k": 2
+        },
+        {
+          "mansion": 14,
+          "k": 1
+        },
+        {
+          "mansion": 17,
+          "k": 1
+        },
+        {
+          "mansion": 22,
+          "k": 1
+        },
+        {
+          "mansion": 25,
+          "k": 1
+        }
+      ],
+      "count": 9,
+      "lit": [
+        8,
+        9,
+        7
+      ],
+      "full": true
+    },
+    {
+      "n": 12,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 13,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 14,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 15,
+      "m": "480",
+      "gears": [
+        32,
+        3,
+        5
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 2
+        },
+        {
+          "mansion": 1,
+          "k": 1
+        },
+        {
+          "mansion": 2,
+          "k": 1
+        },
+        {
+          "mansion": 3,
+          "k": 1
+        },
+        {
+          "mansion": 4,
+          "k": 2
+        },
+        {
+          "mansion": 5,
+          "k": 1
+        },
+        {
+          "mansion": 6,
+          "k": 1
+        },
+        {
+          "mansion": 7,
+          "k": 1
+        },
+        {
+          "mansion": 8,
+          "k": 1
+        },
+        {
+          "mansion": 9,
+          "k": 1
+        },
+        {
+          "mansion": 10,
+          "k": 1
+        },
+        {
+          "mansion": 11,
+          "k": 2
+        },
+        {
+          "mansion": 13,
+          "k": 1
+        },
+        {
+          "mansion": 14,
+          "k": 2
+        },
+        {
+          "mansion": 16,
+          "k": 2
+        },
+        {
+          "mansion": 18,
+          "k": 1
+        },
+        {
+          "mansion": 19,
+          "k": 1
+        },
+        {
+          "mansion": 20,
+          "k": 1
+        },
+        {
+          "mansion": 21,
+          "k": 3
+        },
+        {
+          "mansion": 23,
+          "k": 1
+        },
+        {
+          "mansion": 24,
+          "k": 1
+        },
+        {
+          "mansion": 25,
+          "k": 1
+        },
+        {
+          "mansion": 26,
+          "k": 2
+        },
+        {
+          "mansion": 27,
+          "k": 1
+        }
+      ],
+      "count": 32,
+      "lit": [
+        32,
+        3,
+        5
+      ],
+      "full": true
+    },
+    {
+      "n": 16,
+      "m": "2",
+      "gears": [
+        2
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 14,
+          "k": 1
+        }
+      ],
+      "count": 2,
+      "lit": [
+        2
+      ],
+      "full": true
+    },
+    {
+      "n": 17,
+      "m": "2",
+      "gears": [
+        2
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 14,
+          "k": 1
+        }
+      ],
+      "count": 2,
+      "lit": [
+        2
+      ],
+      "full": true
+    },
+    {
+      "n": 18,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 19,
+      "m": "264",
+      "gears": [
+        8,
+        3,
+        11
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 3,
+          "k": 1
+        },
+        {
+          "mansion": 5,
+          "k": 1
+        },
+        {
+          "mansion": 7,
+          "k": 1
+        },
+        {
+          "mansion": 9,
+          "k": 1
+        },
+        {
+          "mansion": 12,
+          "k": 1
+        },
+        {
+          "mansion": 14,
+          "k": 1
+        },
+        {
+          "mansion": 17,
+          "k": 1
+        },
+        {
+          "mansion": 18,
+          "k": 1
+        },
+        {
+          "mansion": 22,
+          "k": 1
+        },
+        {
+          "mansion": 24,
+          "k": 1
+        }
+      ],
+      "count": 11,
+      "lit": [
+        8,
+        3,
+        11
+      ],
+      "full": true
+    },
+    {
+      "n": 20,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 21,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 22,
+      "m": "1",
+      "gears": [],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        }
+      ],
+      "count": 1,
+      "lit": [],
+      "full": true
+    },
+    {
+      "n": 23,
+      "m": "65520",
+      "gears": [
+        16,
+        9,
+        5,
+        7,
+        13
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 1,
+          "k": 1
+        },
+        {
+          "mansion": 3,
+          "k": 1
+        },
+        {
+          "mansion": 5,
+          "k": 1
+        },
+        {
+          "mansion": 6,
+          "k": 1
+        },
+        {
+          "mansion": 8,
+          "k": 1
+        },
+        {
+          "mansion": 11,
+          "k": 2
+        },
+        {
+          "mansion": 14,
+          "k": 2
+        },
+        {
+          "mansion": 17,
+          "k": 1
+        },
+        {
+          "mansion": 19,
+          "k": 1
+        },
+        {
+          "mansion": 21,
+          "k": 1
+        },
+        {
+          "mansion": 23,
+          "k": 1
+        },
+        {
+          "mansion": 25,
+          "k": 1
+        },
+        {
+          "mansion": 26,
+          "k": 1
+        }
+      ],
+      "count": 16,
+      "lit": [
+        16,
+        9,
+        5,
+        7,
+        13
+      ],
+      "full": true
+    },
+    {
+      "n": 24,
+      "m": "2",
+      "gears": [
+        2
+      ],
+      "plan": [
+        {
+          "mansion": 0,
+          "k": 1
+        },
+        {
+          "mansion": 14,
+          "k": 1
+        }
+      ],
+      "count": 2,
+      "lit": [
+        2
+      ],
+      "full": true
+    }
+  ],
+  "treeRows": [
+    {
+      "order": 1,
+      "nodes": [
+        "1000",
+        "2000",
+        "4000",
+        "8000",
+        "16000",
+        "32000",
+        "64000",
+        "128000"
+      ],
+      "total": "255000",
+      "cumulative": "255000"
+    },
+    {
+      "order": 2,
+      "nodes": [
+        "256000",
+        "512000",
+        "1024000",
+        "2048000",
+        "4096000",
+        "8192000",
+        "16384000",
+        "32768000"
+      ],
+      "total": "65280000",
+      "cumulative": "65535000"
+    },
+    {
+      "order": 3,
+      "nodes": [
+        "65536000",
+        "131072000",
+        "262144000",
+        "524288000",
+        "1048576000",
+        "2097152000",
+        "4194304000",
+        "8388608000"
+      ],
+      "total": "16711680000",
+      "cumulative": "16777215000"
+    },
+    {
+      "order": 4,
+      "nodes": [
+        "16777216000",
+        "33554432000",
+        "67108864000",
+        "134217728000",
+        "268435456000",
+        "536870912000",
+        "1073741824000",
+        "2147483648000"
+      ],
+      "total": "4278190080000",
+      "cumulative": "4294967295000"
+    }
+  ],
+  "stable": [
+    {
+      "m": 1,
+      "one": true,
+      "two": true,
+      "zero": true
+    },
+    {
+      "m": 2,
+      "one": true,
+      "two": false,
+      "zero": false
+    },
+    {
+      "m": 24,
+      "one": true,
+      "two": false,
+      "zero": false
+    },
+    {
+      "m": 240,
+      "one": true,
+      "two": false,
+      "zero": false
+    }
+  ],
+  "cocycle": {
+    "walkClosed": true,
+    "badClosed": false,
+    "beforeGlue": {
+      "ok": true
+    },
+    "h": 2,
+    "afterGlue": {
+      "ok": false,
+      "glue": "glue1",
+      "diff": 1
+    },
+    "repaired": {
+      "ok": true
+    },
+    "repairedH": 1
+  },
+  "firstChain": {
+    "h": 1,
+    "J": "1",
+    "coherent": true
+  },
+  "firstQ": 3.9785327433199713,
+  "firstRemainingGamma": "99900",
+  "octal": [
+    {
+      "code": "0.3",
+      "computed": 256,
+      "first": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "registered": {
+        "status": "exact",
+        "p": 2,
+        "n0": 0,
+        "source": "oct:0.3"
+      }
+    },
+    {
+      "code": "0.1",
+      "computed": 256,
+      "first": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "registered": {
+        "status": "exact",
+        "p": 1,
+        "n0": 2,
+        "source": "oct:0.1"
+      }
+    },
+    {
+      "code": "0.2",
+      "computed": 256,
+      "first": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "registered": {
+        "status": "exact",
+        "p": 2,
+        "n0": 1,
+        "source": "oct:0.2"
+      }
+    },
+    {
+      "code": "0.33",
+      "computed": 256,
+      "first": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2
+      ],
+      "registered": {
+        "status": "exact",
+        "p": 3,
+        "n0": 0,
+        "source": "oct:0.33"
+      }
+    },
+    {
+      "code": "0.07",
+      "computed": 256,
+      "first": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        0,
+        3,
+        1,
+        1,
+        0,
+        3,
+        3,
+        2,
+        2,
+        4,
+        0,
+        5,
+        2
+      ],
+      "registered": {
+        "status": "exact",
+        "p": 34,
+        "n0": 53,
+        "source": "oct:0.07"
+      }
+    }
+  ],
+  "returnStation": {
+    "station": 5362,
+    "full": {
+      "CH": 0,
+      "C2": 1,
+      "MA": 0,
+      "DIA": 0,
+      "B1": 1,
+      "B2": 1,
+      "B3": 1,
+      "B4": 1,
+      "R": 4,
+      "K": 2
+    },
+    "route0": "5362:1:1fmpvix",
+    "route00": "5362:2:5hoee5",
+    "duplicate": false,
+    "cohenThenRandom": "5362:2:fytbdf"
+  },
+  "frames": {
+    "A": "src:24:1waiyah",
+    "B": "src:24:q3ec7s",
+    "twistA": 1,
+    "twistB": 1,
+    "product": {
+      "id": "src:24:1uaft77",
+      "word": [
+        1,
+        2
+      ],
+      "twist": 2,
+      "etaSum": true
+    }
+  },
+  "tower": [
+    {
+      "floor": 1,
+      "combo": [
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "floor": 2,
+      "combo": [
+        {
+          "era": 22,
+          "pert": 3,
+          "level": 1
+        },
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "floor": 3,
+      "combo": [
+        {
+          "era": 22,
+          "pert": 1,
+          "level": 1
+        },
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 1
+        },
+        {
+          "era": 21,
+          "pert": 2,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "floor": 4,
+      "combo": [
+        {
+          "era": 22,
+          "pert": 1,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "floor": 5,
+      "combo": [
+        {
+          "era": 22,
+          "pert": 3,
+          "level": 1
+        },
+        {
+          "era": 21,
+          "pert": 1,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "floor": 6,
+      "combo": [
+        {
+          "era": 24,
+          "pert": 1,
+          "level": 1
+        },
+        {
+          "era": 22,
+          "pert": 3,
+          "level": 1
+        },
+        {
+          "era": 21,
+          "pert": 1,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "floor": 65,
+      "combo": [
+        {
+          "era": 24,
+          "pert": 3,
+          "level": 2
+        },
+        {
+          "era": 23,
+          "pert": 2,
+          "level": 2
+        }
+      ]
+    },
+    {
+      "floor": 129,
+      "combo": [
+        {
+          "era": 23,
+          "pert": 3,
+          "level": 3
+        },
+        {
+          "era": 22,
+          "pert": 2,
+          "level": 3
+        },
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 3
+        }
+      ]
+    }
+  ],
+  "horizon": [
+    {
+      "ring": 42,
+      "orders": [
+        {
+          "order": 0,
+          "minBaseline": 13,
+          "noDiscountTotal": "16382000"
+        },
+        {
+          "order": 1,
+          "minBaseline": 27,
+          "noDiscountTotal": "268435454000"
+        },
+        {
+          "order": 2,
+          "minBaseline": 41,
+          "noDiscountTotal": "4398046511102000"
+        },
+        {
+          "order": 3,
+          "minBaseline": 55,
+          "noDiscountTotal": "72057594037927934000"
+        }
+      ]
+    },
+    {
+      "ring": 52,
+      "orders": [
+        {
+          "order": 0,
+          "minBaseline": 12,
+          "noDiscountTotal": "8190000"
+        },
+        {
+          "order": 1,
+          "minBaseline": 26,
+          "noDiscountTotal": "134217726000"
+        },
+        {
+          "order": 2,
+          "minBaseline": 40,
+          "noDiscountTotal": "2199023255550000"
+        },
+        {
+          "order": 3,
+          "minBaseline": 54,
+          "noDiscountTotal": "36028797018963966000"
+        }
+      ]
+    },
+    {
+      "ring": 40,
+      "orders": [
+        {
+          "order": 0,
+          "minBaseline": 13,
+          "noDiscountTotal": "16382000"
+        },
+        {
+          "order": 1,
+          "minBaseline": 27,
+          "noDiscountTotal": "268435454000"
+        },
+        {
+          "order": 2,
+          "minBaseline": 41,
+          "noDiscountTotal": "4398046511102000"
+        },
+        {
+          "order": 3,
+          "minBaseline": 55,
+          "noDiscountTotal": "72057594037927934000"
+        }
+      ]
+    },
+    {
+      "ring": 400,
+      "orders": [
+        {
+          "order": 0,
+          "minBaseline": 3,
+          "noDiscountTotal": "14000"
+        },
+        {
+          "order": 1,
+          "minBaseline": 17,
+          "noDiscountTotal": "262142000"
+        },
+        {
+          "order": 2,
+          "minBaseline": 31,
+          "noDiscountTotal": "4294967294000"
+        },
+        {
+          "order": 3,
+          "minBaseline": 45,
+          "noDiscountTotal": "70368744177662000"
+        }
+      ]
+    }
+  ],
+  "hitSuborbit": {
+    "gears": [
+      4
+    ],
+    "bits": "5",
+    "h": 2,
+    "rateEven": 1,
+    "rateOdd": 0,
+    "zhoutian": false
+  },
+  "towerNamed": [
+    {
+      "floor": 1,
+      "combo": [
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 1
+        }
+      ],
+      "names": [
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 1,
+          "name": "乱流"
+        }
+      ]
+    },
+    {
+      "floor": 2,
+      "combo": [
+        {
+          "era": 22,
+          "pert": 3,
+          "level": 1
+        },
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 1
+        }
+      ],
+      "names": [
+        {
+          "era": 22,
+          "pert": 3,
+          "level": 1,
+          "name": "冰点"
+        },
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 1,
+          "name": "乱流"
+        }
+      ]
+    },
+    {
+      "floor": 3,
+      "combo": [
+        {
+          "era": 22,
+          "pert": 1,
+          "level": 1
+        },
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 1
+        },
+        {
+          "era": 21,
+          "pert": 2,
+          "level": 1
+        }
+      ],
+      "names": [
+        {
+          "era": 22,
+          "pert": 1,
+          "level": 1,
+          "name": "无绿"
+        },
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 1,
+          "name": "乱流"
+        },
+        {
+          "era": 21,
+          "pert": 2,
+          "level": 1,
+          "name": "单根宇宙"
+        }
+      ]
+    },
+    {
+      "floor": 4,
+      "combo": [
+        {
+          "era": 22,
+          "pert": 1,
+          "level": 1
+        }
+      ],
+      "names": [
+        {
+          "era": 22,
+          "pert": 1,
+          "level": 1,
+          "name": "无绿"
+        }
+      ]
+    },
+    {
+      "floor": 5,
+      "combo": [
+        {
+          "era": 22,
+          "pert": 3,
+          "level": 1
+        },
+        {
+          "era": 21,
+          "pert": 1,
+          "level": 1
+        }
+      ],
+      "names": [
+        {
+          "era": 22,
+          "pert": 3,
+          "level": 1,
+          "name": "冰点"
+        },
+        {
+          "era": 21,
+          "pert": 1,
+          "level": 1,
+          "name": "坍缩禁令"
+        }
+      ]
+    },
+    {
+      "floor": 6,
+      "combo": [
+        {
+          "era": 24,
+          "pert": 1,
+          "level": 1
+        },
+        {
+          "era": 22,
+          "pert": 3,
+          "level": 1
+        },
+        {
+          "era": 21,
+          "pert": 1,
+          "level": 1
+        }
+      ],
+      "names": [
+        {
+          "era": 24,
+          "pert": 1,
+          "level": 1,
+          "name": "拔钉"
+        },
+        {
+          "era": 22,
+          "pert": 3,
+          "level": 1,
+          "name": "冰点"
+        },
+        {
+          "era": 21,
+          "pert": 1,
+          "level": 1,
+          "name": "坍缩禁令"
+        }
+      ]
+    },
+    {
+      "floor": 65,
+      "combo": [
+        {
+          "era": 24,
+          "pert": 3,
+          "level": 2
+        },
+        {
+          "era": 23,
+          "pert": 2,
+          "level": 2
+        }
+      ],
+      "names": [
+        {
+          "era": 24,
+          "pert": 3,
+          "level": 2,
+          "name": "单笔"
+        },
+        {
+          "era": 23,
+          "pert": 2,
+          "level": 2,
+          "name": "退相干"
+        }
+      ]
+    },
+    {
+      "floor": 129,
+      "combo": [
+        {
+          "era": 23,
+          "pert": 3,
+          "level": 3
+        },
+        {
+          "era": 22,
+          "pert": 2,
+          "level": 3
+        },
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 3
+        }
+      ],
+      "names": [
+        {
+          "era": 23,
+          "pert": 3,
+          "level": 3,
+          "name": "断环"
+        },
+        {
+          "era": 22,
+          "pert": 2,
+          "level": 3,
+          "name": "右先手"
+        },
+        {
+          "era": 24,
+          "pert": 4,
+          "level": 3,
+          "name": "乱流"
+        }
+      ]
+    }
+  ],
+  "towerObservation": [
+    {
+      "floor": 64,
+      "depth": "-1",
+      "extraFactor": 1
+    },
+    {
+      "floor": 128,
+      "depth": "0",
+      "extraFactor": 1
+    },
+    {
+      "floor": 129,
+      "depth": "0",
+      "extraFactor": 1
+    },
+    {
+      "floor": 191,
+      "depth": "0",
+      "extraFactor": 1
+    },
+    {
+      "floor": 192,
+      "depth": "1",
+      "extraFactor": 0.9
+    },
+    {
+      "floor": 256,
+      "depth": "2",
+      "extraFactor": 0.81
+    }
+  ],
+  "octalWindows": [
+    {
+      "code": "0.3",
+      "p": 2,
+      "n0": 0,
+      "t": 1,
+      "requiredLimit": 3,
+      "computed": 256,
+      "certificate": true
+    },
+    {
+      "code": "0.1",
+      "p": 1,
+      "n0": 2,
+      "t": 1,
+      "requiredLimit": 6,
+      "computed": 256,
+      "certificate": true
+    },
+    {
+      "code": "0.2",
+      "p": 2,
+      "n0": 1,
+      "t": 1,
+      "requiredLimit": 5,
+      "computed": 256,
+      "certificate": true
+    },
+    {
+      "code": "0.33",
+      "p": 3,
+      "n0": 0,
+      "t": 2,
+      "requiredLimit": 5,
+      "computed": 256,
+      "certificate": true
+    },
+    {
+      "code": "0.07",
+      "p": 34,
+      "n0": 53,
+      "t": 2,
+      "requiredLimit": 142,
+      "computed": 256,
+      "certificate": true
+    }
+  ],
+  "sourceHashes": {
+    "gr-inf.js": "453e64353fd54705955aca7715ff1f00f8c80f5cdb2e90b06061e6de81d5a8c6",
+    "gr-inf-auto.js": "8b5adab5602467b3c19ce1606774f1570c54e5745f060c7c5c820e445424ed52",
+    "gr-obs.js": "c0ba7523a98cac532ca20f81bbc18b5791107d45f990b3a5d2316859799dcb59",
+    "gr-core.js": "ab6ec03864b0b8bc4d0d68eaf9b43ffee6fcb6858f9f778c7e24c568d0fdde48",
+    "gr-data.js": "2935c81a6bbfad1c4ec1ef392f914e08485dd7d9b32847b065ed2ac03bd31f50"
+  }
+}

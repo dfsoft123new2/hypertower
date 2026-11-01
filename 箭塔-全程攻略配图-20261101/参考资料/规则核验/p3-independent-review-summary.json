@@ -1,0 +1,200 @@
+{
+  "review": "P3 public laboratory and infinity deep guide independent cross-review",
+  "date": "2026-11-01",
+  "scope": [
+    "p3-shared-lab.md",
+    "p3-infinity-deep.md"
+  ],
+  "reviewed_against": [
+    "hypertower/src/gr-inf.js",
+    "hypertower/src/gr-inf-auto.js",
+    "hypertower/src/gr-obs.js",
+    "hypertower/src/gr-deg.js",
+    "hypertower/src/gr-era24.js",
+    "p3-network-topology-deep.md"
+  ],
+  "result": "No known material unresolved factual findings in reviewed scope after three corrections.",
+  "findings": [
+    {
+      "id": "P3-REVIEW-01",
+      "status": "fixed_verified",
+      "file": "p3-infinity-deep.md",
+      "line": 301,
+      "issue": "原文可能暗示带子乘积继承环面附加结构；当前相乘入口不继承输入 options。",
+      "resolution": "修正文案明确输出不继承环面、穿孔与手绘信息，仍按当前全局扭钉关系重登记。",
+      "source": "hypertower/src/gr-inf.js:66; hypertower/src/gr-era24.js:32",
+      "actual": {
+        "inputA": {
+          "torus": true,
+          "orders": {}
+        },
+        "inputB": {
+          "torus": true,
+          "orders": {}
+        },
+        "outputOptions": {
+          "orders": {}
+        },
+        "outputTorus": false,
+        "outputTwist": 2
+      }
+    },
+    {
+      "id": "P3-REVIEW-02",
+      "status": "fixed_verified",
+      "file": "p3-infinity-deep.md",
+      "line": 31,
+      "issue": "公共实验册引用的 C12 质量例外在原无限深册内缺少明确展开。",
+      "resolution": "补两项数量检查的准确例外，并保留相位、周天、合法目标、实际正质量限制。",
+      "source": "hypertower/src/gr-inf.js:50-51",
+      "actual": {
+        "Q": 3.9785327433199713,
+        "available": 2,
+        "zhoutian": true,
+        "beforeC12": false,
+        "afterC12": {
+          "mass": 2,
+          "returnedStars": 0
+        },
+        "phase": "huai",
+        "noMass": {
+          "actualRewind": true,
+          "n": "2",
+          "coverage": true,
+          "seedCount": 0,
+          "positiveMassStillRequired": true
+        }
+      }
+    },
+    {
+      "id": "P3-REVIEW-03",
+      "status": "fixed_verified",
+      "file": "p3-shared-lab.md",
+      "line": 122,
+      "issue": "原分光采购建议可能让读者误以为高 R 曝光后可以降档或按镜分开设置 R。",
+      "resolution": "明确 R 全局共同使用、逐级只升不降，采购前安排低阶任务。",
+      "source": "hypertower/src/gr-obs.js:11; hypertower/src/gr-obs.js:64-68"
+    }
+  ],
+  "additional_action_checks": {
+    "pure_seed_coverage_n1_n3_n7_n11": [
+      {
+        "n": 1,
+        "gears": [
+          2
+        ],
+        "counts": [
+          2
+        ],
+        "stars": 2
+      },
+      {
+        "n": 3,
+        "gears": [
+          8,
+          3
+        ],
+        "counts": [
+          8,
+          3
+        ],
+        "stars": 8
+      },
+      {
+        "n": 7,
+        "gears": [
+          16,
+          3,
+          5
+        ],
+        "counts": [
+          16,
+          3,
+          5
+        ],
+        "stars": 16
+      },
+      {
+        "n": 11,
+        "gears": [
+          8,
+          9,
+          7
+        ],
+        "counts": [
+          8,
+          9,
+          7
+        ],
+        "stars": 9
+      }
+    ],
+    "baseline_thresholds": [
+      {
+        "ring": 42,
+        "levels": [
+          13,
+          27,
+          41,
+          55
+        ]
+      },
+      {
+        "ring": 52,
+        "levels": [
+          12,
+          26,
+          40,
+          54
+        ]
+      },
+      {
+        "ring": 40,
+        "levels": [
+          13,
+          27,
+          41,
+          55
+        ]
+      },
+      {
+        "ring": 400,
+        "levels": [
+          3,
+          17,
+          31,
+          45
+        ]
+      }
+    ],
+    "c12_zero_mass_guard": "Verified by actual collapse/starve/evaporation/rewind to circle 2, one echo injected, coverage true, zero seed stars, collapse returns false."
+  },
+  "evidence": [
+    "p3-independent-review-actions.json",
+    "p3-network-topology-evidence.json",
+    "p3-braid-equivalences.json",
+    "p3-300-loop-family.json"
+  ],
+  "scripts": [
+    "verify-walkthrough-p3-independent-review-20261101.cjs",
+    "verify-walkthrough-network-topology-20261101.cjs",
+    "verify-walkthrough-braid-equivalences-20261101.cjs",
+    "verify-walkthrough-300-loops-20261101.cjs"
+  ],
+  "limitations": [
+    "Source review and bounded in-memory kernel experiments; not an exhaustive proof for all saves or later game revisions.",
+    "No game code, player save, or other author manuscript was edited during this independent review."
+  ],
+  "manuscript_sha256": {
+    "p3-shared-lab.md": "7d0dbdbb75b44c65768147fa0183db50935b8297c4c6336be73635d9404fdc59",
+    "p3-infinity-deep.md": "2cc106e8440fe3751d51ac0c149b3772d9d6d1198eb9102c4150024dfa12e3a0",
+    "p3-network-topology-deep.md": "4c6a785690b837e62223e8e073d5c8c57319c7b601dfe6fc4d33affa9be0ca54"
+  },
+  "source_sha256": {
+    "hypertower/src/gr-inf.js": "453e64353fd54705955aca7715ff1f00f8c80f5cdb2e90b06061e6de81d5a8c6",
+    "hypertower/src/gr-inf-auto.js": "8b5adab5602467b3c19ce1606774f1570c54e5745f060c7c5c820e445424ed52",
+    "hypertower/src/gr-obs.js": "c0ba7523a98cac532ca20f81bbc18b5791107d45f990b3a5d2316859799dcb59",
+    "hypertower/src/gr-deg.js": "6e72cad798a5358f3fe04fd52b2e38f5104efafc74aca63c4675c79cb219137d",
+    "hypertower/src/gr-era24.js": "92e5f4e1fa958dacca0c7d670a12a3f73c98ed231f2f8964f2406e2bdf85a486"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "scope": "XI–XX、归一、720星、XX→XXI；只读内核核验与独立攻略文件，无游戏源码或玩家存档改动",
+  "bodyCharacters": 34002,
+  "appendixCharacters": 48306,
+  "sources": [
+    {
+      "topic": "XI入口、研究与挑战",
+      "file": "src/era11.js",
+      "line": 27,
+      "verified": "X gate当前X、meta.started、bestRank=15、bestEpsilon≥10；XI研究cap8/8/6/3/1/8"
+    },
+    {
+      "topic": "XI斩头与奖励",
+      "file": "src/hydra.js",
+      "line": 1,
+      "verified": "标准有限树重放；深度平方奖励；按当前刀数再生"
+    },
+    {
+      "topic": "XII–XX跨纪元门槛",
+      "file": "src/late-eras.js",
+      "line": 25,
+      "verified": "XVIII→XIX需24覆盖且相容闭包MA/notCH，XIX→XX要求AC=false"
+    },
+    {
+      "topic": "研究速度与星级",
+      "file": "src/late-eras.js",
+      "line": 47,
+      "verified": "遗产倍率上限4000；星级研究加成只取前24；质量加星项上限3"
+    },
+    {
+      "topic": "结晶与费用",
+      "file": "src/late-eras.js",
+      "line": 53,
+      "verified": "yieldRate；费用8*2.3^up，每项cap6；领取需runAge≥60"
+    },
+    {
+      "topic": "手动/辅助星级",
+      "file": "src/late-eras.js",
+      "line": 75,
+      "verified": "XII–XX aided?2:3，保存时重验；PFA和速通另有状态条件"
+    },
+    {
+      "topic": "挑战研究与层数",
+      "file": "src/late-eras.js",
+      "line": 87,
+      "verified": "当前trial对应活动蓝图+harvest累计；阈值8/16/24，达标退出当前挑战"
+    },
+    {
+      "topic": "AC与开发者回退",
+      "file": "src/late-eras.js",
+      "line": 105,
+      "verified": "Reinhardt后不能普通开启AC；本机精确快照与旧档回I0区分"
+    },
+    {
+      "topic": "归一与重建",
+      "file": "src/late-eras.js",
+      "line": 137,
+      "verified": "XX complete且AC关闭；收益floor(36000/max(60,轮秒))+1；保留蓝图档案成就规则"
+    },
+    {
+      "topic": "XII调色板缺3",
+      "file": "src/late-ui.js",
+      "line": 41,
+      "verified": "内核允许0/1/2/3/w/E/p/f，调色板只含1/2常数；17–24共享方案说明"
+    },
+    {
+      "topic": "正式导入与载入",
+      "file": "src/late-ui.js",
+      "line": 109,
+      "verified": "载入沙盒依据蓝图source决定辅助标记；使用公开导入验证，未改玩家标记"
+    },
+    {
+      "topic": "有限题目与评价",
+      "file": "src/late-math.js",
+      "line": 131,
+      "verified": "每纪元24题，8组×3变体；1起玩家操作由提取器转换"
+    },
+    {
+      "topic": "XIX反射评分",
+      "file": "src/late-math.js",
+      "line": 128,
+      "verified": "每层来源≤本层，倍率与κ相关，不同来源每种+2"
+    },
+    {
+      "topic": "XIX小宇宙硬限制",
+      "file": "src/late-math.js",
+      "line": 155,
+      "verified": "前三槽非空，目标18，192种合法组合最高14.15，当前不可达"
+    },
+    {
+      "topic": "XIV部分挑战限制未接入",
+      "file": "src/late-math.js",
+      "line": 148,
+      "verified": "当前排序评价只以reverse改变排序；singleOmega/noomega未接额外排序检查"
+    },
+    {
+      "topic": "XV周期时间字段",
+      "file": "src/late-math.js",
+      "line": 62,
+      "verified": "完整归一配置重复；firstRepeat记录重复片段旧起点p.g，当前deadline检查此字段≤100"
+    },
+    {
+      "topic": "XVII提交证书",
+      "file": "src/late-math.js",
+      "line": 152,
+      "verified": "完整纸带重放，不把预算耗尽判为非停机；nocycle要求非零translation"
+    },
+    {
+      "topic": "工坊分组与单手",
+      "file": "src/systems.js",
+      "line": 65,
+      "verified": "同组第一命中规则；XX challenge2暂停工坊"
+    },
+    {
+      "topic": "XXI入口硬条件",
+      "file": "src/gr-core.js",
+      "line": 60,
+      "verified": "当前XX完成、round≥10、XI–XX每题3星、无p3；240题×3=720"
+    }
+  ],
+  "validation": {
+    "fixedPuzzles": 240,
+    "allReferenceSolutionsPassed": true,
+    "lifeManualTranslatedSolutionsPassed": 24,
+    "xiiExternalSharedDesigns": 8,
+    "xiiSharedImportThenUISubmitStars": 3,
+    "challengeDesignsAccepted": 35,
+    "challengeNote": "设计级核验，不冒称已在真实存档等待完每个挑战的三层；XX速通需额外本轮≤7200秒，PFA与AC另受状态约束",
+    "smallUniverse": {
+      "checked": 192,
+      "valid": 0,
+      "max": {
+        "score": 14.15,
+        "summary": "反射 3 槽 · 临界点 12 · AC 关闭",
+        "choice": false,
+        "valid": false,
+        "design": {
+          "slots": [
+            0,
+            1,
+            2,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "critical": 1,
+          "choice": false
+        }
+      },
+      "target": 18
+    }
+  },
+  "limitations": [
+    {
+      "era": 12,
+      "type": "UI missing palette item",
+      "text": "17–24题参考构型含数字3，当前调色板缺3；提供8份另行写出的可核验外部共享HTB5，正式导入后提交，不伪改辅助标记。"
+    },
+    {
+      "era": 14,
+      "type": "Challenge partial implementation",
+      "text": "singleOmega/noomega文案未在排序评价中接入额外限制；普通正确排序当前能过。"
+    },
+    {
+      "era": 19,
+      "type": "Unreachable optional challenge",
+      "text": "小宇宙最高14.15低于18，192组合全检，无合法通过设计；不影响主线/全星/XXI。"
+    }
+  ],
+  "captureSuggestions": [
+    {
+      "id": "puzzle-12-draft至puzzle-20-submitted",
+      "purpose": "各纪元第1题空白与手工提交后主线+沙盒对照",
+      "api": "H.Late.loadPuzzle / validate / submit；使用隔离演示存档"
+    },
+    {
+      "id": "ac-before/ac-after",
+      "purpose": "固定策略、关闭AC前后状态、不可重开边界",
+      "api": "H.Late.setChoice"
+    },
+    {
+      "id": "normalize-before/normalize-after",
+      "purpose": "归一前carry核对与历史重建后的XI",
+      "api": "H.Late.normalize / H.tick"
+    },
+    {
+      "id": "split-entry",
+      "purpose": "XX当前完成、十次归一、720星与正式XXI按钮",
+      "api": "H.GR.gate21"
+    }
+  ]
+}

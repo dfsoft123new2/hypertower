@@ -1,0 +1,1568 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>箭塔 HYPERTOWER</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&text=%E7%AE%AD%E5%A1%94&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #E8EDF1; --paper-2: #F5F7F9; --paper-3: #DCE3E9;
+  --rule: rgba(16, 52, 90, .07); --rule-2: rgba(16, 52, 90, .22); --rule-3: rgba(16, 52, 90, .45);
+  --ink: #10345A; --ink-2: #44678B; --ink-3: #7690AA;
+  --e1: #A06A00; --e2: #0A7A63; --e3: #5242C4; --e4: #B12A5B; --e5: #7E6200;
+  --good: #0A7A63; --bad: #B12A5B;
+  --acc: var(--e1);
+  --num: "STIX Two Text", "STIX Two Math", "Cambria Math", "Times New Roman", serif;
+  --ui: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", system-ui, sans-serif;
+  color-scheme: light;
+  box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0C2B4D; --paper-2: #10355C; --paper-3: #0A2442;
+    --rule: rgba(200, 225, 255, .075); --rule-2: rgba(200, 225, 255, .2); --rule-3: rgba(200, 225, 255, .42);
+    --ink: #EAF2FB; --ink-2: #A3BFDA; --ink-3: #7192B3;
+    --e1: #F4BA45; --e2: #63D8BE; --e3: #B6A8FF; --e4: #FF8AAA; --e5: #FFE58C;
+    --good: #63D8BE; --bad: #FF8AAA; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0C2B4D; --paper-2: #10355C; --paper-3: #0A2442;
+  --rule: rgba(200, 225, 255, .075); --rule-2: rgba(200, 225, 255, .2); --rule-3: rgba(200, 225, 255, .42);
+  --ink: #EAF2FB; --ink-2: #A3BFDA; --ink-3: #7192B3;
+  --e1: #F4BA45; --e2: #63D8BE; --e3: #B6A8FF; --e4: #FF8AAA; --e5: #FFE58C;
+  --good: #63D8BE; --bad: #FF8AAA; color-scheme: dark;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; color: var(--ink); font: 15px/1.55 var(--ui);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--rule) 1px, transparent 1px), linear-gradient(90deg, var(--rule) 1px, transparent 1px),
+    linear-gradient(var(--rule) 1px, transparent 1px), linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  -webkit-font-smoothing: antialiased;
+}
+body[data-era="1"] { --acc: var(--e1); } body[data-era="2"] { --acc: var(--e2); } body[data-era="3"] { --acc: var(--e3); }
+body[data-era="4"] { --acc: var(--e4); } body[data-era="5"] { --acc: var(--e5); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--paper); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+.num { font-family: var(--num); font-variant-numeric: lining-nums tabular-nums; }
+.muted { color: var(--ink-2); } .faint { color: var(--ink-3); }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 20px; }
+
+/* header */
+.top { display: flex; align-items: center; gap: 18px; padding: 14px 0 6px; flex-wrap: wrap; }
+.logo { display: flex; align-items: baseline; gap: 10px; }
+.logo b { font: 900 30px/1 "Noto Serif SC", "Songti SC", serif; letter-spacing: .04em; }
+.logo i { font: italic 15px var(--num); color: var(--ink-2); letter-spacing: .02em; }
+.rail { display: flex; align-items: center; gap: 0; margin-left: auto; }
+.rail .st { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-3); padding: 2px 0; }
+.rail .st .dot { width: 22px; height: 22px; border: 1px solid var(--rule-3); display: grid; place-items: center; font: 600 11px var(--num); border-radius: 50%; }
+.rail .st.done .dot { background: var(--rule-2); color: var(--ink); }
+.rail .st.now { color: var(--ink); } .rail .st.now .dot { border-color: var(--acc); background: var(--acc); color: var(--paper); }
+.rail .ln { width: 22px; height: 1px; background: var(--rule-3); margin: 0 6px; }
+.rail .st .nm { display: inline; }
+.save-ind { font-size: 12px; color: var(--ink-3); min-width: 4em; text-align: right; }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; padding: 18px 0 22px; border-bottom: 1px solid var(--rule-2); align-items: end; }
+.hero-l { min-width: 0; }
+.hero-cap { font-size: 13px; color: var(--ink-2); margin-bottom: 4px; }
+.hero-num { font-family: var(--num); font-weight: 600; font-size: clamp(46px, 8.6vw, 112px); line-height: 1.02; letter-spacing: -.01em; white-space: nowrap; overflow: hidden; text-overflow: clip; padding-top: .45em; }
+.hero-num sup { font-size: .5em; vertical-align: .95em; line-height: 0; font-weight: 600; letter-spacing: 0; }
+.hero-num .x { font-weight: 400; color: var(--ink-2); margin: 0 .12em; font-size: .7em; vertical-align: .08em; }
+.hero-num .arr { color: var(--acc); font-weight: 400; margin: 0 .06em; letter-spacing: -.12em; padding-right: .12em; }
+.hero-num .arr sup { color: var(--acc); font-size: .42em; vertical-align: 1.3em; }
+.hero-num .unit { font-size: .38em; color: var(--acc); margin-left: .15em; vertical-align: .9em; }
+.hero-read { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; min-height: 1.5em; }
+.hero-rate { font-family: var(--num); font-size: 18px; margin-top: 2px; }
+.hero-rule { height: 2px; background: var(--acc); transform-origin: left; transform: scaleX(0); margin-top: 8px; }
+.hero-rule.go { animation: draw 1.4s cubic-bezier(.2, .7, .2, 1) forwards; }
+@keyframes draw { 0% { transform: scaleX(0); opacity: 1; } 70% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+.ledger { display: grid; gap: 2px; font-size: 13.5px; }
+.ledger .row { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px dotted var(--rule-2); padding: 3px 0; }
+.ledger .row .v { font-family: var(--num); font-size: 15px; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.goal { margin-top: 10px; font-size: 12.5px; color: var(--ink-2); }
+.goal .bar { height: 6px; border: 1px solid var(--rule-3); margin-top: 4px; position: relative; overflow: hidden; }
+.goal .bar i { position: absolute; inset: 0 auto 0 0; background: var(--acc); width: 0; transition: width .4s; }
+
+/* banner */
+.banner { margin: 14px 0 0; padding: 8px 12px; border: 1px dashed var(--acc); display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 14px; }
+.banner[hidden] { display: none; }
+
+/* main */
+.main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; padding: 22px 0 120px; align-items: start; }
+.tabs { display: flex; gap: 2px; flex-wrap: wrap; border-bottom: 1px solid var(--rule-2); margin-bottom: 16px; }
+.tab { background: none; border: 0; padding: 8px 12px 9px; color: var(--ink-2); cursor: pointer; font-size: 14.5px; position: relative; }
+.tab:hover { color: var(--ink); }
+.tab.on { color: var(--ink); }
+.tab.on::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: -1px; height: 2px; background: var(--acc); }
+.tab .new { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--acc); margin-left: 4px; vertical-align: 2px; }
+.tab.mob { display: none; }
+.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); }
+
+/* drafting frame */
+.frame { border: 1px solid var(--rule-2); position: relative; padding: 18px 16px 14px; background: color-mix(in srgb, var(--paper) 80%, transparent); }
+.frame + .frame { margin-top: 22px; }
+.frame > .ft { position: absolute; top: -.75em; left: 12px; background: var(--paper); padding: 0 8px; font-size: 13px; color: var(--ink-2); }
+.frame > .fr { position: absolute; top: -.75em; right: 12px; background: var(--paper); padding: 0 8px; font-size: 12.5px; color: var(--ink-3); }
+.p { margin: 0 0 10px; color: var(--ink-2); font-size: 14px; max-width: 64ch; }
+
+/* buttons */
+.btn { background: transparent; border: 1px solid var(--rule-3); padding: 6px 11px; cursor: pointer; border-radius: 2px; line-height: 1.3; text-align: center; white-space: nowrap; }
+.btn:hover { border-color: var(--acc); }
+.btn.buy { min-width: 116px; font-family: var(--num); font-size: 14px; }
+.btn.buy[aria-disabled="true"], .btn.gate[aria-disabled="true"] { opacity: .45; cursor: default; }
+.btn.buy.can { border-color: var(--acc); background: color-mix(in srgb, var(--acc) 15%, transparent); }
+.btn.solid { background: var(--acc); color: var(--paper); border-color: var(--acc); }
+.btn.sm { padding: 3px 8px; font-size: 13px; }
+.btn.ghost { border-style: dashed; }
+.row-btns { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.tog { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; cursor: pointer; user-select: none; color: var(--ink-2); }
+.tog input { accent-color: var(--acc); width: 15px; height: 15px; }
+input.txt, textarea.txt, select.txt { font: 13px var(--num); background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule-3); padding: 5px 7px; border-radius: 2px; }
+textarea.txt { width: 100%; min-height: 90px; resize: vertical; word-break: break-all; }
+
+/* parts table (bill of materials) */
+.bom { width: 100%; border-collapse: collapse; font-size: 14px; }
+.bom th { text-align: left; font-weight: 400; color: var(--ink-3); font-size: 12.5px; border-bottom: 1px solid var(--rule-3); padding: 4px 6px; }
+.bom td { border-bottom: 1px solid var(--rule-2); padding: 8px 6px; vertical-align: middle; }
+.bom td.nm { white-space: nowrap; }
+.bom td.ds { color: var(--ink-2); font-size: 13px; }
+.bom td.lv { font-family: var(--num); color: var(--ink-2); white-space: nowrap; text-align: right; }
+.bom td.r { text-align: right; }
+.bom td.amt { font-family: var(--num); font-size: 16px; white-space: nowrap; }
+.bom tr.off td { opacity: .45; }
+.tblwrap { overflow-x: auto; }
+
+/* lattice */
+.lat { display: grid; gap: 0; justify-content: start; user-select: none; margin: 4px 0 6px; }
+.lat .c { display: grid; place-items: center; }
+.lat .n { width: var(--cn); height: var(--cn); border: 1px solid var(--rule-3); font: 600 calc(var(--cn) * .5)/1 var(--num); cursor: pointer; background: var(--paper-2); position: relative; padding: 0; color: var(--ink); }
+.lat .n:hover { border-color: var(--acc); }
+.lat .n.sel { outline: 2px solid var(--acc); outline-offset: 1px; }
+.lat .n.lam { background: color-mix(in srgb, var(--acc) 20%, var(--paper-2)); border-color: var(--acc); font-size: calc(var(--cn) * .26); }
+.lat .n.lam .lsym { position: absolute; top: 2px; left: 4px; font: italic 600 calc(var(--cn) * .24)/1 var(--num); color: var(--acc); }
+.lat .n .dg { position: absolute; bottom: 2px; right: 4px; font: 400 calc(var(--cn) * .2)/1 var(--num); color: var(--ink-3); }
+.lat .o { width: var(--co); height: var(--co); border: 0; background: none; cursor: pointer; font: 400 calc(var(--co) * .62)/1 var(--num); color: var(--ink-3); padding: 0; }
+.lat .o.h { width: var(--co); height: var(--cn); } .lat .o.v { width: var(--cn); height: var(--co); }
+.lat .o.set { color: var(--acc); font-weight: 600; }
+.lat .o:hover { background: color-mix(in srgb, var(--acc) 12%, transparent); }
+.lat .k { width: var(--co); height: var(--co); background: repeating-linear-gradient(45deg, var(--rule-2) 0 1px, transparent 1px 5px); }
+.lat .lv { font: 12px var(--num); color: var(--ink-2); padding: 0 0 0 8px; white-space: nowrap; justify-items: start; max-width: 96px; overflow: hidden; text-overflow: ellipsis; }
+.lat .lv.b { padding: 6px 0 0; justify-items: center; writing-mode: horizontal-tb; max-width: var(--cn); font-size: 11px; }
+.inv { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.inv .chip { border: 1px solid var(--rule-3); padding: 2px 8px; font: 14px var(--num); }
+.inv .chip b { font-weight: 600; color: var(--acc); margin-right: 4px; }
+.lat-sum { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13.5px; color: var(--ink-2); margin-bottom: 6px; }
+.lat-sum .num { color: var(--ink); font-size: 15px; }
+.prec { font-size: 12.5px; color: var(--ink-3); margin: 8px 0 0; max-width: 60ch; }
+.locked { border: 1px dashed var(--rule-3); padding: 28px 18px; color: var(--ink-3); font-size: 14px; text-align: center; }
+
+/* popover */
+.pop { position: absolute; z-index: 40; background: var(--paper-2); border: 1px solid var(--rule-3); box-shadow: 0 10px 30px rgba(0, 0, 0, .25); padding: 10px; min-width: 200px; max-width: 280px; font-size: 13.5px; }
+.pop[hidden] { display: none; }
+.pop h4 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
+.pop .opt { display: flex; width: 100%; justify-content: space-between; gap: 12px; background: none; border: 1px solid transparent; padding: 5px 7px; cursor: pointer; text-align: left; }
+.pop .opt:hover { border-color: var(--acc); }
+.pop .opt[disabled] { opacity: .4; cursor: default; }
+.pop .opt .sym { font: 600 16px var(--num); color: var(--acc); min-width: 2.2em; }
+.pop .opt.cur { background: color-mix(in srgb, var(--acc) 14%, transparent); }
+.pop .btn { width: 100%; margin-top: 6px; }
+
+/* engines */
+.eng-amt { font-family: var(--num); font-size: 16px; }
+.eng-m { font-family: var(--num); color: var(--ink-2); font-size: 13px; }
+
+/* star map */
+.smap { width: 100%; height: auto; display: block; border: 1px solid var(--rule-2); background: radial-gradient(ellipse at 50% 100%, color-mix(in srgb, var(--acc) 10%, transparent), transparent 70%); }
+.smap .edge { stroke: var(--rule-3); stroke-width: .35; }
+.smap .edge.on { stroke: var(--acc); stroke-width: .5; }
+.smap .node circle { fill: var(--paper-2); stroke: var(--rule-3); stroke-width: .4; cursor: pointer; }
+.smap .node.can circle { stroke: var(--acc); stroke-width: .8; stroke-dasharray: 1 .6; }
+.smap .node.own circle { fill: var(--acc); stroke: var(--acc); }
+.smap .node.lock { opacity: .35; }
+.smap .node.sel circle { stroke: var(--ink); stroke-width: .9; }
+.smap .node text { font: 2.3px var(--ui); fill: var(--ink-2); text-anchor: middle; pointer-events: none; }
+.smap .node.own text { fill: var(--ink); }
+.sdetail { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; margin-top: 12px; min-height: 54px; }
+.sdetail h4 { margin: 0; font-size: 15px; }
+
+/* paradox */
+.pips { display: inline-flex; gap: 3px; vertical-align: middle; }
+.pips i { width: 9px; height: 9px; border: 1px solid var(--acc); transform: rotate(45deg); display: inline-block; margin: 0 2px; }
+.pips i.f { background: var(--acc); }
+
+/* spire */
+.spire { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 18px; }
+.tower { display: flex; flex-direction: column-reverse; align-items: center; gap: 2px; padding-top: 6px; }
+.tower .fl { height: 11px; border: 1px solid var(--rule-3); }
+.tower .fl.b { background: var(--acc); border-color: var(--acc); }
+.tower .fl.nx { border-color: var(--acc); border-style: dashed; }
+.flist { max-height: 300px; overflow-y: auto; font-size: 13.5px; }
+.flist div { padding: 4px 0; border-bottom: 1px dotted var(--rule-2); display: flex; gap: 10px; }
+.flist div .i { font-family: var(--num); color: var(--ink-3); min-width: 2em; }
+
+/* arrows */
+.atrack { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin: 4px 0 14px; }
+.atrack .a { border: 1px solid var(--rule-3); text-align: center; padding: 8px 2px; }
+.atrack .a .s { font: 600 20px var(--num); }
+.atrack .a .c { font: 12px var(--num); color: var(--ink-3); }
+.atrack .a.own { border-color: var(--acc); background: color-mix(in srgb, var(--acc) 16%, transparent); }
+.atrack .a.nx { border-style: dashed; border-color: var(--acc); }
+
+/* achievements */
+.ach { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+.ach .t { border: 1px solid var(--rule-2); padding: 8px 6px; min-height: 64px; font-size: 12.5px; color: var(--ink-3); }
+.ach .t b { display: block; font-weight: 600; font-size: 13px; color: var(--ink-2); margin-bottom: 2px; }
+.ach .t.got { border-color: var(--acc); color: var(--ink-2); }
+.ach .t.got b { color: var(--ink); }
+
+/* dock */
+.dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(6px); border-top: 1px solid var(--rule-2); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.dock .wrap { display: flex; gap: 10px; padding-top: 10px; padding-bottom: 10px; overflow-x: auto; }
+.gate { flex: 1 1 0; min-width: 150px; text-align: left; padding: 8px 12px; border: 1px solid var(--rule-3); background: transparent; cursor: pointer; position: relative; border-radius: 2px; }
+.gate .g1 { font-size: 14px; display: flex; justify-content: space-between; gap: 8px; }
+.gate .g2 { font: 600 16px var(--num); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gate .g3 { font-size: 11.5px; color: var(--ink-3); }
+.gate.can { border-color: var(--acc); background: color-mix(in srgb, var(--acc) 14%, transparent); }
+.gate .cry { position: absolute; left: 0; bottom: 0; height: 2px; background: var(--acc); width: 0; }
+.gate[hidden], .dock[hidden] { display: none; }
+
+/* modal + toast */
+.modal { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: rgba(4, 18, 34, .55); padding: 20px; }
+.modal[hidden] { display: none; }
+.modal .box { background: var(--paper); border: 1px solid var(--rule-3); max-width: 560px; width: 100%; padding: 26px 24px 20px; position: relative; max-height: 86vh; overflow-y: auto; }
+.modal .box h3 { margin: 0 0 4px; font: 600 22px var(--ui); }
+.modal .box .era-mark { font: italic 15px var(--num); color: var(--acc); margin-bottom: 10px; }
+.modal .box p { color: var(--ink-2); margin: 0 0 10px; max-width: 60ch; }
+.modal .box .act { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; flex-wrap: wrap; }
+.toasts { position: fixed; left: 16px; bottom: 96px; z-index: 50; display: flex; flex-direction: column; gap: 6px; pointer-events: none; }
+.toast { background: var(--paper-2); border: 1px solid var(--acc); padding: 7px 12px; font-size: 13.5px; max-width: 320px; animation: tin .25s ease-out; }
+@keyframes tin { from { transform: translateY(8px); opacity: 0; } }
+
+.ov-grid { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 14px; margin: 8px 0; }
+.ov-grid .num { text-align: right; }
+
+@media (max-width: 999px) {
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .side { position: static; display: none; }
+  body.m-lat .side { display: block; }
+  body.m-lat #panel { display: none; }
+  .tab.mob { display: inline-block; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .rail .st .nm { display: none; }
+  .ach { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .spire { grid-template-columns: 90px minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 12px; }
+  .logo i { display: none; }
+  .bom td, .bom th { padding: 6px 3px; }
+  .btn.buy { min-width: 92px; font-size: 13px; }
+  .bom td.ds { display: none; }
+  .atrack { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .gate { min-width: 128px; }
+  .toasts { bottom: 104px; left: 10px; right: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body data-era="1">
+<div class="wrap">
+  <header class="top">
+    <div class="logo"><b>箭塔</b><i>Hypertower</i></div>
+    <nav class="rail" id="rail" aria-label="纪元进度"></nav>
+    <div class="save-ind" id="saveInd"></div>
+  </header>
+  <section class="hero" aria-live="off">
+    <div class="hero-l">
+      <div class="hero-cap">星尘 ✦</div>
+      <div class="hero-num" id="heroNum">10</div>
+      <div class="hero-read" id="heroRead"></div>
+      <div class="hero-rate" id="heroRate"></div>
+      <div class="hero-rule" id="heroRule"></div>
+    </div>
+    <div class="hero-r">
+      <div class="ledger" id="ledger"></div>
+      <div class="goal" id="goal"><span id="goalTxt"></span><div class="bar"><i id="goalBar"></i></div></div>
+    </div>
+  </section>
+  <div class="banner" id="banner" hidden></div>
+  <main class="main">
+    <section>
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div id="panel"></div>
+    </section>
+    <aside class="side" id="side"></aside>
+  </main>
+</div>
+<div class="dock"><div class="wrap" id="dock"></div></div>
+<div class="pop" id="pop" hidden></div>
+<div class="modal" id="modal" hidden><div class="box" id="modalBox" role="dialog" aria-modal="true"></div></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/omega_num.js@0.7.0/OmegaNum.js"></script>
+<script>
+/* HYPERTOWER · 箭塔 — core engine (shared by browser + Node balance sim) */
+(function (root, factory) {
+  if (typeof module === 'object' && module.exports) module.exports = factory(require('omega_num.js'));
+  else root.HT = factory(root.OmegaNum);
+})(typeof self !== 'undefined' ? self : this, function (O) {
+'use strict';
+const N = x => (x instanceof O ? x : new O(x));
+const ZERO = N(0), ONE = N(1), TEN = N(10);
+const p10 = e => O.pow(10, e);
+const E25 = N('1e25'), E308 = O.pow(2, 1024), T5 = O.tetrate(10, 5), P3 = TEN.arrow(3)(3), OMEGA = TEN.arrow(10)(10);
+
+/* ---------- numeric helpers ---------- */
+function num(x) { x = N(x); return x.gt(1e300) ? Infinity : x.lt(-1e300) ? -Infinity : x.toNumber(); }
+function lg(x) { x = N(x); return x.lte(0) ? -Infinity : num(x.log10()); }
+function topLevel(x) { const a = x.array; let m = a.length - 1; while (m > 0 && !a[m]) m--; return m; }
+function Hn(x, k) {
+  if (!(x < Infinity)) return Infinity;
+  if (k <= 1) return x > 0 ? Math.log10(x) : -Infinity;
+  if (x < 10) return x >= 1 ? Math.log10(x) : 0;
+  return 1 + Hn(Hn(x, k - 1), k);
+}
+/* continuous level-k hyper-logarithm: H1 = log10, H2 = slog, H3 = pentational log ... */
+function H(x, k) {
+  x = N(x); const a = x.array, m = topLevel(x);
+  if (m === 0) return Hn(a[0], k);
+  if (k === 1) return lg(x);
+  if (m >= k) return Infinity;
+  if (m === k - 1) return a[m] + H(O.fromArray(a.slice(0, m)), k);
+  return 1 + Hn(H(x, k - 1), k);
+}
+function hrank(x) { x = N(x); const m = topLevel(x); if (m === 0) return { k: 1, h: lg(x) }; return { k: m + 1, h: H(x, m + 1) }; }
+
+const group = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+function fmtNum(v, p = 2) {
+  if (!isFinite(v)) return v > 0 ? '∞' : '−∞';
+  const av = Math.abs(v), sg = v < 0 ? '−' : '';
+  if (av < 1000) return sg + String(parseFloat(av.toFixed(av >= 100 ? 0 : av >= 10 ? Math.min(p, 1) : p)));
+  if (av < 1e6) return sg + group(Math.floor(av));
+  let e = Math.floor(Math.log10(av)), m = av / Math.pow(10, e);
+  if (m >= 9.995) { m = 1; e++; }
+  return sg + m.toFixed(2) + 'e' + (e >= 1e4 ? group(e) : e);
+}
+function arrows(k) { return k === 1 ? '^' : k <= 4 ? '↑'.repeat(k) : '{' + k + '}'; }
+function fmtH(h) { return h < 1000 ? h.toFixed(3) : h < 1e6 ? group(Math.floor(h)) : fmtNum(h); }
+function fmt(x, p = 2) {
+  x = N(x);
+  if (x.sign < 0) return '−' + fmt(x.abs(), p);
+  const a = x.array, m = topLevel(x);
+  if (m === 0) return fmtNum(a[0], p);
+  if (m === 1 && a[1] === 1) {
+    const e = a[0];
+    if (e < 1e6) { let fe = Math.floor(e), mant = Math.pow(10, e - fe); if (mant >= 9.995) { mant = 1; fe++; } return mant.toFixed(2) + 'e' + group(fe); }
+    return 'e' + fmtNum(e);
+  }
+  if (m === 1 && a[1] <= 4) return 'e'.repeat(a[1] - 1) + fmt(p10(a[0]));
+  const k = m + 1; return '10' + arrows(k) + fmtH(H(x, k));
+}
+/* structured form for typeset rendering in UI */
+function shape(x) {
+  x = N(x); const a = x.array, m = topLevel(x);
+  if (m === 0 && a[0] < 1e6) return { t: 'plain', s: fmtNum(a[0]) };
+  if (m <= 1 && (m === 0 || a[1] === 1)) {
+    const e = m === 0 ? Math.log10(a[0]) : a[0];
+    if (e < 1e6) { let fe = Math.floor(e), mant = Math.pow(10, e - fe); if (mant >= 9.995) { mant = 1; fe++; } return { t: 'sci', m: mant.toFixed(2), e: group(fe) }; }
+    return { t: 'tower', base: '10', exps: [fmtNum(e)] };
+  }
+  if (m === 1 && a[1] <= 4) { const exps = []; for (let i = 0; i < a[1] - 1; i++) exps.push('10'); exps.push(fmtNum(a[0])); return { t: 'tower', base: '10', exps }; }
+  const k = m + 1; return { t: 'hyper', k, arrows: arrows(k), h: fmtH(H(x, k)) };
+}
+
+/* ---------- configuration (balance lives here) ---------- */
+const CFG = {
+  eng: { base: [1, 2, 4, 6, 9, 13, 18, 24], mult: [2.5, 3, 3.5, 4, 4.5, 5, 6, 7], cap: 2000, flow: 1 },
+  oc: { base: 3, step: 1, cap: 600, per: 1.125 },
+  foldReq: 25, foldDen: 20, foldPow: 4,
+  ascDen: 2.4885, ascPow: 1.5,
+  towPow: 2.5,
+  lamBase: 0.05, lamExpBase: 0.01, lamV: 0.02, cry: { power: 30, brick: 60, arrowE: 60 },
+  goals: [8, 300, 1e8],
+};
+
+/* ---------- lattice ---------- */
+const OPS = ['+', '×', '^', '↑↑', '↑³', '↑⁴', '↑⁵', '↑⁶', '↑⁷', '↑⁸', '↑⁹', '↑¹⁰'];
+const OPNAME = ['空槽（视为加）', '乘', '幂', '迭幂', '五元运算', '六元运算', '七元运算', '八元运算', '九元运算', '十元运算', '十一元运算', '十二元运算'];
+const lineCache = {};
+function linesFor(n) {
+  if (lineCache[n]) return lineCache[n];
+  const L = [];
+  for (let r = 0; r < n; r++) { const sl = [], op = []; for (let c = 0; c < n; c++) { sl.push(r * n + c); if (c < n - 1) op.push(['h', r * (n - 1) + c]); } L.push({ sl, op, row: true, i: r }); }
+  for (let c = 0; c < n; c++) { const sl = [], op = []; for (let r = 0; r < n; r++) { sl.push(r * n + c); if (r < n - 1) op.push(['v', r * n + c]); } L.push({ sl, op, row: false, i: c }); }
+  return (lineCache[n] = L);
+}
+function prec(id, inv) { const p = id; return inv ? 20 - p : p; }
+function apply(id, a, b) {
+  switch (id) {
+    case 0: return a.add(b);
+    case 1: return a.mul(b);
+    case 2: return a.pow(b);
+    case 3: return a.tetrate(b);
+    default: return a.arrow(id - 1)(b);
+  }
+}
+function evalSeq(vals, ops, lo, hi, inv) {
+  if (lo === hi) return vals[lo];
+  let mp = Infinity, idx = -1;
+  for (let i = lo; i < hi; i++) { const p = prec(ops[i], inv); if (p < mp) { mp = p; idx = i; } }
+  return apply(ops[idx], evalSeq(vals, ops, lo, idx, inv), evalSeq(vals, ops, idx + 1, hi, inv));
+}
+function newLattice(n) { return { n, d: Array(n * n).fill(1), h: Array(n * (n - 1)).fill(0), v: Array((n - 1) * n).fill(0), lam: -1 }; }
+function resizeLattice(lat, n) {
+  const nl = newLattice(n), o = lat.n;
+  for (let r = 0; r < o; r++) for (let c = 0; c < o; c++) {
+    nl.d[r * n + c] = lat.d[r * o + c];
+    if (c < o - 1) nl.h[r * (n - 1) + c] = lat.h[r * (o - 1) + c];
+    if (r < o - 1) nl.v[r * n + c] = lat.v[r * o + c];
+  }
+  if (lat.lam >= 0) { const r = Math.floor(lat.lam / o), c = lat.lam % o; nl.lam = r * n + c; }
+  return nl;
+}
+
+/* ---------- definitions: upgrades ---------- */
+const cost = (c0, g) => lv => p10(Math.log10(c0) + lv * Math.log10(g)).ceil();
+const UP = {
+  /* ◇ fold upgrades */
+  autoE: { cur: 'crease', name: '引擎自动购买', cap: 1, cost: () => N(3), desc: () => '每刻自动买下所有买得起的引擎。' },
+  grid3: { cur: 'crease', name: '晶格扩展至 3×3', cap: 1, cost: () => N(10), req: s => s.lat.n < 3, desc: () => '多出 5 个数字槽与 8 个算符槽。' },
+  autoO: { cur: 'crease', name: '超频自动购买', cap: 1, cost: () => N(20), desc: () => '自动购买超频。' },
+  mul: { cur: 'crease', name: '乘符 ×', cap: 40, cost: cost(2, 1.8), tile: 1, desc: s => '算符砖。已拥有 ' + s.own[1] + ' 块。' },
+  phi: { cur: 'crease', name: '晶格功率 φ', cap: 8, cost: cost(5, 2.5), desc: s => '产量 ×(1+L)^φ，φ +0.25。当前 φ = ' + fmtNum(phi(s)) },
+  res: { cur: 'crease', name: '引擎共振', cap: 3, cost: cost(10, 5), desc: s => '每买 10 个引擎的倍率 +0.25（当前 ×' + fmtNum(resv(s)) + '）。' },
+  eboost: { cur: 'crease', name: '引擎增压', cap: 10, cost: cost(3, 2.8), desc: s => '全部引擎 ×3。当前 ×' + fmtNum(Math.pow(3, lv(s, 'eboost'))) },
+  cgain: { cur: 'crease', name: '折痕增益', cap: 8, cost: cost(8, 3), desc: s => '折痕获取 ×1.6。当前 ×' + fmtNum(Math.pow(1.6, lv(s, 'cgain'))) },
+  /* ◆ ascension shop */
+  pow: { cur: 'power', name: '幂符 ^', cap: 8, cost: cost(2, 7), tile: 2, desc: s => '算符砖，右结合：a^b^c = a^(b^c)。已拥有 ' + s.own[2] + ' 块。' },
+  /* ✧ arrow array */
+  xl: { cur: 'arrowE', name: 'λ 超递归', cap: 6, cost: cost(4, 6), desc: s => '箭核 λ 的指数增速 ×1.5。当前每秒 +' + fmtNum(lamExp(s) * 100) + '%' },
+  xg: { cur: 'arrowE', name: '箭能共振', cap: 8, cost: cost(6, 6), desc: s => '箭能获取 ×2。当前 ×' + fmtNum(Math.pow(2, lv(s, 'xg'))) },
+  x0: { cur: 'arrowE', name: 'λ 预热', cap: 6, cost: cost(10, 10), desc: s => '每局 λ 起点 ×3。' },
+  xa: { cur: 'arrowE', name: '自动塔化', cap: 1, cost: () => N(4), desc: () => '纪元 IV 内按设定自动塔化。' },
+};
+/* arrow tiles ↑⁴..↑¹⁰ bought with ✧ */
+const ARROWS = [5, 6, 7, 8, 9, 10, 11].map((id, i) => ({ id, cost: N([20, 500, 1.2e4, 3e5, 5e6, 1e8, 6e8][i]) }));
+
+/* star map (◆) — x,y in a 100×70 board */
+const STARS = [
+  { id: 'o', name: '幂之源', cost: 1, x: 50, y: 62, req: [], desc: '获得 1 块幂符 ^；折痕获取 ×100。' },
+  { id: 'k1', name: '余烬', cost: 2, x: 34, y: 54, req: ['o'], desc: '升幂时保留全部折叠升级与晶格。' },
+  { id: 'e1', name: '引擎狂热', cost: 3, x: 66, y: 54, req: ['o'], desc: '全部引擎 ×1e6，超频底数 +0.025。' },
+  { id: 'k2', name: '自动折叠', cost: 5, x: 20, y: 46, req: ['k1'], desc: '解锁自动折叠。' },
+  { id: 'l1', name: '递归核 λ', cost: 6, x: 50, y: 46, req: ['o'], desc: '解锁 λ：一块会随时间增长的数字砖。' },
+  { id: 'c1', name: '幂晶 I', cost: 12, x: 80, y: 46, req: ['e1'], desc: '幂晶获取 ×2。' },
+  { id: 'l2', name: 'λ 加速 I', cost: 30, x: 42, y: 37, req: ['l1'], desc: 'λ 增速 ×2。' },
+  { id: 'l4', name: 'λ 起点', cost: 70, x: 58, y: 37, req: ['l1'], desc: '每局 λ 从 5 开始。' },
+  { id: 'p1', name: '悖论之门', cost: 50, x: 70, y: 30, req: ['c1', 'l1'], desc: '解锁 6 个悖论挑战。' },
+  { id: 'a1', name: '自动幂符', cost: 90, x: 28, y: 33, req: ['k2'], desc: '自动购买幂符与折叠升级。' },
+  { id: 'c2', name: '幂晶 II', cost: 180, x: 88, y: 30, req: ['c1'], desc: '幂晶获取 ×3。' },
+  { id: 'l3', name: 'λ 加速 II', cost: 350, x: 36, y: 26, req: ['l2'], desc: 'λ 增速 ×3。' },
+  { id: 'd1', name: '刻度溢出', cost: 600, x: 52, y: 25, req: ['l2', 'l4'], desc: '数字刻度上限 9 → 10。' },
+  { id: 'm1', name: '幂律回响', cost: 1500, x: 20, y: 19, req: ['l3'], desc: 'λ 增速再乘 (1+log₁₀log₁₀幂晶)^1.5。' },
+  { id: 'c3', name: '幂晶 III', cost: 3000, x: 80, y: 16, req: ['c2', 'p1'], desc: '幂晶获取 ×5。' },
+  { id: 'a2', name: '自动升幂', cost: 6000, x: 30, y: 10, req: ['m1'], desc: '解锁自动升幂。' },
+  { id: 'g4', name: '晶格 4×4', cost: 1e5, x: 50, y: 15, req: ['d1', 'p1'], desc: '晶格扩展至 4×4，一行能放 3 个算符。' },
+  { id: 'd2', name: '刻度溢出 II', cost: 1e40, x: 66, y: 9, req: ['g4'], desc: '数字刻度上限 10 → 11。' },
+  { id: 'l5', name: 'λ 加速 III', cost: '1e600', x: 40, y: 4, req: ['g4', 'a2'], desc: 'λ 增速 ×4。' },
+  { id: 't1', name: '塔之预兆', cost: '1e3000', x: 82, y: 4, req: ['d2'], desc: '塔砖获取 ×3。' },
+  { id: 'l6', name: 'λ 加速 IV', cost: '1e8000', x: 24, y: 2, req: ['l5'], desc: 'λ 增速 ×5。' },
+  { id: 'g5', name: '晶格 5×5', cost: '1e60000', x: 60, y: 1, req: ['l5', 'd2'], desc: '晶格扩展至 5×5，一行能放 4 个算符。' },
+];
+const STAR = Object.fromEntries(STARS.map(s => [s.id, s]));
+
+/* paradox challenges */
+const PARA = [
+  { id: 0, name: '无乘之境', rule: '乘符全部视为加。', reward: t => 'λ 增速 ×' + fmtNum(Math.pow(1.4, t)) },
+  { id: 1, name: '引擎熄火', rule: '五至八阶引擎与超频失效。', reward: t => '幂晶获取 ×' + fmtNum(Math.pow(1.6, t)) },
+  { id: 2, name: '镜像', rule: '每一行、每一列都从右往左读。', reward: t => 'λ 增速 ×' + fmtNum(Math.pow(1.5, t)) },
+  { id: 3, name: '独行', rule: '只有第一行计入晶格值。', reward: t => '每局 λ 起点 +' + 2 * t },
+  { id: 4, name: '冻结', rule: 'λ 停止增长。', reward: t => '幂晶获取 ×' + fmtNum(Math.pow(2, t)) },
+  { id: 5, name: '熵增', rule: '所有数字砖的值 −3（最低 1）。', reward: t => '所有数字砖 +' + t },
+];
+
+/* spire floors (▲) */
+const SPIRE = [
+  { cost: 1.0, name: '递归', desc: 'λ 改为指数增长（每秒 +1%），并保留原有的线性增长。' },
+  { cost: 28.0, name: '晶阶', desc: '自动购买星图与幂符；塔化时立即重建纪元 III。' },
+  { cost: 790.0, name: '加速 I', desc: 'λ 指数增速 ×1.5。' },
+  { cost: 22000.0, name: '砖窑 I', desc: '塔砖获取 ×2。' },
+  { cost: 630000.0, name: '基座', desc: 'λ 起点 ×5。' },
+  { cost: 18000000.0, name: '加速 II', desc: 'λ 指数增速 ×1.5。' },
+  { cost: 500000000.0, name: '回声', desc: 'λ 起点 ×2。' },
+  { cost: 14000000000.0, name: '砖窑 II', desc: '塔砖获取 ×2。' },
+  { cost: 400000000000.0, name: '加速 III', desc: 'λ 指数增速 ×1.5。' },
+  { cost: 11000000000000.0, name: '刻度溢出 III', desc: '数字刻度上限 +1。' },
+  { cost: 320000000000000.0, name: '自动塔化', desc: '解锁自动塔化。' },
+  { cost: 8900000000000000.0, name: '加速 IV', desc: 'λ 指数增速 ×1.5。' },
+  { cost: 2.5e+17, name: '砖窑 III', desc: '塔砖获取 ×3。' },
+  { cost: 7.1e+18, name: '加速 V', desc: 'λ 指数增速 ×1.5。' },
+  { cost: 2e+20, name: '回声 II', desc: 'λ 起点 ×3。' },
+  { cost: '5.6e+21', name: '加速 VI', desc: 'λ 指数增速 ×1.5。' },
+  { cost: '1.6e+23', name: '砖窑 IV', desc: '塔砖获取 ×3。' },
+  { cost: '4.5e+24', name: '加速 VII', desc: 'λ 指数增速 ×1.5。' },
+  { cost: '1.3e+26', name: '共鸣', desc: 'λ 指数增速再乘 (1+log₁₀塔砖)^0.5。' },
+  { cost: '3.5e+27', name: '加速 VIII', desc: 'λ 指数增速 ×1.5。' },
+  { cost: '1e+29', name: '第二迭幂', desc: '再获得 1 块迭幂符 ↑↑，可以叠成 a↑↑b↑↑λ。' },
+];
+
+/* achievements */
+const ACH = [
+  ['第一缕星尘', '买下第一台引擎', s => s.eng[0].b > 0],
+  ['八缸', '拥有八阶引擎', s => s.eng[7].b > 0],
+  ['百万', '星尘达到 1e6', s => s.best.gte(1e6)],
+  ['超频者', '超频达到 25 级', s => s.oc >= 25],
+  ['折纸', '第一次折叠', s => s.foldN > 0],
+  ['填字游戏', '在晶格里放下第一块乘符', s => s.lat.h.concat(s.lat.v).includes(1)],
+  ['九九归一', '把一个数字槽升到 9', s => s.lat.d.some(d => d >= 9)],
+  ['百折', '折叠 100 次', s => s.foldN >= 100],
+  ['谷歌', '星尘达到 1e100', s => s.best.gte('1e100')],
+  ['满格', '晶格扩展至 3×3', s => s.lat.n >= 3],
+  ['φ 之上', 'φ 达到 4', s => phi(s) >= 4],
+  ['溢出', '星尘达到 2^1024', s => s.best.gte(E308)],
+  ['升幂', '第一次升幂', s => s.ascN > 0],
+  ['幂塔', '一行里放下两块幂符', s => maxInLine(s, 2) >= 2],
+  ['点燃 λ', '解锁递归核 λ', s => hasStar(s, 'l1')],
+  ['e 的 e 次方', '星尘达到 ee10', s => s.best.gte(p10(1e10))],
+  ['悖论', '完成任意一个悖论挑战', s => s.para.some(t => t > 0)],
+  ['星图半满', '点亮 10 颗星', s => s.stars.length >= 10],
+  ['三重悖论', '某个悖论完成 3 层', s => s.para.some(t => t >= 3)],
+  ['四方', '晶格扩展至 4×4', s => s.lat.n >= 4],
+  ['全悖论', '全部悖论完成至少 1 层', s => s.para.every(t => t > 0)],
+  ['塔化', '第一次塔化', s => s.towN > 0],
+  ['迭幂', '星尘达到 10↑↑10', s => s.best.gte(O.tetrate(10, 10))],
+  ['百层塔', '星尘达到 10↑↑100', s => s.best.gte(O.tetrate(10, 100))],
+  ['尖塔十层', '建成尖塔第 10 层', s => s.spire >= 10],
+  ['五阶', '晶格扩展至 5×5', s => s.lat.n >= 5],
+  ['百万层塔', '星尘达到 10↑↑1e6', s => s.best.gte(O.tetrate(10, 1e6))],
+  ['双迭幂', '一行里放下两块迭幂符', s => maxInLine(s, 3) >= 2],
+  ['超越', '第一次超越', s => s.trN > 0],
+  ['五元', '星尘达到 10↑↑↑10', s => s.best.gte(TEN.arrow(3)(10))],
+  ['六元', '获得 ↑⁴', s => s.own[5] > 0],
+  ['八元', '获得 ↑⁶', s => s.own[7] > 0],
+  ['十元', '获得 ↑⁸', s => s.own[9] > 0],
+  ['十二元', '获得 ↑¹⁰', s => s.own[11] > 0],
+  ['Ω', '星尘达到 10{10}10', s => s.best.gte(OMEGA)],
+  ['守夜人', '累计游玩 10 小时', s => s.time >= 36000],
+];
+
+/* ---------- state ---------- */
+function newState() {
+  return {
+    v: 3, time: 0, era: 1, last: Date.now(), runT: 0,
+    star: N(10), best: N(10), rt: { c: 0, p: 0, b: 0, a: 0 },
+    eng: Array.from({ length: 8 }, () => ({ a: N(0), b: 0 })), oc: 0,
+    crease: N(0), foldN: 0, up: {},
+    lat: newLattice(2), own: Array(12).fill(0),
+    power: N(0), ascN: 0, stars: [], para: [0, 0, 0, 0, 0, 0], inPara: -1,
+    lam: N(1), brick: N(0), towN: 0, spire: 0,
+    arrowE: N(0), trN: 0, won: false, wonT: 0,
+    ach: [], auto: { eng: true, oc: true, fold: false, foldX: 1, asc: false, ascX: 1, tow: false, towX: 1, arrange: true },
+    ui: { seen: 0, theme: 'auto', confirm: true, intro: false }, saved: 0,
+    stats: { maxStar: N(10), fastFold: 1e99, fastAsc: 1e99 }, log: [], tot: { crease: N(0), power: N(0), brick: N(0), arrowE: N(0) }, peak: {},
+  };
+}
+const lv = (s, id) => s.up[id] || 0;
+const hasStar = (s, id) => s.stars.includes(id);
+const floorHas = (s, i) => s.spire > i;
+
+/* ---------- derived quantities ---------- */
+function resv(s) { return 2 + 0.25 * lv(s, 'res'); }
+function phi(s) { return 1 + 0.25 * lv(s, 'phi'); }
+function ocBase(s) { return CFG.oc.per + (hasStar(s, 'e1') ? 0.025 : 0); }
+function digitCap(s) { return 9 + (hasStar(s, 'd1') ? 1 : 0) + (hasStar(s, 'd2') ? 1 : 0) + (floorHas(s, 9) ? 1 : 0); }
+function engMult(s, k) {
+  let m = Math.pow(resv(s), Math.floor(s.eng[k].b / 10)) * Math.pow(3, lv(s, 'eboost'));
+  if (hasStar(s, 'e1')) m *= 1e6;
+  m *= achMult(s);
+  return N(m);
+}
+function achMult(s) { return Math.pow(1.08, s.ach.length); }
+function tick_(s) { if (s.inPara === 1) return ONE; return O.pow(ocBase(s), s.oc); }
+function engOn(s, k) { return !(s.inPara === 1 && k >= 4); }
+function engCost(s, k, b) { return p10(CFG.eng.base[k] + Math.floor(b / 10) * CFG.eng.mult[k]); }
+function ocCost(s) { return p10(CFG.oc.base + s.oc * CFG.oc.step); }
+
+function lamRate(s) { // linear part per second
+  if (!hasStar(s, 'l1') || s.inPara === 4 || s.era >= 5) return 0;
+  let r = CFG.lamBase;
+  if (hasStar(s, 'l2')) r *= 2;
+  if (hasStar(s, 'l3')) r *= 3;
+  if (hasStar(s, 'm1')) r *= Math.pow(1 + Math.min(4, Math.max(0, lg(s.power.add(10).log10()))), 1.5);
+  if (hasStar(s, 'l5')) r *= 4;
+  if (hasStar(s, 'l6')) r *= 5;
+  r *= Math.pow(1.4, s.para[0]) * Math.pow(1.5, s.para[2]);
+  return r;
+}
+function lamExp(s) { // exponential part (fraction per second)
+  if (s.inPara === 4) return 0;
+  if (s.era >= 5) return CFG.lamV * Math.pow(1.5, lv(s, 'xl'));
+  if (!floorHas(s, 0)) return 0;
+  let r = CFG.lamExpBase;
+  [2, 5, 8, 11, 13, 15, 17, 19].forEach(i => { if (floorHas(s, i)) r *= 1.5; });
+  if (floorHas(s, 18)) r *= Math.pow(1 + Math.min(100, Math.max(0, lg(s.brick.add(1)))), 0.5);
+  return r;
+}
+function lamStart(s) {
+  if (s.era >= 5) return Math.pow(3, lv(s, 'x0'));
+  let l = 1 + (hasStar(s, 'l4') ? 4 : 0) + 2 * s.para[3];
+  if (floorHas(s, 4)) l *= 5;
+  if (floorHas(s, 6)) l *= 2;
+  if (floorHas(s, 14)) l *= 3;
+  l *= Math.pow(3, lv(s, 'x0'));
+  return l;
+}
+function latCtx(s) {
+  return {
+    lamOn: hasStar(s, 'l1'), lam: s.lam,
+    dBonus: s.para[5] - (s.inPara === 5 ? 3 : 0),
+    mulPlus: s.inPara === 0, mirror: s.inPara === 2, inv: false, single: s.inPara === 3,
+  };
+}
+function slotVal(lat, i, ctx) { const d = N(Math.max(1, lat.d[i] + ctx.dBonus)); if (lat.lam === i && ctx.lamOn) return ctx.lam.max(d); return d; }
+function lineVal(lat, ln, ctx) {
+  const vals = ln.sl.map(i => slotVal(lat, i, ctx));
+  const ops = ln.op.map(([t, i]) => { let id = lat[t][i]; if (ctx.mulPlus && id === 1) id = 0; return id; });
+  if (ctx.mirror) { vals.reverse(); ops.reverse(); }
+  return evalSeq(vals, ops, 0, vals.length - 1, ctx.inv);
+}
+function latKey(lat, ctx) { return lat.n + '|' + lat.d.join() + '|' + lat.h.join() + '|' + lat.v.join() + '|' + lat.lam + '|' + ctx.lamOn + ctx.dBonus + ctx.mulPlus + ctx.mirror + ctx.single; }
+function latticeValue(s, lat) {
+  lat = lat || s.lat; const ctx = latCtx(s);
+  const key = latKey(lat, ctx);
+  let c = s._lc;
+  if (!c || c.key !== key) {
+    const lines = linesFor(lat.n).filter(l => !ctx.single || (l.row && l.i === 0));
+    let st = ZERO; const dyn = [];
+    for (const ln of lines) { if (ctx.lamOn && lat.lam >= 0 && ln.sl.includes(lat.lam)) dyn.push(ln); else st = st.add(lineVal(lat, ln, ctx)); }
+    c = s._lc = { key, st, dyn, lamKey: null, val: null };
+  }
+  const lk = ctx.lam.toString();
+  if (c.lamKey !== lk) { let v = c.st; for (const ln of c.dyn) v = v.add(lineVal(lat, ln, ctx)); c.val = v; c.lamKey = lk; }
+  return c.val;
+}
+function maxInLine(s, id) { let best = 0; for (const ln of linesFor(s.lat.n)) { const c = ln.op.filter(([t, i]) => s.lat[t][i] === id).length; if (c > best) best = c; } return best; }
+function placedCount(lat, id) { return lat.h.filter(x => x === id).length + lat.v.filter(x => x === id).length; }
+function latMult(s) { return latticeValue(s).add(1).pow(phi(s) + 0.5 * s.para[0] * 0); }
+
+function starRate(s) { // ✦ per second
+  if (!engOn(s, 0)) return ZERO;
+  return s.eng[0].a.mul(engMult(s, 0)).mul(tick_(s)).mul(s.foldN > 0 ? latMult(s) : ONE);
+}
+
+/* ---------- prestige gains ---------- */
+/* crystallinity: prestige gains ramp up over the first seconds of a run, so instant re-prestiging is never optimal */
+const RT = { crease: 'c', power: 'p', brick: 'b', arrowE: 'a' };
+function cryst(s, kind) { const T = CFG.cry[kind] || 0; return T ? Math.min(1, s.rt[RT[kind]] / T) : 1; }
+function creaseMult(s) { let m = Math.pow(1.6, lv(s, 'cgain')); if (hasStar(s, 'o')) m *= 100; return m; }
+function pendingCrease(s) {
+  if (s.star.lt(E25)) return ZERO;
+  return s.star.log10().div(CFG.foldDen).pow(CFG.foldPow).mul(creaseMult(s)).floor().max(1);
+}
+function powerMult(s) {
+  let m = 1; if (hasStar(s, 'c1')) m *= 2; if (hasStar(s, 'c2')) m *= 3; if (hasStar(s, 'c3')) m *= 5;
+  m *= Math.pow(1.6, s.para[1]) * Math.pow(2, s.para[4]);
+  return m;
+}
+function pendingPower(s) {
+  if (s.star.lt(E308) || s.inPara >= 0) return ZERO;
+  return s.star.log10().log10().div(CFG.ascDen).pow(CFG.ascPow).mul(powerMult(s) * cryst(s, 'power')).floor().max(1);
+}
+function brickMult(s) { let m = 1; if (hasStar(s, 't1')) m *= 3; if (floorHas(s, 3)) m *= 2; if (floorHas(s, 7)) m *= 2; if (floorHas(s, 12)) m *= 3; if (floorHas(s, 16)) m *= 3; return m; }
+function pendingBrick(s) {
+  if (s.star.lt(T5)) return ZERO;
+  return s.star.slog().div(5).pow(CFG.towPow).mul(brickMult(s) * cryst(s, 'brick')).floor().max(1);
+}
+function topArrow(s) { let k = 3; for (let id = 4; id < 12; id++) if (s.own[id] > 0) k = id - 1; return k; }
+function arrowMult(s) { return Math.pow(2, lv(s, 'xg')); }
+function pendingArrow(s) {
+  if (s.star.lt(P3)) return ZERO;
+  const k = topArrow(s), h = Math.min(1e16, H(s.star, k));
+  return N(Math.pow(2, k - 3) * Math.pow(1 + Math.log10(Math.max(1, h)), 3) * arrowMult(s) * cryst(s, 'arrowE')).floor().max(1);
+}
+
+/* ---------- purchases ---------- */
+function curOf(s, c) { return s[c]; }
+function canBuyUp(s, id) { const u = UP[id], l = lv(s, id); if (l >= u.cap) return false; if (u.req && !u.req(s)) return false; return s[u.cur].gte(u.cost(l)); }
+function buyUp(s, id) {
+  if (!canBuyUp(s, id)) return false; const u = UP[id], l = lv(s, id);
+  s[u.cur] = s[u.cur].sub(u.cost(l)); s.up[id] = l + 1;
+  if (u.tile) s.own[u.tile]++;
+  if (id === 'grid3') s.lat = resizeLattice(s.lat, 3);
+  s._dirty = true; return true;
+}
+function buyEngine(s, k, max) {
+  let bought = 0;
+  while (s.eng[k].b < CFG.eng.cap) {
+    const b = s.eng[k].b, c = engCost(s, k, b);
+    if (s.star.lt(c)) break;
+    const left = 10 - (b % 10);
+    let n = Math.min(left, CFG.eng.cap - b, Math.floor(num(s.star.div(c))) || 0);
+    if (!max) n = 1; if (n <= 0) break;
+    s.star = s.star.sub(c.mul(n)).max(0); s.eng[k].b += n; s.eng[k].a = s.eng[k].a.add(n); bought += n;
+    if (!max || n < left) break;
+  }
+  return bought;
+}
+function buyEngineFast(s, k) { // jump straight to cap when stardust dwarfs the cap cost
+  const capCost = engCost(s, k, CFG.eng.cap - 1);
+  if (s.eng[k].b < CFG.eng.cap && s.star.gte(capCost.mul(1e6))) { const d = CFG.eng.cap - s.eng[k].b; s.eng[k].b = CFG.eng.cap; s.eng[k].a = s.eng[k].a.add(d); return d; }
+  return buyEngine(s, k, true);
+}
+function buyOc(s, max) {
+  let n = 0;
+  if (s.oc < CFG.oc.cap && s.star.gte(ocCost({ oc: CFG.oc.cap - 1 }).mul(1e6))) { n = CFG.oc.cap - s.oc; s.oc = CFG.oc.cap; return n; }
+  while (s.oc < CFG.oc.cap && s.star.gte(ocCost(s))) { s.star = s.star.sub(ocCost(s)); s.oc++; n++; if (!max) break; }
+  return n;
+}
+function buyAllEngines(s) { let n = 0; for (let k = 7; k >= 0; k--) n += buyEngineFast(s, k); return n; }
+function digitCost(d) { return p10((d - 1) * Math.log10(2.5)).ceil(); }
+function buyDigit(s, i) {
+  const d = s.lat.d[i]; if (d >= digitCap(s)) return false;
+  const c = digitCost(d); if (s.crease.lt(c)) return false;
+  s.crease = s.crease.sub(c); s.lat.d[i]++; s._dirty = true; return true;
+}
+function buyDigitsCheapest(s, limit = 1e4) {
+  let n = 0;
+  while (n < limit) {
+    let bi = -1, bd = 99;
+    s.lat.d.forEach((d, i) => { if (d < digitCap(s) && d < bd) { bd = d; bi = i; } });
+    if (bi < 0 || !buyDigit(s, bi)) break; n++;
+  }
+  return n;
+}
+function starAvail(s, id) { const st = STAR[id]; return !hasStar(s, id) && st.req.every(r => hasStar(s, r)); }
+function buyStar(s, id) {
+  if (!starAvail(s, id)) return false; const st = STAR[id];
+  if (s.power.lt(N(st.cost))) return false;
+  s.power = s.power.sub(N(st.cost)); s.stars.push(id);
+  if (id === 'o') s.own[2]++;
+  if (id === 'g4' && s.lat.n < 4) s.lat = resizeLattice(s.lat, 4);
+  if (id === 'g5' && s.lat.n < 5) s.lat = resizeLattice(s.lat, 5);
+  if (id === 'l1' && s.lat.lam < 0) s.lat.lam = 0;
+  s._dirty = true; return true;
+}
+function buySpire(s) {
+  if (s.spire >= SPIRE.length) return false; const f = SPIRE[s.spire];
+  if (s.brick.lt(N(f.cost))) return false;
+  s.brick = s.brick.sub(N(f.cost)); s.spire++;
+  if (s.spire === 21) s.own[3]++;
+  s._dirty = true; return true;
+}
+function nextArrow(s) { return ARROWS.find(a => s.own[a.id] === 0); }
+function buyArrow(s) { const a = nextArrow(s); if (!a || s.arrowE.lt(a.cost)) return false; s.arrowE = s.arrowE.sub(a.cost); s.own[a.id]++; s._dirty = true; return true; }
+
+/* ---------- resets ---------- */
+function resetRun(s, lvl) { lvl = lvl || 0; const ks = ['c', 'p', 'b', 'a'], kk = ['crease', 'power', 'brick', 'arrowE']; for (let i = 0; i <= lvl; i++) { s.rt[ks[i]] = 0; delete s.peak[kk[i]]; } s.star = N(10); s.eng.forEach(e => { e.a = N(0); e.b = 0; }); s.oc = 0; s.runT = 0; s._lc = null; }
+function resetLam(s) { s.lam = N(lamStart(s)); }
+function fold(s, force) {
+  const g = pendingCrease(s); if (g.lte(0) && !force) return false;
+  s.crease = s.crease.add(g); s.tot.crease = s.tot.crease.add(g); s.foldN++; if (s.era < 2) s.era = 2;
+  s.stats.fastFold = Math.min(s.stats.fastFold, s.runT);
+  resetRun(s); s._dirty = true; return true;
+}
+function ascend(s, force) {
+  const g = pendingPower(s); if (g.lte(0) && !force) return false;
+  s.power = s.power.add(g); s.tot.power = s.tot.power.add(g); s.ascN++; if (s.era < 3) s.era = 3;
+  s.stats.fastAsc = Math.min(s.stats.fastAsc, s.rt.p);
+  resetRun(s, 1); resetLam(s); s.crease = ZERO;
+  if (!hasStar(s, 'k1')) { const keep = ['mul', 'grid3']; for (const k of Object.keys(s.up)) if (UP[k] && UP[k].cur === 'crease' && !keep.includes(k)) delete s.up[k]; }
+  s._dirty = true; return true;
+}
+function tower(s) {
+  const g = pendingBrick(s); if (g.lte(0)) return false;
+  s.brick = s.brick.add(g); s.tot.brick = s.tot.brick.add(g); s.towN++;
+  if (s.era < 4) { s.era = 4; s.own[3]++; }
+  resetRun(s, 2); resetLam(s); s.crease = ZERO; s.power = ZERO; s.inPara = -1;
+  s._dirty = true; return true;
+}
+function transcend(s) {
+  const g = pendingArrow(s); if (g.lte(0)) return false;
+  s.arrowE = s.arrowE.add(g); s.tot.arrowE = s.tot.arrowE.add(g); s.trN++;
+  if (s.era < 5) { s.era = 5; s.own[4]++; }
+  resetRun(s, 3); resetLam(s); s.crease = ZERO; s.power = ZERO; s.brick = ZERO;
+  s._dirty = true; return true;
+}
+function enterPara(s, id) {
+  if (!hasStar(s, 'p1') || s.para[id] >= 3) return false;
+  if (s.inPara < 0) { const g = pendingPower(s); s.power = s.power.add(g); }
+  s.inPara = id; resetRun(s, 1); resetLam(s); s._dirty = true; return true;
+}
+function exitPara(s) { if (s.inPara < 0) return; s.inPara = -1; resetRun(s, 1); resetLam(s); s._dirty = true; }
+function paraGoal(s, id) { const t = s.para[id]; return p10(p10(CFG.goals[Math.min(t, 2)])); }
+
+/* ---------- lattice editing & optimizer ---------- */
+function setOp(s, t, i, id) {
+  const lat = s.lat, cur = lat[t][i];
+  if (id !== 0 && id !== cur && placedCount(lat, id) >= s.own[id]) return false;
+  lat[t][i] = id; s._lc = null; return true;
+}
+function swapSlots(s, i, j) {
+  const lat = s.lat; [lat.d[i], lat.d[j]] = [lat.d[j], lat.d[i]];
+  if (lat.lam === i) lat.lam = j; else if (lat.lam === j) lat.lam = i;
+  s._lc = null;
+}
+/* local-search arranger: builds a strong chain, then greedily fills, then hill-climbs */
+function arrange(s, iters = 250) {
+  const n = s.lat.n, ctx = latCtx(s), lines = linesFor(n).filter(l => !ctx.single || (l.row && l.i === 0));
+  const opsInv = []; for (let id = 11; id >= 1; id--) for (let k = 0; k < s.own[id]; k++) opsInv.push(id);
+  const digits = s.lat.d.slice().sort((a, b) => b - a);
+  const lat = newLattice(n); lat.lam = ctx.lamOn ? n - 1 : -1;
+  // main row 0: biggest digits, strongest ops ascending to the right, λ on the far right
+  const rowSlots = [...Array(n).keys()];
+  const order = ctx.lamOn ? rowSlots.slice(0, n - 1) : rowSlots;
+  let di = 0; for (const i of order) lat.d[i] = digits[di++];
+  if (ctx.lamOn) lat.d[n - 1] = digits[di++];
+  const rest = []; for (let i = 0; i < n * n; i++) if (i >= n) rest.push(i);
+  for (const i of rest) lat.d[i] = digits[di++];
+  const strong = opsInv.slice(0, n - 1).sort((a, b) => a - b);
+  strong.forEach((id, k) => { lat.h[n - 1 - strong.length + k] = id; });
+  if (ctx.mirror) { lat.d.splice(0, n, ...lat.d.slice(0, n).reverse()); lat.h.splice(0, n - 1, ...lat.h.slice(0, n - 1).reverse()); if (lat.lam >= 0) lat.lam = 0; }
+  const pool = opsInv.slice(strong.length);
+  const vals = new Map();
+  const lv_ = ln => lineVal(lat, ln, ctx);
+  const total = () => { let t = ZERO; for (const ln of lines) t = t.add(lv_(ln)); return t; };
+  const slotsOf = []; for (let i = 0; i < lat.h.length; i++) slotsOf.push(['h', i]); for (let i = 0; i < lat.v.length; i++) slotsOf.push(['v', i]);
+  const lineOfSlot = (t, i) => lines.filter(ln => ln.op.some(([tt, ii]) => tt === t && ii === i));
+  let best = total();
+  // greedy placement of remaining ops (strongest first), each into the slot that raises L most
+  const fast = topLevel(best) >= 2;
+  if (fast) { iters = Math.min(iters, 30); let k = 0; for (const id of pool) { while (k < slotsOf.length && (lat[slotsOf[k][0]][slotsOf[k][1]] !== 0 || (slotsOf[k][0] === 'h' && slotsOf[k][1] < n - 1))) k++; if (k < slotsOf.length) lat[slotsOf[k][0]][slotsOf[k][1]] = id; } best = total(); }
+  for (const id of fast ? [] : pool) {
+    let bestSlot = null, bestV = best;
+    for (const [t, i] of slotsOf) {
+      if (lat[t][i] !== 0) continue;
+      if (!lineOfSlot(t, i).length) continue;
+      lat[t][i] = id; const v = total(); lat[t][i] = 0;
+      if (v.gt(bestV)) { bestV = v; bestSlot = [t, i]; }
+    }
+    if (bestSlot) { lat[bestSlot[0]][bestSlot[1]] = id; best = bestV; }
+  }
+  // leftover tiles go into any empty slot where they do not lower L
+  for (const id of pool) {
+    if (placedCount(lat, id) >= s.own[id]) continue;
+    for (const [t, i] of slotsOf) { if (lat[t][i] !== 0 || !lineOfSlot(t, i).length) continue; lat[t][i] = id; const v = total(); if (v.gte(best)) { best = v; break; } lat[t][i] = 0; }
+  }
+  // hill climb: swap digit slots, swap op slots, move λ
+  let seed = 12345; const rnd = m => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed % m; };
+  for (let it = 0; it < iters; it++) {
+    const kind = rnd(2);
+    if (kind === 0) { const a = rnd(n * n), b = rnd(n * n); if (a === b) continue; [lat.d[a], lat.d[b]] = [lat.d[b], lat.d[a]]; const v = total(); if (v.gt(best)) best = v; else [lat.d[a], lat.d[b]] = [lat.d[b], lat.d[a]]; }
+    else if (kind === 1) { const A = slotsOf[rnd(slotsOf.length)], B = slotsOf[rnd(slotsOf.length)]; const x = lat[A[0]][A[1]], y = lat[B[0]][B[1]]; if (x === y) continue; lat[A[0]][A[1]] = y; lat[B[0]][B[1]] = x; const v = total(); if (v.gt(best)) best = v; else { lat[A[0]][A[1]] = x; lat[B[0]][B[1]] = y; } }
+  }
+  // only adopt when better than the current layout
+  const curV = (() => { let t = ZERO; for (const ln of lines) t = t.add(lineVal(s.lat, ln, ctx)); return t; })();
+  if (best.gte(curV)) { s.lat = lat; s._lc = null; return true; }
+  return false;
+}
+
+/* ---------- main tick ---------- */
+function tick(s, dt) {
+  s.time += dt; s.runT += dt; for (const k in s.rt) s.rt[k] += dt;
+  // λ growth
+  if (hasStar(s, 'l1') && s.inPara !== 4) {
+    const r = lamRate(s), e = lamExp(s);
+    if (e > 0) s.lam = s.lam.mul(Math.exp(Math.min(e * dt, 50))).add(r * dt);
+    else s.lam = s.lam.add(r * dt);
+  }
+  // engines cascade
+  const T = tick_(s);
+  for (let k = 7; k >= 1; k--) if (engOn(s, k) && s.eng[k].a.gt(0)) s.eng[k - 1].a = s.eng[k - 1].a.add(s.eng[k].a.mul(engMult(s, k)).mul(T).mul(dt * CFG.eng.flow));
+  s.star = s.star.add(starRate(s).mul(dt));
+  if (s.star.gt(s.best)) s.best = s.star;
+  // challenge completion
+  if (s.inPara >= 0 && s.star.gte(paraGoal(s, s.inPara))) { s.para[s.inPara]++; s.log.push({ t: s.time, m: '悖论「' + PARA[s.inPara].name + '」完成第 ' + s.para[s.inPara] + ' 层' }); if (s.log.length > 30) s.log.shift(); exitPara(s); }
+  // victory
+  if (!s.won && s.star.gte(OMEGA)) { s.won = true; s.wonT = s.time; }
+}
+function automate(s) {
+  if (s.auto.eng && lv(s, 'autoE')) buyAllEngines(s);
+  if (s.auto.oc && lv(s, 'autoO')) buyOc(s, true);
+  if (hasStar(s, 'a1') || floorHas(s, 1)) {
+    for (const id of ['grid3', 'autoE', 'autoO', 'phi', 'res', 'eboost', 'cgain', 'mul']) while (canBuyUp(s, id)) buyUp(s, id);
+    buyDigitsCheapest(s, 200);
+    while (canBuyUp(s, 'pow')) buyUp(s, 'pow');
+  }
+  if (floorHas(s, 1)) { let b = true; while (b) { b = false; for (const st of STARS) if (buyStar(s, st.id)) b = true; } }
+  if (s._dirty && s.auto.arrange) { arrange(s); s._dirty = false; }
+}
+/* prestige timing: fire when the gain rate has peaked, or when the pending gain reaches ratio × lifetime total */
+function readyTo(s, kind, ratio) {
+  const g = kind === 'crease' ? pendingCrease(s) : kind === 'power' ? pendingPower(s) : kind === 'brick' ? pendingBrick(s) : pendingArrow(s);
+  const t = s.rt[RT[kind]];
+  if (g.lte(0) || t < Math.max(3, CFG.cry[kind] || 0)) return false;
+  const tgt = nextTarget(s, kind);
+  if (tgt && s[kind].add(g).gte(tgt)) return true;
+  const rate = num(g.div(t)), pk = s.peak[kind] || 0;
+  if (rate > pk) s.peak[kind] = rate;
+  if (!tgt && g.gte(s.tot[kind].mul(ratio))) return true;
+  return pk > 0 && rate < pk * 0.9 && isFinite(rate);
+}
+/* cheapest thing in this currency's shop that the player cannot afford yet (null when everything is bought) */
+function nextTarget(s, kind) {
+  let best = null; const consider = c => { c = N(c); if (s[kind].lt(c) && (!best || c.lt(best))) best = c; };
+  for (const id in UP) { const u = UP[id]; if (u.cur !== kind) continue; const l = lv(s, id); if (l < u.cap && (!u.req || u.req(s))) consider(u.cost(l)); }
+  if (kind === 'crease') s.lat.d.forEach(d => { if (d < digitCap(s)) consider(digitCost(d)); });
+  if (kind === 'power') for (const st of STARS) if (starAvail(s, st.id)) consider(st.cost);
+  if (kind === 'brick' && s.spire < SPIRE.length) consider(SPIRE[s.spire].cost);
+  if (kind === 'arrowE') { const a = nextArrow(s); if (a) consider(a.cost); }
+  return best;
+}
+function autoPrestige(s) {
+  if (s.auto.fold && hasStar(s, 'k2') && !(s.era >= 3 && s.star.gte(E308)) && readyTo(s, 'crease', s.auto.foldX)) fold(s);
+  if (s.auto.asc && hasStar(s, 'a2') && s.era < 4 && s.inPara < 0 && readyTo(s, 'power', s.auto.ascX)) ascend(s);
+  if (s.auto.tow && (floorHas(s, 10) || lv(s, 'xa')) && s.era === 4 && s.inPara < 0 && readyTo(s, 'brick', s.auto.towX)) tower(s);
+}
+function checkAch(s) { const got = []; ACH.forEach((a, i) => { if (!s.ach.includes(i) && a[2](s)) { s.ach.push(i); got.push(i); } }); return got; }
+
+/* ---------- save / load ---------- */
+function ser(v) {
+  if (v instanceof O) return { $O: [v.sign, v.array.slice()] };
+  if (Array.isArray(v)) return v.map(ser);
+  if (v && typeof v === 'object') { const o = {}; for (const k in v) if (k[0] !== '_') o[k] = ser(v[k]); return o; }
+  return v;
+}
+function deser(v) {
+  if (Array.isArray(v)) return v.map(deser);
+  if (v && typeof v === 'object') {
+    if (v.$O) { const x = O.fromArray(v.$O[1]); if (v.$O[0] < 0) x.sign = -1; return x; }
+    const o = {}; for (const k in v) o[k] = deser(v[k]); return o;
+  }
+  return v;
+}
+function save(s) { return JSON.stringify(ser(s)); }
+function load(str) {
+  const d = deser(JSON.parse(str)), s = newState();
+  for (const k in d) if (k in s) s[k] = (s[k] && typeof s[k] === 'object' && !(s[k] instanceof O) && !Array.isArray(s[k])) ? Object.assign(s[k], d[k]) : d[k];
+  if (!s.lat || !s.lat.d) s.lat = newLattice(2);
+  return s;
+}
+function exportStr(s) { const j = save(s); return 'HT3:' + (typeof btoa === 'function' ? btoa(unescape(encodeURIComponent(j))) : Buffer.from(j, 'utf8').toString('base64')); }
+function importStr(str) { str = str.trim(); if (!str.startsWith('HT3:')) throw new Error('存档开头应为 HT3:'); const b = str.slice(4); const j = typeof atob === 'function' ? decodeURIComponent(escape(atob(b))) : Buffer.from(b, 'base64').toString('utf8'); return load(j); }
+
+/* offline: coarse steps */
+function simulate(s, seconds, stepCb) {
+  const steps = Math.min(2000, Math.max(1, Math.ceil(seconds / 0.5)));
+  const dt = seconds / steps;
+  for (let i = 0; i < steps; i++) { tick(s, dt); if (i % 5 === 0) { automate(s); autoPrestige(s); } if (stepCb) stepCb(i, steps); }
+}
+
+return {
+  O, N, ZERO, ONE, E25, E308, T5, P3, OMEGA, CFG, OPS, OPNAME, UP, ARROWS, STARS, STAR, PARA, SPIRE, ACH,
+  num, lg, H, hrank, fmt, fmtNum, fmtH, shape, topLevel,
+  newState, lv, hasStar, floorHas, resv, phi, ocBase, digitCap, engMult, tick_, engOn, engCost, ocCost,
+  lamRate, lamExp, lamStart, latCtx, latticeValue, latMult, starRate, linesFor, lineVal, slotVal, placedCount, maxInLine,
+  topArrow, cryst, achMult, pendingCrease, pendingPower, pendingBrick, pendingArrow, creaseMult, powerMult, brickMult, arrowMult,
+  canBuyUp, buyUp, buyEngine, buyEngineFast, buyOc, buyAllEngines, digitCost, buyDigit, buyDigitsCheapest,
+  starAvail, buyStar, buySpire, nextArrow, buyArrow,
+  fold, ascend, tower, transcend, readyTo, nextTarget, enterPara, exitPara, paraGoal,
+  setOp, swapSlots, arrange, resizeLattice, tick, automate, autoPrestige, checkAch,
+  save, load, exportStr, importStr, simulate,
+};
+});
+
+</script>
+<script>
+(function () {
+'use strict';
+const H = window.HT, N = H.N, fmt = H.fmt, fn = H.fmtNum;
+const KEY = 'hypertower.v3';
+const $ = id => document.getElementById(id);
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const SUPD = '⁰¹²³⁴⁵⁶⁷⁸⁹', sup = n => String(n).split('').map(d => SUPD[+d]).join('');
+const CN = ['一', '二', '三', '四', '五', '六', '七', '八'];
+const CUR = { crease: ['◇', '折痕'], power: ['◆', '幂晶'], brick: ['▲', '塔砖'], arrowE: ['✧', '箭能'] };
+const ERAS = [null, ['I', '引擎'], ['II', '折叠'], ['III', '升幂'], ['IV', '塔化'], ['V', '超越']];
+const clamp = x => Math.max(0, Math.min(1, isFinite(x) ? x : 0));
+const hms = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math.floor(t / 60) % 60, s = t % 60; return h ? `${h} 小时 ${m} 分` : m ? `${m} 分 ${s} 秒` : `${s} 秒`; };
+let S = null;
+const V = { tab: 'eng', sel: -1, psig: '', lsig: '', tsig: '', gsig: '', rsig: '', pop: null, star: null, tier: '', lastSave: Date.now(), lastCloud: 0, cloud: null, cloudMsg: '', saveMsg: '', achT: 0, autoT: 0, logN: 0, lineT: 0, lines: {}, busy: false, rT: 0 };
+
+/* ---------- saves ---------- */
+function loadLocal() { try { const t = localStorage.getItem(KEY); if (t) return H.load(t); } catch (e) { console.warn('load failed', e); } return null; }
+function saveLocal(manual) {
+  S.saved = Date.now();
+  try { localStorage.setItem(KEY, H.save(S)); V.saveMsg = manual ? '已保存' : ''; } catch (e) { V.saveMsg = '本地存档不可用'; }
+  V.lastSave = Date.now();
+}
+async function initCloud() {
+  try {
+    if (!window.claude || typeof window.claude.use !== 'function') return;
+    const [db, user] = await Promise.all([window.claude.use('db'), window.claude.use('user')]);
+    if (!db || !user) return;
+    const id = await user.id(); if (!id) return;
+    V.cloud = db.doc('data/users/' + id + '/save');
+    V.cloudMsg = '云存档已连接';
+    const snap = await V.cloud.get();
+    if (snap.exists) { const d = snap.data(); if (d && d.s && d.t > (S.saved || 0) + 20000) offerCloud(d); }
+  } catch (e) { V.cloud = null; V.cloudMsg = ''; }
+}
+async function saveCloud() {
+  if (!V.cloud) return; V.lastCloud = Date.now();
+  try { await V.cloud.set({ t: Date.now(), s: H.exportStr(S), era: S.era }); V.cloudMsg = '云存档已同步'; }
+  catch (e) { V.cloudMsg = '云存档暂时无法写入'; }
+}
+function offerCloud(d) {
+  modal(`<div class="era-mark">云存档</div><h3>云端有一份更新的存档</h3><p>那份存档保存于 ${new Date(d.t).toLocaleString()}，进度在第 ${ERAS[d.era || 1][0]} 纪元。载入它会替换这台设备上的进度。</p>
+  <div class="act"><button class="btn" data-act="close">保留本地进度</button><button class="btn solid" data-act="cloudLoad">载入云存档</button></div>`);
+  V.cloudData = d;
+}
+
+/* ---------- number typesetting ---------- */
+function heroHTML(x) {
+  const sh = H.shape(x);
+  if (sh.t === 'plain') return sh.s;
+  if (sh.t === 'sci') return `${sh.m}<span class="x">×</span>10<sup>${sh.e}</sup>`;
+  if (sh.t === 'tower') { let inner = ''; for (let i = sh.exps.length - 1; i >= 0; i--) inner = `<sup>${sh.exps[i]}${inner}</sup>`; return '10' + inner; }
+  const ar = sh.k <= 4 ? '↑'.repeat(sh.k) : `↑<sup>${sh.k}</sup>`;
+  return `10<span class="arr">${ar}</span>${sh.h}`;
+}
+function tierOf(x) { const sh = H.shape(x); return sh.t + (sh.k || (sh.exps ? sh.exps.length : '')); }
+function reading(x) {
+  const sh = H.shape(x);
+  if (sh.t === 'plain') return '';
+  if (sh.t === 'sci') return `一个 ${(+sh.e.replace(/,/g, '') + 1).toLocaleString()} 位数`;
+  if (sh.t === 'tower') return sh.exps.length === 1 ? `10 的 ${sh.exps[0]} 次方：一个约 ${sh.exps[0]} 位的数` : `${sh.exps.length + 1} 层的幂塔：10 的 10 的……次方，塔顶是 ${sh.exps[sh.exps.length - 1]}`;
+  if (sh.k === 2) return `迭幂：一座 ${sh.h} 层高的 10 的幂塔`;
+  const name = sh.k === 3 ? '五元运算' : `${sh.k + 2} 元运算`;
+  return `${name}（${sh.k <= 4 ? '↑'.repeat(sh.k) : '↑' + sup(sh.k)}）：在这一层上叠了 ${sh.h} 次`;
+}
+const opSym = id => id === 0 ? '+' : H.OPS[id];
+function short(x) { const s = fmt(x); return s; }
+
+/* ---------- milestone ---------- */
+function milestone() {
+  const s = S;
+  if (s.won) return ['Ω 已抵达。星尘仍在无尽模式中增长', 1];
+  if (s.foldN === 0) return ['下一站：折叠，需要 ✦ 1e25', clamp(H.lg(s.star) / 25)];
+  if (s.era === 2) return ['下一站：升幂，需要 ✦ 2^1024 ≈ 1.80e308', clamp(H.lg(s.star) / 308.25)];
+  if (s.era === 3) return ['下一站：塔化，需要 ✦ 10↑↑5', clamp((H.H(s.star, 2) - 2.396) / 2.604)];
+  if (s.era === 4) return ['下一站：超越，需要 ✦ 10↑↑↑3', clamp((H.H(s.star, 3) - 1.7) / 1.3)];
+  const k = H.topArrow(s), h = Math.min(1e16, H.H(s.star, k));
+  return ['终点：Ω = 10{10}10，需要 ↑¹⁰', clamp((k - 3 + Math.min(1, Math.log10(Math.max(1, h)) / 16)) / 7)];
+}
+
+/* ---------- small DOM helpers ---------- */
+function applyVals(root, vals, ens) {
+  root.querySelectorAll('[data-k]').forEach(n => { const v = vals[n.dataset.k]; if (v !== undefined && n._v !== v) { n._v = v; if ('h' in n.dataset) n.innerHTML = v; else n.textContent = v; } });
+  if (ens) root.querySelectorAll('[data-en]').forEach(n => { const e = !!ens[n.dataset.en]; if (n._e !== e) { n._e = e; n.classList.toggle('can', e); n.setAttribute('aria-disabled', e ? 'false' : 'true'); } });
+}
+function toast(msg) { const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg; $('toasts').appendChild(t); setTimeout(() => t.remove(), 4200); }
+function modal(html) { $('modalBox').innerHTML = html; $('modal').hidden = false; const b = $('modalBox').querySelector('button.solid, button'); if (b) b.focus(); }
+function closeModal() { $('modal').hidden = true; $('modalBox').innerHTML = ''; }
+function confirmModal(title, body, ok, fn_) { V.confirmFn = fn_; modal(`<h3>${title}</h3><p>${body}</p><div class="act"><button class="btn" data-act="close">取消</button><button class="btn solid" data-act="confirmOk">${ok}</button></div>`); }
+function flashHero() { const r = $('heroRule'); r.classList.remove('go'); void r.offsetWidth; r.classList.add('go'); }
+function upRow(id) {
+  const u = H.UP[id];
+  return `<tr><td class="nm">${u.name}</td><td class="ds" data-k="d_${id}"></td><td class="lv" data-k="l_${id}"></td><td class="r"><button class="btn buy" data-act="up" data-id="${id}" data-en="e_${id}"><span data-k="c_${id}"></span></button></td></tr>`;
+}
+function upVals(ids, v, e) {
+  for (const id of ids) {
+    const u = H.UP[id], l = H.lv(S, id);
+    v['d_' + id] = u.desc(S); v['l_' + id] = l + ' / ' + u.cap;
+    v['c_' + id] = l >= u.cap ? '已满' : fmt(u.cost(l)) + ' ' + CUR[u.cur][0];
+    e['e_' + id] = H.canBuyUp(S, id);
+  }
+}
+function tog(path, label, on) { return `<label class="tog"><input type="checkbox" data-set="${path}" ${on ? 'checked' : ''}> ${label}</label>`; }
+function ratioInput(path, val) { return `<label class="tog">收益倍数 <input class="txt" style="width:6em" data-set="${path}" data-num value="${esc(fn(val))}"></label>`; }
+
+/* ---------- intros ---------- */
+const INTRO = {
+  0: ['欢迎', '欢迎来到箭塔', ['目标：让星尘 ✦ 一路增长到 Ω = 10{10}10，一个要用十个箭头才写得下的数。', '先买一台一阶引擎。每一阶引擎都会生产下一阶，星尘会越滚越快。', '进度会自动保存。关掉页面后游戏继续运转，回来时补算离线收益，最多 24 小时。']],
+  2: ['第 II 纪元', '折叠与算式晶格', ['折叠会重置星尘、引擎和超频，换来折痕 ◇。', '折痕用来建造算式晶格。每一行、每一列都是一道算式，它们的总和 L 让星尘产量 ×(1+L)^φ。空的算符槽当作加号。', '点一个数字格可以升刻度，再点另一格就能互换；点算符槽可以放入乘符 ×。“自动排布”会替你找一个好布局。']],
+  3: ['第 III 纪元', '升幂与幂塔', ['星尘溢出 2^1024 后可以升幂：重置折痕与 λ，换来幂晶 ◆，用来点亮星图。', '幂符 ^ 是右结合的：9^9^9 = 9^(9^9)，一个有 3.7 亿位的数。同一行里幂符越多，幂塔越高。', '星图中的递归核 λ 是一块持续增长的数字砖。它附着在一个数字格上，取两者中较大的值，放在幂塔最顶端效果最好。', '升幂收益要结晶大约 30 秒，刚开局时只能拿到一部分。']],
+  4: ['第 IV 纪元', '塔化与迭幂', ['星尘达到 10↑↑5，也就是五层 10 的幂塔之后，可以塔化：换来塔砖 ▲，并得到一块迭幂符 ↑↑。', 'a↑↑b 是 b 个 a 叠成的幂塔。把 λ 放在 ↑↑ 的右边，λ 就是塔的层数。', '尖塔的楼层会让 λ 改为指数增长。第 21 层再给你一块 ↑↑，可以叠出 a↑↑b↑↑λ。']],
+  5: ['第 V 纪元', '超越与箭阵', ['星尘达到 10↑↑↑3 后可以超越，得到五元运算符 ↑↑↑ 和箭能 ✧。', 'λ 被重铸为箭核：每局从 1 开始指数增长，之前的 λ 加成不再生效。', '用箭能依次解锁 ↑⁴ 到 ↑¹⁰。箭能取决于你拥有的最高箭头，以及星尘在那一层的高度。', '终点是 Ω = 10{10}10。']],
+};
+function showIntro(era) {
+  const it = INTRO[era]; if (!it) return;
+  modal(`<div class="era-mark">${it[0]}</div><h3>${it[1]}</h3>${it[2].map(p => `<p>${p}</p>`).join('')}<div class="act"><button class="btn solid" data-act="close">开始</button></div>`);
+}
+
+/* ---------- tabs ---------- */
+const TABS = [
+  ['eng', '引擎', () => true], ['lat', '晶格', () => S.foldN > 0, true], ['fold', '折叠', () => S.foldN > 0],
+  ['star', '星图', () => S.era >= 3], ['para', '悖论', () => H.hasStar(S, 'p1')], ['spire', '尖塔', () => S.era >= 4],
+  ['arrow', '箭阵', () => S.era >= 5], ['ach', '成就', () => true], ['opt', '选项', () => true],
+];
+function renderTabs() {
+  const vis = TABS.filter(t => t[2]());
+  if (!vis.find(t => t[0] === V.tab)) V.tab = 'eng';
+  const sig = vis.map(t => t[0]).join() + V.tab;
+  if (sig === V.tsig) return; V.tsig = sig;
+  $('tabs').innerHTML = vis.map(t => `<button class="tab${t[3] ? ' mob' : ''}${V.tab === t[0] ? ' on' : ''}" role="tab" aria-selected="${V.tab === t[0]}" data-act="tab" data-id="${t[0]}">${t[1]}</button>`).join('');
+  document.body.classList.toggle('m-lat', V.tab === 'lat');
+}
+
+/* ---------- panels ---------- */
+const P = {};
+const visEng = () => { let k = 1; while (k < 8 && S.eng[k - 1].b > 0) k++; return k; };
+P.eng = {
+  sig: () => [visEng(), H.lv(S, 'autoE'), H.lv(S, 'autoO'), S.inPara === 1].join(),
+  html: () => {
+    let r = `<div class="frame"><span class="ft">引擎</span><span class="fr" data-k="tick"></span>
+    <p class="p">一阶引擎生产星尘，更高阶的引擎生产下一阶。同一阶每买满 10 台，该阶倍率 ×<span data-k="res"></span>。</p>
+    <div class="tblwrap"><table class="bom"><thead><tr><th>型号</th><th>数量</th><th class="r">倍率</th><th class="r">买 1 台</th><th class="r">买满 10</th></tr></thead><tbody>`;
+    for (let k = 0; k < visEng(); k++) {
+      const off = !H.engOn(S, k);
+      r += `<tr class="${off ? 'off' : ''}"><td class="nm">${CN[k]}阶引擎</td><td class="amt" data-k="ea${k}"></td><td class="lv" data-k="em${k}"></td>
+      <td class="r"><button class="btn buy" data-act="eng1" data-i="${k}" data-en="e1${k}"><span data-k="ec${k}"></span></button></td>
+      <td class="r"><button class="btn buy" data-act="engM" data-i="${k}" data-en="eM${k}"><span data-k="eM${k}"></span></button></td></tr>`;
+    }
+    r += `<tr class="${S.inPara === 1 ? 'off' : ''}"><td class="nm">超频</td><td class="amt" data-k="ocl"></td><td class="lv" data-k="ocm"></td>
+      <td class="r"><button class="btn buy" data-act="oc1" data-en="oc1"><span data-k="occ"></span></button></td><td class="r"><button class="btn buy" data-act="ocM" data-en="oc1">全部</button></td></tr>`;
+    r += `</tbody></table></div><div class="row-btns" style="margin-top:14px"><button class="btn" data-act="engAll">全部买满</button>
+      ${H.lv(S, 'autoE') ? tog('auto.eng', '自动购买引擎', S.auto.eng) : ''}${H.lv(S, 'autoO') ? tog('auto.oc', '自动超频', S.auto.oc) : ''}</div></div>`;
+    return r;
+  },
+  vals: () => {
+    const v = {}, e = {};
+    v.tick = '超频倍率 ×' + fmt(H.tick_(S)); v.res = fn(H.resv(S));
+    for (let k = 0; k < visEng(); k++) {
+      const g = S.eng[k], c = H.engCost(S, k, g.b), left = 10 - (g.b % 10), cap = g.b >= H.CFG.eng.cap;
+      v['ea' + k] = fmt(g.a); v['em' + k] = '×' + fmt(H.engMult(S, k));
+      v['ec' + k] = cap ? '已满' : fmt(c); v['eM' + k] = cap ? '已满' : '×' + left + '  ' + fmt(c.mul(left));
+      e['e1' + k] = !cap && S.star.gte(c); e['eM' + k] = !cap && S.star.gte(c.mul(left));
+    }
+    v.ocl = 'Lv ' + S.oc; v.ocm = '每级 ×' + H.ocBase(S).toFixed(3); v.occ = S.oc >= H.CFG.oc.cap ? '已满' : fmt(H.ocCost(S));
+    e.oc1 = S.oc < H.CFG.oc.cap && S.star.gte(H.ocCost(S));
+    return [v, e];
+  },
+};
+const FOLD_UPS = ['autoE', 'autoO', 'grid3', 'mul', 'phi', 'res', 'eboost', 'cgain'];
+P.fold = {
+  sig: () => [S.lat.n, H.hasStar(S, 'k2'), S.era].join(),
+  html: () => `<div class="frame"><span class="ft">折叠</span><span class="fr">第 <span data-k="fn"></span> 次</span>
+    <p class="p">折叠会重置星尘、引擎和超频，换来折痕 ◇。折痕 = (log₁₀✦ ÷ 20)⁴ × 增益，所以星尘越高，一次折叠拿得越多。</p>
+    <div class="tblwrap"><table class="bom"><thead><tr><th>零件</th><th>说明</th><th class="r">等级</th><th></th></tr></thead><tbody>
+    ${FOLD_UPS.filter(id => id !== 'grid3' || S.lat.n < 3).map(upRow).join('')}
+    <tr><td class="nm">数字刻度</td><td class="ds">点晶格里的数字格可以单独升级，这里一次升级所有最便宜的格子。上限 <span data-k="dcap"></span>。</td><td class="lv"></td>
+    <td class="r"><button class="btn buy" data-act="digits" data-en="dg"><span data-k="dgc"></span></button></td></tr>
+    </tbody></table></div>
+    ${H.hasStar(S, 'k2') ? `<div class="row-btns" style="margin-top:14px">${tog('auto.fold', '自动折叠', S.auto.fold)}${ratioInput('auto.foldX', S.auto.foldX)}</div>` : ''}</div>`,
+  vals: () => {
+    const v = { fn: S.foldN, dcap: H.digitCap(S) }, e = {};
+    upVals(FOLD_UPS.filter(id => id !== 'grid3' || S.lat.n < 3), v, e);
+    let md = 99; S.lat.d.forEach(d => { if (d < H.digitCap(S) && d < md) md = d; });
+    if (md === 99) { v.dgc = '已满'; e.dg = false; } else { const c = H.digitCost(md); v.dgc = fmt(c) + ' ◇'; e.dg = S.crease.gte(c); }
+    return [v, e];
+  },
+};
+P.lat = { sig: () => 'x', html: () => '', vals: () => [{}, {}] };
+P.star = {
+  sig: () => [S.stars.length, V.star, H.lv(S, 'pow'), H.hasStar(S, 'a2')].join(),
+  html: () => {
+    const nodes = H.STARS, by = H.STAR;
+    let edges = '', ns = '';
+    for (const st of nodes) for (const r of st.req) { const a = by[r]; edges += `<line class="edge${H.hasStar(S, st.id) ? ' on' : ''}" x1="${a.x}" y1="${a.y}" x2="${st.x}" y2="${st.y}"/>`; }
+    for (const st of nodes) {
+      const own = H.hasStar(S, st.id), av = H.starAvail(S, st.id);
+      ns += `<g class="node${own ? ' own' : av ? '' : ' lock'}${V.star === st.id ? ' sel' : ''}" data-act="star" data-id="${st.id}" ${own ? '' : `data-en="s_${st.id}"`} tabindex="0" role="button" aria-label="${st.name}">
+        <circle cx="${st.x}" cy="${st.y}" r="2.4"/><text x="${st.x}" y="${st.y + 5.3}">${st.name}</text></g>`;
+    }
+    const sel = V.star && by[V.star];
+    return `<div class="frame"><span class="ft">幂符</span>
+      <p class="p">升幂得到的幂晶 ◆ 用来点亮星图，也可以直接买幂符。</p>
+      <div class="tblwrap"><table class="bom"><tbody>${upRow('pow')}</tbody></table></div>
+      ${H.hasStar(S, 'a2') ? `<div class="row-btns" style="margin-top:12px">${tog('auto.asc', '自动升幂', S.auto.asc)}${ratioInput('auto.ascX', S.auto.ascX)}</div>` : ''}</div>
+      <div class="frame"><span class="ft">星图</span><span class="fr">已点亮 ${S.stars.length} / ${nodes.length}</span>
+      <svg class="smap" viewBox="0 -4 100 76" role="group" aria-label="星图">${edges}${ns}</svg>
+      <div class="sdetail">${sel ? `<div><h4>${sel.name}</h4><div class="muted" style="font-size:13.5px">${sel.desc}</div>
+        <div class="faint" style="font-size:12.5px">${sel.req.length ? '前置：' + sel.req.map(r => by[r].name).join('、') : '没有前置'}</div></div>
+        ${H.hasStar(S, sel.id) ? '<span class="faint">已点亮</span>' : `<button class="btn buy" data-act="buyStar" data-id="${sel.id}" data-en="sb">${fmt(N(sel.cost))} ◆</button>`}`
+        : '<div class="faint">点一颗星查看说明。</div>'}</div></div>`;
+  },
+  vals: () => {
+    const v = {}, e = {}; upVals(['pow'], v, e);
+    for (const st of H.STARS) if (!H.hasStar(S, st.id)) e['s_' + st.id] = H.starAvail(S, st.id) && S.power.gte(N(st.cost));
+    if (V.star) e.sb = H.starAvail(S, V.star) && S.power.gte(N(H.STAR[V.star].cost));
+    return [v, e];
+  },
+};
+P.para = {
+  sig: () => [S.para.join(), S.inPara].join('|'),
+  html: () => `<div class="frame"><span class="ft">悖论挑战</span>
+    <p class="p">进入悖论会先结算升幂，然后在限制下重新开局。星尘达到目标就完成一层并自动退出。每个悖论 3 层，目标依次是 ✦ ≥ ee8、ee300、ee1e8。奖励永久生效。</p>
+    <div class="tblwrap"><table class="bom"><thead><tr><th>悖论</th><th>限制</th><th>进度</th><th>奖励</th><th></th></tr></thead><tbody>
+    ${H.PARA.map(p => `<tr><td class="nm">${p.name}</td><td class="ds">${p.rule}</td><td><span class="pips">${[0, 1, 2].map(i => `<i class="${S.para[p.id] > i ? 'f' : ''}"></i>`).join('')}</span></td>
+      <td class="ds" data-k="pr${p.id}"></td><td class="r">${S.para[p.id] >= 3 ? '<span class="faint">已完成</span>' : S.inPara === p.id ? '<button class="btn" data-act="paraExit">退出</button>' : `<button class="btn" data-act="para" data-id="${p.id}">进入</button>`}</td></tr>`).join('')}
+    </tbody></table></div></div>`,
+  vals: () => { const v = {}; H.PARA.forEach(p => { v['pr' + p.id] = (S.para[p.id] ? '当前：' + p.reward(S.para[p.id]) + '。' : '') + (S.para[p.id] < 3 ? '下一层目标 ✦ ≥ ' + fmt(H.paraGoal(S, p.id)) : ''); }); return [v, {}]; },
+};
+P.spire = {
+  sig: () => [S.spire, H.floorHas(S, 10) || H.lv(S, 'xa') > 0].join(),
+  html: () => {
+    const F = H.SPIRE, nx = F[S.spire];
+    const tw = F.map((f, i) => `<div class="fl ${i < S.spire ? 'b' : i === S.spire ? 'nx' : ''}" style="width:${110 - i * 3.6}px" title="${i + 1} 层：${f.name}"></div>`).join('');
+    return `<div class="frame"><span class="ft">尖塔</span><span class="fr">${S.spire} / ${F.length} 层</span>
+      <div class="spire"><div class="tower">${tw}</div><div>
+      ${nx ? `<p class="p" style="margin-bottom:4px">下一层是第 ${S.spire + 1} 层「${nx.name}」</p><p class="p">${nx.desc}</p>
+        <button class="btn buy" data-act="spire" data-en="sp">${fmt(N(nx.cost))} ▲</button>` : '<p class="p">尖塔已经封顶。</p>'}
+      ${H.floorHas(S, 10) || H.lv(S, 'xa') ? `<div class="row-btns" style="margin-top:14px">${tog('auto.tow', '自动塔化', S.auto.tow)}${ratioInput('auto.towX', S.auto.towX)}</div>` : ''}
+      <div class="flist" style="margin-top:14px">${F.slice(0, S.spire).map((f, i) => `<div><span class="i">${i + 1}</span><span><b>${f.name}</b>　<span class="muted">${f.desc}</span></span></div>`).reverse().join('')}</div>
+      </div></div></div>
+      <div class="frame"><span class="ft">λ 的增长</span><p class="p" style="margin:0">线性 <span class="num" data-k="lr"></span> / 秒，指数 <span class="num" data-k="le"></span> / 秒，每局起点 <span class="num" data-k="l0"></span>。</p></div>`;
+  },
+  vals: () => { const nx = H.SPIRE[S.spire]; return [{ lr: fn(H.lamRate(S)), le: '+' + fn(H.lamExp(S) * 100) + '%', l0: fn(H.lamStart(S)) }, { sp: !!nx && S.brick.gte(N(nx.cost)) }]; },
+};
+const ARR_UPS = ['xl', 'xg', 'x0', 'xa'];
+P.arrow = {
+  sig: () => [S.own.slice(4).join(''), ARR_UPS.map(id => H.lv(S, id)).join()].join('|'),
+  html: () => {
+    const nx = H.nextArrow(S);
+    return `<div class="frame"><span class="ft">箭阵</span><span class="fr">最高箭头：<span class="num">${H.topArrow(S) <= 4 ? '↑'.repeat(H.topArrow(S)) : '↑' + sup(H.topArrow(S))}</span></span>
+      <p class="p">箭能 ✧ = 2^(k−3) × (1 + log₁₀h)³ × 增益。k 是你拥有的最高箭头数，h 是星尘在那一层上的高度。买到新箭头后记得把它放进晶格。</p>
+      <div class="atrack">${H.ARROWS.map(a => { const own = S.own[a.id] > 0, k = a.id - 1; return `<div class="a ${own ? 'own' : nx && nx.id === a.id ? 'nx' : ''}"><div class="s">↑${sup(k)}</div><div class="c">${own ? '已拥有' : fmt(a.cost) + ' ✧'}</div></div>`; }).join('')}</div>
+      ${nx ? `<button class="btn buy" data-act="arrowBuy" data-en="ab">解锁 ↑${sup(nx.id - 1)}　${fmt(nx.cost)} ✧</button>` : '<p class="p">所有箭头都已解锁。</p>'}</div>
+      <div class="frame"><span class="ft">箭能升级</span><div class="tblwrap"><table class="bom"><tbody>${ARR_UPS.map(upRow).join('')}</tbody></table></div>
+      ${H.lv(S, 'xa') ? `<div class="row-btns" style="margin-top:12px">${tog('auto.tow', '自动塔化（纪元 IV 内）', S.auto.tow)}</div>` : ''}</div>`;
+  },
+  vals: () => { const v = {}, e = {}; upVals(ARR_UPS, v, e); const nx = H.nextArrow(S); e.ab = !!nx && S.arrowE.gte(nx.cost); return [v, e]; },
+};
+P.ach = {
+  sig: () => String(S.ach.length),
+  html: () => `<div class="frame"><span class="ft">成就</span><span class="fr">${S.ach.length} / ${H.ACH.length}</span>
+    <p class="p">每个成就让全部引擎 ×1.08，当前合计 ×${fmt(N(Math.pow(1.08, S.ach.length)))}。</p>
+    <div class="ach">${H.ACH.map((a, i) => `<div class="t ${S.ach.includes(i) ? 'got' : ''}"><b>${S.ach.includes(i) ? a[0] : '？？？'}</b>${a[1]}</div>`).join('')}</div></div>`,
+  vals: () => [{}, {}],
+};
+P.opt = {
+  sig: () => [S.era, H.lv(S, 'autoE'), H.lv(S, 'autoO'), H.hasStar(S, 'k2'), H.hasStar(S, 'a2'), H.floorHas(S, 10) || H.lv(S, 'xa') > 0, S.ui.theme].join(),
+  html: () => `<div class="frame"><span class="ft">存档</span>
+    <p class="p">每 15 秒自动保存到这台设备${V.cloud ? '，每 2 分钟同步一次云存档' : ''}。<span data-k="cloud"></span></p>
+    <div class="row-btns"><button class="btn" data-act="save">立即保存</button><button class="btn" data-act="export">导出存档</button><button class="btn" data-act="import">导入存档</button></div></div>
+    <div class="frame"><span class="ft">自动化</span>
+    <p class="p">自动转生会在两种时机触发：转生后能买下这一层商店里最便宜的下一件东西，或者收益速度开始下降。商店买空之后，改用“待领收益 ≥ 累计收益 × 倍数”。</p>
+    <div class="row-btns" style="flex-direction:column;align-items:flex-start;gap:10px">
+    ${tog('auto.arrange', '买到新砖块时自动排布晶格', S.auto.arrange)}
+    ${H.lv(S, 'autoE') ? tog('auto.eng', '自动购买引擎', S.auto.eng) : ''}${H.lv(S, 'autoO') ? tog('auto.oc', '自动超频', S.auto.oc) : ''}
+    ${H.hasStar(S, 'k2') ? `<span class="row-btns">${tog('auto.fold', '自动折叠', S.auto.fold)}${ratioInput('auto.foldX', S.auto.foldX)}</span>` : ''}
+    ${H.hasStar(S, 'a2') ? `<span class="row-btns">${tog('auto.asc', '自动升幂', S.auto.asc)}${ratioInput('auto.ascX', S.auto.ascX)}</span>` : ''}
+    ${H.floorHas(S, 10) || H.lv(S, 'xa') ? `<span class="row-btns">${tog('auto.tow', '自动塔化', S.auto.tow)}${ratioInput('auto.towX', S.auto.towX)}</span>` : ''}
+    ${tog('ui.confirm', '升幂、塔化、超越之前先确认', S.ui.confirm)}</div></div>
+    <div class="frame"><span class="ft">外观</span><label class="tog">配色 <select class="txt" data-set="ui.theme">
+      <option value="auto" ${S.ui.theme === 'auto' ? 'selected' : ''}>跟随系统</option><option value="dark" ${S.ui.theme === 'dark' ? 'selected' : ''}>晒图蓝</option><option value="light" ${S.ui.theme === 'light' ? 'selected' : ''}>白图纸</option></select></label></div>
+    <div class="frame"><span class="ft">统计</span><div class="ov-grid" data-k="stats" data-h></div></div>
+    <div class="frame"><span class="ft">规则速查</span>
+    <p class="p">运算优先级：箭头越多越先算，同级从右往左（右结合），然后是 ×，最后是 +。所以 9^9^9 = 9^(9^9)，2+3×4^2 = 2+3×16。</p>
+    <p class="p">记号：e123 表示 10^123；ee5 表示 10^10^5；10↑↑h 是高 h 层的 10 幂塔；10↑↑↑h、10↑⁴h……依此类推。</p></div>
+    <div class="frame"><span class="ft">危险操作</span><button class="btn ghost" data-act="reset">清除全部进度</button></div>`,
+  vals: () => {
+    const st = [['游戏时长', hms(S.time)], ['最高星尘', fmt(S.best)], ['折叠', S.foldN + ' 次'], ['升幂', S.ascN + ' 次'], ['塔化', S.towN + ' 次'], ['超越', S.trN + ' 次'],
+      ['最快折叠', S.stats.fastFold < 1e98 ? hms(S.stats.fastFold) : '—'], ['最快升幂', S.stats.fastAsc < 1e98 ? hms(S.stats.fastAsc) : '—']];
+    if (S.won) st.push(['抵达 Ω', hms(S.wonT)]);
+    return [{ cloud: V.cloudMsg, stats: st.map(r => `<span class="muted">${r[0]}</span><span class="num">${r[1]}</span>`).join('') }, {}];
+  },
+};
+function renderPanel() {
+  const p = P[V.tab], el = $('panel');
+  const sig = V.tab + '|' + p.sig();
+  if (sig !== V.psig) { el.innerHTML = p.html(); V.psig = sig; }
+  const [v, e] = p.vals(); applyVals(el, v, e);
+}
+
+/* ---------- lattice (side) ---------- */
+function cellSize(n) {
+  const w = window.innerWidth < 1000 ? Math.min(window.innerWidth - 40, 640) : Math.min(620, (Math.min(window.innerWidth, 1320) - 68) / 2);
+  const avail = w - 110; return Math.max(30, Math.min(58, Math.floor(avail / (n + (n - 1) * 0.5))));
+}
+function latSig() { const l = S.lat; return [S.foldN > 0, l.n, l.d.join(''), l.h.join(), l.v.join(), l.lam, S.own.join(), S.inPara, H.digitCap(S), V.sel, H.hasStar(S, 'l1'), S.auto.arrange, cellSize(l.n)].join('|'); }
+function latHTML() {
+  if (S.foldN === 0) return `<div class="frame"><span class="ft">算式晶格</span><div class="locked">第一次折叠之后，这里会出现一张算式网格。<br>每一行、每一列都是一道算式，它们的总和会放大星尘产量。</div></div>`;
+  const lat = S.lat, n = lat.n, ctx = H.latCtx(S), cn = cellSize(n), co = Math.round(cn * 0.5);
+  const cols = []; for (let c = 0; c < 2 * n - 1; c++) cols.push(c % 2 ? 'var(--co)' : 'var(--cn)'); cols.push('auto');
+  let g = '';
+  for (let r = 0; r < 2 * n - 1; r++) {
+    for (let c = 0; c < 2 * n - 1; c++) {
+      if (r % 2 === 0 && c % 2 === 0) {
+        const i = (r / 2) * n + c / 2, isL = ctx.lamOn && lat.lam === i, d = Math.max(1, lat.d[i] + ctx.dBonus);
+        g += `<button class="n${isL ? ' lam' : ''}${V.sel === i ? ' sel' : ''}" data-act="slot" data-i="${i}" aria-label="数字格 ${r / 2 + 1} 行 ${c / 2 + 1} 列">${isL ? `<span class="lsym">λ</span><span data-k="lamv"></span><span class="dg">${d}</span>` : d}</button>`;
+      } else if (r % 2 === 0) { const i = (r / 2) * (n - 1) + (c - 1) / 2, id = lat.h[i]; g += `<button class="o h${id ? ' set' : ''}" data-act="op" data-t="h" data-i="${i}" aria-label="横向算符槽">${opSym(id)}</button>`; }
+      else if (c % 2 === 0) { const i = ((r - 1) / 2) * n + c / 2, id = lat.v[i]; g += `<button class="o v${id ? ' set' : ''}" data-act="op" data-t="v" data-i="${i}" aria-label="纵向算符槽">${opSym(id)}</button>`; }
+      else g += '<div class="k"></div>';
+    }
+    g += r % 2 === 0 ? `<div class="c lv" data-k="row${r / 2}"></div>` : '<div></div>';
+  }
+  for (let c = 0; c < 2 * n - 1; c++) g += c % 2 === 0 ? `<div class="c lv b" data-k="col${c / 2}"></div>` : '<div></div>';
+  g += '<div></div>';
+  const inv = []; for (let id = 1; id < 12; id++) if (S.own[id] > 0) inv.push(`<span class="chip" title="${H.OPNAME[id]}"><b>${H.OPS[id]}</b>${H.placedCount(lat, id)} / ${S.own[id]}</span>`);
+  return `<div class="frame"><span class="ft">算式晶格 ${n}×${n}</span>
+    <div class="lat-sum"><span>L = <span class="num" data-k="L"></span></span><span>φ = <span class="num" data-k="phi"></span></span><span>产量 ×<span class="num" data-k="LM"></span></span>${ctx.lamOn ? '<span>λ = <span class="num" data-k="lam"></span></span>' : ''}</div>
+    <div class="lat" style="--cn:${cn}px;--co:${co}px;grid-template-columns:${cols.join(' ')}">${g}</div>
+    <div class="inv">${inv.length ? inv.join('') : '<span class="faint" style="font-size:13px">还没有算符砖。在“折叠”里可以买乘符 ×。</span>'}</div>
+    <div class="row-btns"><button class="btn" data-act="arrange">自动排布</button><button class="btn buy" data-act="digits" data-en="dg">升刻度 <span data-k="dgc"></span></button>${tog('auto.arrange', '买到新砖块时自动排布', S.auto.arrange)}</div>
+    <p class="prec">优先级：箭头越多越先算，同级从右往左；然后 ×，最后 +。空槽当作 +。${ctx.lamOn ? 'λ 附着在一个数字格上，取两者较大值；点数字格可以把 λ 移过去。' : ''}</p></div>`;
+}
+function latVals() {
+  const v = {}, e = {}, now = Date.now();
+  if (S.foldN === 0) return [v, e];
+  const L = H.latticeValue(S); v.L = fmt(L); v.phi = fn(H.phi(S)); v.LM = fmt(H.latMult(S));
+  if (H.hasStar(S, 'l1')) { v.lam = fmt(S.lam); v.lamv = fmt(S.lam); }
+  if (now - V.lineT > 300) {
+    V.lineT = now; const ctx = H.latCtx(S);
+    for (const ln of H.linesFor(S.lat.n)) { const key = (ln.row ? 'row' : 'col') + ln.i; V.lines[key] = ctx.single && !(ln.row && ln.i === 0) ? '—' : '= ' + fmt(H.lineVal(S.lat, ln, ctx)); }
+  }
+  Object.assign(v, V.lines);
+  let md = 99; S.lat.d.forEach(d => { if (d < H.digitCap(S) && d < md) md = d; });
+  if (md === 99) { v.dgc = '已满'; e.dg = false; } else { const c = H.digitCost(md); v.dgc = fmt(c) + ' ◇'; e.dg = S.crease.gte(c); }
+  return [v, e];
+}
+function renderSide() {
+  const el = $('side'), sig = latSig();
+  if (sig !== V.lsig) { el.innerHTML = latHTML(); V.lsig = sig; V.lineT = 0; }
+  const [v, e] = latVals(); applyVals(el, v, e);
+}
+
+/* ---------- popover ---------- */
+function openPop(anchor, kind, data) {
+  V.pop = { kind, ...data }; const p = $('pop');
+  p.innerHTML = popHTML(); p.hidden = false;
+  const r = anchor.getBoundingClientRect(), pw = 240;
+  let x = r.left + window.scrollX + r.width / 2 - pw / 2; x = Math.max(8, Math.min(x, window.scrollX + document.documentElement.clientWidth - pw - 8));
+  p.style.left = x + 'px'; p.style.top = (r.bottom + window.scrollY + 6) + 'px'; p.style.width = pw + 'px';
+}
+function closePop() { V.pop = null; $('pop').hidden = true; }
+function popHTML() {
+  const q = V.pop, lat = S.lat;
+  if (q.kind === 'slot') {
+    const i = q.i, n = lat.n, d = lat.d[i], cap = H.digitCap(S);
+    return `<h4>数字格（第 ${Math.floor(i / n) + 1} 行，第 ${i % n + 1} 列）</h4><div class="muted">刻度 ${d}，上限 ${cap}</div>
+      ${d < cap ? `<button class="btn buy" data-act="digit" data-i="${i}" data-en="pd">刻度 +1　<span data-k="pdc"></span></button>` : ''}
+      ${H.hasStar(S, 'l1') && lat.lam !== i ? `<button class="btn" data-act="lamHere" data-i="${i}">把 λ 移到这里</button>` : ''}
+      <p class="faint" style="margin:8px 0 0;font-size:12.5px">再点另一个数字格，两格会互换。</p>`;
+  }
+  const cur = lat[q.t][q.i]; let r = `<h4>${q.t === 'h' ? '横向' : '纵向'}算符槽</h4>`;
+  for (let id = 0; id < 12; id++) {
+    if (id > 0 && !S.own[id]) continue;
+    const avail = id === 0 ? Infinity : S.own[id] - H.placedCount(lat, id) + (cur === id ? 1 : 0);
+    r += `<button class="opt${cur === id ? ' cur' : ''}" data-act="setop" data-id="${id}" ${avail <= 0 ? 'disabled' : ''}><span class="sym">${id === 0 ? '·' : H.OPS[id]}</span><span>${H.OPNAME[id]}</span><span class="faint">${id === 0 ? '' : '剩 ' + Math.max(0, avail - (cur === id ? 1 : 0))}</span></button>`;
+  }
+  return r;
+}
+function renderPop() {
+  if (!V.pop || V.pop.kind !== 'slot') return;
+  const d = S.lat.d[V.pop.i]; if (d >= H.digitCap(S)) return;
+  const c = H.digitCost(d); applyVals($('pop'), { pdc: fmt(c) + ' ◇' }, { pd: S.crease.gte(c) });
+}
+
+/* ---------- hero, ledger, rail, dock ---------- */
+function renderHero() {
+  const x = S.star, t = tierOf(x);
+  $('heroNum').innerHTML = heroHTML(x);
+  if (t !== V.tier) { if (V.tier) flashHero(); V.tier = t; }
+  $('heroRead').textContent = reading(x);
+  const r = H.starRate(S);
+  $('heroRate').textContent = r.gt(0) ? '+' + fmt(r) + ' / 秒' : (S.eng[0].b ? '' : '买一台一阶引擎开始生产');
+}
+function renderLedger() {
+  const rows = [];
+  if (S.foldN > 0) rows.push(['折痕 ◇', 'crease']);
+  if (S.era >= 3) rows.push(['幂晶 ◆', 'power']);
+  if (S.era >= 4) rows.push(['塔砖 ▲', 'brick']);
+  if (S.era >= 5) rows.push(['箭能 ✧', 'arrowE']);
+  if (S.foldN > 0) rows.push(['晶格值 L', 'L']);
+  if (H.hasStar(S, 'l1')) rows.push(['递归核 λ', 'lam']);
+  rows.push(['游戏时长', 'time']);
+  const sig = rows.map(r => r[1]).join();
+  if (sig !== V.gsig) { V.gsig = sig; $('ledger').innerHTML = rows.map(r => `<div class="row"><span class="muted">${r[0]}</span><span class="v" data-k="${r[1]}"></span></div>`).join(''); }
+  const v = { crease: fmt(S.crease), power: fmt(S.power), brick: fmt(S.brick), arrowE: fmt(S.arrowE), time: hms(S.time), lam: fmt(S.lam) };
+  if (S.foldN > 0) v.L = fmt(H.latticeValue(S));
+  applyVals($('ledger'), v);
+  const [txt, f] = milestone(); $('goalTxt').textContent = txt; $('goalBar').style.width = (f * 100).toFixed(1) + '%';
+}
+function renderRail() {
+  const sig = S.era + '|' + S.won; if (sig === V.rsig) return; V.rsig = sig;
+  let h = '';
+  for (let e = 1; e <= 5; e++) { h += `<span class="st ${e < S.era ? 'done' : e === S.era ? 'now' : ''}" title="第 ${ERAS[e][0]} 纪元：${ERAS[e][1]}"><span class="dot">${ERAS[e][0]}</span><span class="nm">${e <= S.era ? ERAS[e][1] : '？'}</span></span><span class="ln"></span>`; }
+  h += `<span class="st ${S.won ? 'now' : ''}" title="终点 Ω"><span class="dot">Ω</span></span>`;
+  $('rail').innerHTML = h;
+}
+const GATES = [
+  { id: 'fold', name: '折叠', cur: 'crease', n: () => S.foldN, show: () => S.foldN > 0 || S.best.gte(1e15), pend: () => H.pendingCrease(S), req: '需要 ✦ ≥ 1e25', act: () => H.fold(S) },
+  { id: 'asc', name: '升幂', cur: 'power', n: () => S.ascN, show: () => S.ascN > 0 || S.best.gte('1e200'), pend: () => H.pendingPower(S), req: '需要 ✦ ≥ 2^1024', act: () => H.ascend(S), cry: 'power',
+    body: g => `升幂会重置星尘、引擎、折痕和 λ${H.hasStar(S, 'k1') ? '' : '，以及大部分折叠升级'}，换来 ${g} ◆。晶格的数字和算符都会保留。` },
+  { id: 'tow', name: '塔化', cur: 'brick', n: () => S.towN, show: () => S.towN > 0 || S.lat.n >= 5, pend: () => H.pendingBrick(S), req: '需要 ✦ ≥ 10↑↑5', act: () => H.tower(S), cry: 'brick',
+    body: g => `塔化会重置星尘、折痕、幂晶和 λ，换来 ${g} ▲。星图、悖论进度和晶格都会保留。` },
+  { id: 'tr', name: '超越', cur: 'arrowE', n: () => S.trN, show: () => S.trN > 0 || S.own[3] >= 2, pend: () => H.pendingArrow(S), req: '需要 ✦ ≥ 10↑↑↑3', act: () => H.transcend(S), cry: 'arrowE',
+    body: g => `超越会重置星尘、折痕、幂晶、塔砖和 λ，换来 ${g} ✧。尖塔与星图保留。` },
+];
+function renderDock() {
+  const vis = GATES.filter(g => g.show()), sig = vis.map(g => g.id).join();
+  document.querySelector('.dock').hidden = !vis.length;
+  if (sig !== V.dsig) { V.dsig = sig; $('dock').innerHTML = vis.map(g => `<button class="gate" data-act="gate" data-id="${g.id}" data-en="g_${g.id}"><div class="g1"><span>${g.name}</span><span class="faint" data-k="n_${g.id}"></span></div><div class="g2" data-k="p_${g.id}"></div><div class="g3" data-k="s_${g.id}"></div><i class="cry" id="cry_${g.id}"></i></button>`).join(''); }
+  const v = {}, e = {};
+  for (const g of vis) {
+    const p = g.pend(); e['g_' + g.id] = p.gt(0); v['n_' + g.id] = g.n() ? '第 ' + g.n() + ' 次' : '';
+    v['p_' + g.id] = p.gt(0) ? '+' + fmt(p) + ' ' + CUR[g.cur][0] : CUR[g.cur][1] + ' ' + fmt(S[g.cur]);
+    let sub = p.gt(0) ? '' : g.req;
+    if (g.id === 'asc' && S.inPara >= 0) sub = '悖论中无法升幂';
+    if (g.cry && p.gt(0)) { const c = H.cryst(S, g.cry); sub = c < 1 ? '结晶 ' + Math.floor(c * 100) + '%' : '已完全结晶'; const el = $('cry_' + g.id); if (el) el.style.width = (c * 100) + '%'; }
+    else { const el = $('cry_' + g.id); if (el) el.style.width = '0'; }
+    v['s_' + g.id] = sub;
+  }
+  applyVals($('dock'), v, e);
+}
+function renderBanner() {
+  const b = $('banner');
+  if (S.inPara < 0) { if (!b.hidden) { b.hidden = true; b.innerHTML = ''; } return; }
+  const p = H.PARA[S.inPara], key = 'p' + S.inPara + S.para[S.inPara];
+  if (b.dataset.key !== key) { b.dataset.key = key; b.innerHTML = `<b>悖论进行中：${p.name}</b><span class="muted">${p.rule} 目标 ✦ ≥ ${fmt(H.paraGoal(S, S.inPara))}</span><button class="btn sm" data-act="paraExit">退出悖论</button>`; }
+  b.hidden = false;
+}
+function render() {
+  document.body.dataset.era = S.era;
+  renderRail(); renderHero(); renderLedger(); renderBanner(); renderTabs(); renderPanel(); renderSide(); renderDock(); renderPop();
+  $('saveInd').textContent = V.saveMsg || V.cloudMsg;
+}
+
+/* ---------- actions ---------- */
+function afterChange() { V.lsig = ''; V.psig = ''; }
+const ACT = {
+  tab: d => { V.tab = d.id; closePop(); V.tsig = ''; },
+  close: () => closeModal(),
+  confirmOk: () => { const f = V.confirmFn; V.confirmFn = null; closeModal(); if (f) f(); },
+  eng1: d => H.buyEngine(S, +d.i, false), engM: d => H.buyEngine(S, +d.i, true),
+  oc1: () => H.buyOc(S, false), ocM: () => H.buyOc(S, true), engAll: () => { H.buyAllEngines(S); H.buyOc(S, true); },
+  up: d => { if (H.buyUp(S, d.id)) { afterChange(); if (S.auto.arrange) { H.arrange(S); S._dirty = false; } } },
+  digits: () => { if (H.buyDigitsCheapest(S)) { if (S.auto.arrange) { H.arrange(S); S._dirty = false; } afterChange(); } },
+  digit: d => { H.buyDigit(S, +d.i); S._dirty = false; afterChange(); openPopAgain(); },
+  slot: (d, el) => {
+    const i = +d.i;
+    if (V.sel >= 0 && V.sel !== i) { H.swapSlots(S, V.sel, i); V.sel = -1; closePop(); afterChange(); return; }
+    if (V.sel === i) { V.sel = -1; closePop(); afterChange(); return; }
+    V.sel = i; afterChange(); renderSide(); const nel = document.querySelector(`#side [data-act="slot"][data-i="${i}"]`); openPop(nel || el, 'slot', { i });
+  },
+  lamHere: d => { S.lat.lam = +d.i; S._lc = null; V.sel = -1; closePop(); afterChange(); },
+  op: (d, el) => { V.sel = -1; afterChange(); renderSide(); const nel = document.querySelector(`#side [data-act="op"][data-t="${d.t}"][data-i="${d.i}"]`); openPop(nel || el, 'op', { t: d.t, i: +d.i }); },
+  setop: d => { if (V.pop) { H.setOp(S, V.pop.t, V.pop.i, +d.id); } closePop(); afterChange(); },
+  arrange: () => { const ok = H.arrange(S, 500); afterChange(); toast(ok ? '已换成更好的布局' : '当前布局已经是找到的最好布局'); },
+  star: d => { V.star = d.id; },
+  buyStar: d => { if (H.buyStar(S, d.id)) { afterChange(); if (S.auto.arrange && S._dirty) { H.arrange(S); S._dirty = false; } } },
+  para: d => confirmModal('进入悖论「' + H.PARA[+d.id].name + '」', H.PARA[+d.id].rule + ' 进入时会先结算升幂，然后从头开始这一局。', '进入', () => { H.enterPara(S, +d.id); if (S.auto.arrange) H.arrange(S); afterChange(); }),
+  paraExit: () => { H.exitPara(S); if (S.auto.arrange) H.arrange(S); afterChange(); },
+  spire: () => { if (H.buySpire(S)) { afterChange(); if (S.auto.arrange && S._dirty) { H.arrange(S); S._dirty = false; } } },
+  arrowBuy: () => { if (H.buyArrow(S)) { afterChange(); if (S.auto.arrange) { H.arrange(S); S._dirty = false; } toast('新箭头已加入晶格'); } },
+  gate: d => {
+    const g = GATES.find(x => x.id === d.id); const p = g.pend(); if (p.lte(0)) return;
+    const go = () => { const before = S.era; g.act(); V.sel = -1; closePop(); afterChange(); if (S.auto.arrange) { H.arrange(S); S._dirty = false; } flashHero(); if (S.era !== before) checkEra(); };
+    if (S.ui.confirm && g.body) confirmModal(g.name + '？', g.body(fmt(p)), g.name, go); else go();
+  },
+  save: () => { saveLocal(true); saveCloud(); toast('已保存'); },
+  export: () => { modal(`<h3>导出存档</h3><p>复制下面这段文字保存好，以后可以在“导入存档”里恢复。</p><textarea class="txt" id="exportTxt" readonly>${esc(H.exportStr(S))}</textarea><div class="act"><button class="btn" data-act="close">关闭</button><button class="btn solid" data-act="copy">复制</button></div>`); const t = $('exportTxt'); t.focus(); t.select(); },
+  copy: () => { const t = $('exportTxt'); t.select(); (navigator.clipboard ? navigator.clipboard.writeText(t.value) : Promise.reject()).then(() => toast('已复制到剪贴板'), () => { document.execCommand('copy'); toast('已复制'); }); },
+  import: () => modal(`<h3>导入存档</h3><p>粘贴以 HT3: 开头的存档文字。导入会替换当前进度。</p><textarea class="txt" id="importTxt" placeholder="HT3:…"></textarea><p class="faint" id="importErr" style="color:var(--bad)"></p><div class="act"><button class="btn" data-act="close">取消</button><button class="btn solid" data-act="doImport">导入</button></div>`),
+  doImport: () => { try { const ns = H.importStr($('importTxt').value); S = ns; S.last = Date.now(); saveLocal(true); closeModal(); resetView(); toast('存档已导入'); } catch (e) { $('importErr').textContent = '无法读取：' + (e.message || '格式不对'); } },
+  cloudLoad: () => { try { S = H.importStr(V.cloudData.s); S.last = Date.now(); saveLocal(true); closeModal(); resetView(); toast('已载入云存档'); } catch (e) { toast('云存档读取失败'); closeModal(); } },
+  reset: () => modal(`<h3>清除全部进度</h3><p>所有纪元、成就和存档都会被删除，无法撤销。确定的话，在下面输入“重置”。</p><input class="txt" id="resetTxt" style="width:100%"><div class="act"><button class="btn" data-act="close">取消</button><button class="btn solid" data-act="doReset">清除</button></div>`),
+  doReset: () => { if (($('resetTxt').value || '').trim() !== '重置') { toast('请输入“重置”'); return; } S = H.newState(); S.ui.intro = true; saveLocal(true); saveCloud(); closeModal(); resetView(); },
+  victory: () => closeModal(),
+};
+function openPopAgain() { if (!V.pop || V.pop.kind !== 'slot') return; const i = V.pop.i; renderSide(); const el = document.querySelector(`#side [data-act="slot"][data-i="${i}"]`); if (el) openPop(el, 'slot', { i }); }
+function resetView() { V.tab = 'eng'; V.sel = -1; V.psig = V.lsig = V.tsig = V.gsig = V.rsig = V.dsig = ''; V.tier = ''; V.logN = S.log.length; closePop(); applyTheme(); }
+function applyTheme() { const t = S.ui.theme; if (t === 'auto') delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = t; }
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-act]');
+  if (!t) { if (!e.target.closest('#pop')) { if (V.pop) { closePop(); if (V.sel >= 0) { V.sel = -1; afterChange(); } } } return; }
+  if (t.getAttribute('aria-disabled') === 'true' && t.classList.contains('buy')) return;
+  if (t.hasAttribute('disabled')) return;
+  const f = ACT[t.dataset.act]; if (f) { f(t.dataset, t, e); render(); }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { if (!$('modal').hidden) closeModal(); else if (V.pop) { closePop(); V.sel = -1; afterChange(); } }
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('g[data-act]')) { e.preventDefault(); e.target.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
+});
+document.addEventListener('change', e => {
+  const t = e.target.closest('[data-set]'); if (!t) return;
+  const [a, b] = t.dataset.set.split('.');
+  let val = t.type === 'checkbox' ? t.checked : t.value;
+  if ('num' in t.dataset) { val = parseFloat(val); if (!(val > 0)) val = 1; t.value = fn(val); }
+  S[a][b] = val; if (t.dataset.set === 'ui.theme') applyTheme();
+  V.psig = '';
+});
+window.addEventListener('resize', () => { V.lsig = ''; closePop(); });
+
+/* ---------- events: era, achievements, logs ---------- */
+function checkEra() {
+  if (S.era > (S.ui.seen || 1)) { S.ui.seen = S.era; showIntro(S.era); flashHero(); }
+  if (S.won && !S.ui.wonSeen) { S.ui.wonSeen = true; modal(`<div class="era-mark">终点</div><h3 style="font:600 54px var(--num)">Ω</h3><p>你在 ${hms(S.wonT)} 的游戏时间里抵达了 10{10}10。</p><p>星尘不会停下。之后的一切都是无尽模式：看看它还能走多远。</p><div class="act"><button class="btn solid" data-act="victory">继续</button></div>`); }
+}
+function events() {
+  H.checkAch(S).forEach(i => toast('成就：' + H.ACH[i][0]));
+  while (V.logN < S.log.length) toast(S.log[V.logN++].m);
+  if (V.logN > S.log.length) V.logN = S.log.length;
+  if ($('modal').hidden) checkEra();
+}
+
+/* ---------- offline ---------- */
+function offline(sec, done) {
+  V.busy = true; sec = Math.min(sec, 86400);
+  const steps = Math.min(900, Math.max(30, Math.ceil(sec / 2))), dt = sec / steps;
+  const b = { star: S.star, crease: S.crease, power: S.power, brick: S.brick, arrowE: S.arrowE, era: S.era, folds: S.foldN, asc: S.ascN, tow: S.towN };
+  modal(`<div class="era-mark">离线收益</div><h3>正在补算你离开的 ${hms(sec)}</h3><div class="goal"><div class="bar"><i id="offBar"></i></div></div>`);
+  let i = 0;
+  const chunk = () => {
+    const end = Math.min(steps, i + 20);
+    for (; i < end; i++) { H.tick(S, dt); H.automate(S); H.autoPrestige(S); }
+    const bar = $('offBar'); if (bar) bar.style.width = (i / steps * 100) + '%';
+    if (i < steps) { setTimeout(chunk, 0); return; }
+    S.last = Date.now(); V.busy = false;
+    const rows = [['星尘 ✦', fmt(b.star) + ' → ' + fmt(S.star)]];
+    for (const [k, nm] of [['crease', '折痕 ◇'], ['power', '幂晶 ◆'], ['brick', '塔砖 ▲'], ['arrowE', '箭能 ✧']]) if (!S[k].eq(b[k])) rows.push([nm, fmt(b[k]) + ' → ' + fmt(S[k])]);
+    if (S.foldN > b.folds) rows.push(['折叠', '+' + (S.foldN - b.folds) + ' 次']);
+    if (S.ascN > b.asc) rows.push(['升幂', '+' + (S.ascN - b.asc) + ' 次']);
+    if (S.towN > b.tow) rows.push(['塔化', '+' + (S.towN - b.tow) + ' 次']);
+    modal(`<div class="era-mark">离线收益</div><h3>你离开了 ${hms(sec)}</h3><div class="ov-grid">${rows.map(r => `<span class="muted">${r[0]}</span><span class="num">${r[1]}</span>`).join('')}</div><div class="act"><button class="btn solid" data-act="close">好的</button></div>`);
+    afterChange(); if (done) done();
+  };
+  chunk();
+}
+
+/* ---------- loop ---------- */
+function step() {
+  if (V.busy || !S) return;
+  const now = Date.now(); let dt = (now - S.last) / 1000; S.last = now;
+  if (dt > 60) { offline(dt); return; }
+  if (dt > 0) { const n = Math.min(240, Math.ceil(dt / 0.25)), sdt = dt / n; for (let i = 0; i < n; i++) H.tick(S, sdt); }
+  if (now - V.autoT > 100) { V.autoT = now; const era = S.era; H.automate(S); H.autoPrestige(S); if (S._dirty) S._dirty = false; if (S.era !== era) afterChange(); }
+  if (now - V.achT > 1000) { V.achT = now; events(); }
+  if (now - V.lastSave > 15000) saveLocal(false);
+  if (V.cloud && now - V.lastCloud > 120000) saveCloud();
+}
+function frame() { const now = performance.now(); if (now - V.rT > 90 && S && !V.busy) { V.rT = now; try { render(); } catch (e) { console.error(e); } } requestAnimationFrame(frame); }
+document.addEventListener('visibilitychange', () => { if (document.hidden && S) saveLocal(false); });
+window.addEventListener('pagehide', () => { if (S) saveLocal(false); });
+
+function boot() {
+  S = loadLocal();
+  const fresh = !S;
+  if (!S) S = H.newState();
+  V.logN = S.log.length; applyTheme();
+  const away = (Date.now() - (S.last || Date.now())) / 1000;
+  setInterval(step, 50); requestAnimationFrame(frame);
+  if (fresh || !S.ui.intro) { S.ui.intro = true; showIntro(0); }
+  else if (away > 60) offline(away);
+  else S.last = Date.now();
+  initCloud();
+}
+if (!window.OmegaNum || !window.HT) {
+  document.getElementById('panel').innerHTML = '<div class="locked">大数运算库没能加载。请检查网络后刷新页面。</div>';
+} else boot();
+window.__HT_STATE = () => S;
+})();
+
+</script>
+</body>
+</html>

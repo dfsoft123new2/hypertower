@@ -1,0 +1,367 @@
+{
+  "entries": [
+    {
+      "era": 6,
+      "seconds": 0
+    },
+    {
+      "era": 7,
+      "seconds": 3745
+    },
+    {
+      "era": 8,
+      "seconds": 7571
+    },
+    {
+      "era": 9,
+      "seconds": 11270
+    },
+    {
+      "era": 10,
+      "seconds": 14726
+    }
+  ],
+  "rungs": [
+    {
+      "seconds": 1,
+      "era": 6,
+      "rank": 0
+    },
+    {
+      "seconds": 1531,
+      "era": 6,
+      "rank": 1
+    },
+    {
+      "seconds": 2693,
+      "era": 6,
+      "rank": 2
+    },
+    {
+      "seconds": 3745,
+      "era": 7,
+      "rank": 0
+    },
+    {
+      "seconds": 3807,
+      "era": 7,
+      "rank": 1
+    },
+    {
+      "seconds": 3867,
+      "era": 7,
+      "rank": 2
+    },
+    {
+      "seconds": 3926,
+      "era": 7,
+      "rank": 3
+    },
+    {
+      "seconds": 5322,
+      "era": 7,
+      "rank": 4
+    },
+    {
+      "seconds": 6501,
+      "era": 7,
+      "rank": 5
+    },
+    {
+      "seconds": 7571,
+      "era": 8,
+      "rank": 0
+    },
+    {
+      "seconds": 7574,
+      "era": 8,
+      "rank": 1
+    },
+    {
+      "seconds": 7577,
+      "era": 8,
+      "rank": 2
+    },
+    {
+      "seconds": 7580,
+      "era": 8,
+      "rank": 3
+    },
+    {
+      "seconds": 7643,
+      "era": 8,
+      "rank": 4
+    },
+    {
+      "seconds": 7703,
+      "era": 8,
+      "rank": 5
+    },
+    {
+      "seconds": 7763,
+      "era": 8,
+      "rank": 6
+    },
+    {
+      "seconds": 9097,
+      "era": 8,
+      "rank": 7
+    },
+    {
+      "seconds": 10235,
+      "era": 8,
+      "rank": 8
+    },
+    {
+      "seconds": 11270,
+      "era": 9,
+      "rank": 0
+    },
+    {
+      "seconds": 11271,
+      "era": 9,
+      "rank": 1
+    },
+    {
+      "seconds": 11272,
+      "era": 9,
+      "rank": 2
+    },
+    {
+      "seconds": 11273,
+      "era": 9,
+      "rank": 3
+    },
+    {
+      "seconds": 11276,
+      "era": 9,
+      "rank": 4
+    },
+    {
+      "seconds": 11279,
+      "era": 9,
+      "rank": 5
+    },
+    {
+      "seconds": 11282,
+      "era": 9,
+      "rank": 6
+    },
+    {
+      "seconds": 11342,
+      "era": 9,
+      "rank": 7
+    },
+    {
+      "seconds": 11400,
+      "era": 9,
+      "rank": 8
+    },
+    {
+      "seconds": 11457,
+      "era": 9,
+      "rank": 9
+    },
+    {
+      "seconds": 12691,
+      "era": 9,
+      "rank": 10
+    },
+    {
+      "seconds": 13758,
+      "era": 9,
+      "rank": 11
+    },
+    {
+      "seconds": 14726,
+      "era": 10,
+      "rank": 0
+    },
+    {
+      "seconds": 14727,
+      "era": 10,
+      "rank": 1
+    },
+    {
+      "seconds": 14728,
+      "era": 10,
+      "rank": 2
+    },
+    {
+      "seconds": 14729,
+      "era": 10,
+      "rank": 3
+    },
+    {
+      "seconds": 14730,
+      "era": 10,
+      "rank": 4
+    },
+    {
+      "seconds": 14731,
+      "era": 10,
+      "rank": 5
+    },
+    {
+      "seconds": 14732,
+      "era": 10,
+      "rank": 6
+    },
+    {
+      "seconds": 14735,
+      "era": 10,
+      "rank": 7
+    },
+    {
+      "seconds": 14738,
+      "era": 10,
+      "rank": 8
+    },
+    {
+      "seconds": 14741,
+      "era": 10,
+      "rank": 9
+    },
+    {
+      "seconds": 14794,
+      "era": 10,
+      "rank": 10
+    },
+    {
+      "seconds": 14845,
+      "era": 10,
+      "rank": 11
+    },
+    {
+      "seconds": 14896,
+      "era": 10,
+      "rank": 12
+    },
+    {
+      "seconds": 16060,
+      "era": 10,
+      "rank": 13
+    },
+    {
+      "seconds": 17067,
+      "era": 10,
+      "rank": 14
+    },
+    {
+      "seconds": 17973,
+      "era": 10,
+      "rank": 15
+    }
+  ],
+  "totalSeconds": 26291,
+  "runtimeMs": 2934.784,
+  "baseline": {
+    "time": 33491,
+    "era": 10,
+    "rank": 15,
+    "epsilon": "10",
+    "progress": 0,
+    "hero": "H⟨ε_10⟩(10)",
+    "lambda": "H⟨ε₀[100]⟩(100)",
+    "rate": 0.12269387618767671,
+    "echo": 29.97620771382694,
+    "swallows": 1428,
+    "devourInterval": 12.295081967213115,
+    "currency": [
+      0.3140499999991072,
+      8.256049999999222,
+      12.403849999999055,
+      6.287049999998775,
+      16.398999999999486
+    ],
+    "total": [
+      124.02502000001586,
+      109.34440000001125,
+      92.99557000001289,
+      76.05805000001415,
+      127.39899999997408
+    ],
+    "up": [
+      {
+        "drive": 6,
+        "flux": 3,
+        "devour": 3,
+        "operator": 1,
+        "auto": 1,
+        "memory": 1
+      },
+      {
+        "drive": 6,
+        "flux": 3,
+        "devour": 2,
+        "operator": 1,
+        "auto": 1,
+        "memory": 1
+      },
+      {
+        "drive": 5,
+        "flux": 3,
+        "devour": 2,
+        "operator": 1,
+        "auto": 1,
+        "memory": 1
+      },
+      {
+        "drive": 5,
+        "flux": 2,
+        "devour": 2,
+        "operator": 1,
+        "auto": 1,
+        "memory": 1
+      },
+      {
+        "drive": 6,
+        "flux": 3,
+        "devour": 3,
+        "operator": 1,
+        "auto": 1,
+        "memory": 1
+      }
+    ],
+    "clears": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "proofs": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "auto": {
+      "advance": true,
+      "shop": true,
+      "prestige": false
+    },
+    "focus": "growth",
+    "layout": 1.82934693877551
+  },
+  "campaignSeed": {
+    "file": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\simulation-p1\\campaign-completed-V-input.json",
+    "sha256": "7773cc2114b7f7eb6f1c23473af2f1fd9dd7c9380d37716cf13d5f9c2f86a7cd",
+    "bytes": 2545
+  },
+  "baselineSave": {
+    "file": "D:\\hypertower-recovery-20261026\\walkthrough-work-20261101\\simulation-p1\\baseline-X-epsilon10.json",
+    "sha256": "ff5d747b22ad82b03849e3c976b1655cc0db57625201c26c8ff41e06dba076df",
+    "bytes": 8235
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "seconds": 3600,
+  "completeSerializedStateEqual": true,
+  "beforeMs": 2104.516,
+  "afterMs": 1008.9528999999998,
+  "speedup": 2.085841668129405,
+  "method": "Same source in isolated VM with summary lazy internal+external; no game file changed, no dt or strategy change"
+}

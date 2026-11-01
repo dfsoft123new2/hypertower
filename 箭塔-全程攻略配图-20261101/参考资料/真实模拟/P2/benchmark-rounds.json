@@ -1,0 +1,153 @@
+{
+  "benchmarkWallSeconds": 1.0569819999999999,
+  "steps": 8115,
+  "cycles": [
+    {
+      "round": "225002",
+      "axiom": 2,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 541,
+      "canonicalHash": "77b885876fe19a9a16ed1b4858a7d9be2668112ad60bc81d4a17953ef95d2b64"
+    },
+    {
+      "round": "225003",
+      "axiom": 3,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 1082,
+      "canonicalHash": "24bad632951483e8d40a7003e9759eb3431bb0ab4ad4cb95c27b36cb0de868a9"
+    },
+    {
+      "round": "225004",
+      "axiom": 4,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 1623,
+      "canonicalHash": "5d26ddef5c50cbaf7e10f7f2d1037bc444bfb35ecb6f3ed7540629a9b216514d"
+    },
+    {
+      "round": "225005",
+      "axiom": 0,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 2164,
+      "canonicalHash": "bf40ebd93c0e720d8782c50958a4eb6bda17dc9bf9989cfb23be909b0e68b78a"
+    },
+    {
+      "round": "225006",
+      "axiom": 1,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 2705,
+      "canonicalHash": "9c62863b7b234bea493ec264a0d314d06e98709b76171635c3e41dac62c3f72b",
+      "sameAsFiveEarlier": false
+    },
+    {
+      "round": "225007",
+      "axiom": 2,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 3246,
+      "canonicalHash": "77b885876fe19a9a16ed1b4858a7d9be2668112ad60bc81d4a17953ef95d2b64",
+      "sameAsFiveEarlier": true
+    },
+    {
+      "round": "225008",
+      "axiom": 3,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 3787,
+      "canonicalHash": "24bad632951483e8d40a7003e9759eb3431bb0ab4ad4cb95c27b36cb0de868a9",
+      "sameAsFiveEarlier": true
+    },
+    {
+      "round": "225009",
+      "axiom": 4,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 4328,
+      "canonicalHash": "5d26ddef5c50cbaf7e10f7f2d1037bc444bfb35ecb6f3ed7540629a9b216514d",
+      "sameAsFiveEarlier": true
+    },
+    {
+      "round": "225010",
+      "axiom": 0,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 4869,
+      "canonicalHash": "bf40ebd93c0e720d8782c50958a4eb6bda17dc9bf9989cfb23be909b0e68b78a",
+      "sameAsFiveEarlier": true
+    },
+    {
+      "round": "225011",
+      "axiom": 1,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 5410,
+      "canonicalHash": "9c62863b7b234bea493ec264a0d314d06e98709b76171635c3e41dac62c3f72b",
+      "sameAsFiveEarlier": true
+    },
+    {
+      "round": "225012",
+      "axiom": 2,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 5951,
+      "canonicalHash": "77b885876fe19a9a16ed1b4858a7d9be2668112ad60bc81d4a17953ef95d2b64",
+      "sameAsFiveEarlier": true
+    },
+    {
+      "round": "225013",
+      "axiom": 3,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 6492,
+      "canonicalHash": "24bad632951483e8d40a7003e9759eb3431bb0ab4ad4cb95c27b36cb0de868a9",
+      "sameAsFiveEarlier": true
+    },
+    {
+      "round": "225014",
+      "axiom": 4,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 7033,
+      "canonicalHash": "5d26ddef5c50cbaf7e10f7f2d1037bc444bfb35ecb6f3ed7540629a9b216514d",
+      "sameAsFiveEarlier": true
+    },
+    {
+      "round": "225015",
+      "axiom": 0,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 7574,
+      "canonicalHash": "bf40ebd93c0e720d8782c50958a4eb6bda17dc9bf9989cfb23be909b0e68b78a",
+      "sameAsFiveEarlier": true
+    },
+    {
+      "round": "225016",
+      "axiom": 1,
+      "seconds": 31.016728687111556,
+      "earned": "601",
+      "multiplier": 4000,
+      "steps": 8115,
+      "canonicalHash": "9c62863b7b234bea493ec264a0d314d06e98709b76171635c3e41dac62c3f72b",
+      "sameAsFiveEarlier": true
+    }
+  ],
+  "legalLoad": true
+}

@@ -1,0 +1,310 @@
+{
+  "module": "P1 I-X and XI gate",
+  "versionDate": "2026-11-01",
+  "charCount": 32845,
+  "tests": 11,
+  "allPassed": true,
+  "results": [
+    {
+      "name": "Fresh first engine and fold exact threshold",
+      "passed": true,
+      "initialDust": 10,
+      "firstEnginePrice": 10,
+      "foldAt1e25": 2
+    },
+    {
+      "name": "Current v7 phi upgrade cap",
+      "passed": true,
+      "cap": 12,
+      "phiAtCap": 4
+    },
+    {
+      "name": "2 by 2 digit3 multiplication demonstration",
+      "passed": true,
+      "before": "24",
+      "after": "27"
+    },
+    {
+      "name": "3 by 3 digit3 concentrated multiplication demonstration",
+      "passed": true,
+      "before": "54",
+      "after": "72"
+    },
+    {
+      "name": "Finite paradox has three total layers",
+      "passed": true,
+      "max": 3
+    },
+    {
+      "name": "Axiom third layer is stage gated 0",
+      "passed": true,
+      "id": 0,
+      "goal": 4,
+      "lockedEra": 6,
+      "lockedCeiling": 3,
+      "opensEra": 7,
+      "completed": 3
+    },
+    {
+      "name": "Axiom third layer is stage gated 1",
+      "passed": true,
+      "id": 1,
+      "goal": 7,
+      "lockedEra": 7,
+      "lockedCeiling": 6,
+      "opensEra": 8,
+      "completed": 3
+    },
+    {
+      "name": "Axiom third layer is stage gated 2",
+      "passed": true,
+      "id": 2,
+      "goal": 10,
+      "lockedEra": 8,
+      "lockedCeiling": 9,
+      "opensEra": 9,
+      "completed": 3
+    },
+    {
+      "name": "Axiom third layer is stage gated 3",
+      "passed": true,
+      "id": 3,
+      "goal": 13,
+      "lockedEra": 9,
+      "lockedCeiling": 12,
+      "opensEra": 10,
+      "completed": 3
+    },
+    {
+      "name": "Research stage threshold and 60 second gate",
+      "passed": true,
+      "rank": 3,
+      "bothTimersRequired": 60,
+      "entered": 7,
+      "grid": 6
+    },
+    {
+      "name": "XI gate requires best epsilon ten",
+      "passed": true,
+      "bestEpsilonRequired": "10"
+    }
+  ],
+  "sourceEvidence": [
+    {
+      "file": "source-v3.html",
+      "line": 324,
+      "needle": "const E25"
+    },
+    {
+      "file": "source-v3.html",
+      "line": 386,
+      "needle": "const CFG"
+    },
+    {
+      "file": "source-v3.html",
+      "line": 437,
+      "needle": "const UP ="
+    },
+    {
+      "file": "source-v3.html",
+      "line": 459,
+      "needle": "const STARS ="
+    },
+    {
+      "file": "source-v3.html",
+      "line": 486,
+      "needle": "const PARA ="
+    },
+    {
+      "file": "source-v3.html",
+      "line": 496,
+      "needle": "const SPIRE ="
+    },
+    {
+      "file": "source-v3.html",
+      "line": 669,
+      "needle": "function pendingCrease"
+    },
+    {
+      "file": "source-v3.html",
+      "line": 767,
+      "needle": "function resetRun"
+    },
+    {
+      "file": "src/beyond.js",
+      "line": 116,
+      "needle": "const STAGES"
+    },
+    {
+      "file": "src/beyond.js",
+      "line": 123,
+      "needle": "const UPG"
+    },
+    {
+      "file": "src/beyond.js",
+      "line": 196,
+      "needle": "function layout"
+    },
+    {
+      "file": "src/beyond.js",
+      "line": 218,
+      "needle": "function rate"
+    },
+    {
+      "file": "src/beyond.js",
+      "line": 250,
+      "needle": "function pending"
+    },
+    {
+      "file": "src/beyond.js",
+      "line": 265,
+      "needle": "function prestige"
+    },
+    {
+      "file": "src/beyond.js",
+      "line": 329,
+      "needle": "function enterTrial"
+    },
+    {
+      "file": "src/beyond.js",
+      "line": 338,
+      "needle": "function automate"
+    },
+    {
+      "file": "src/era11.js",
+      "line": 29,
+      "needle": "function gate"
+    }
+  ],
+  "onlineIndexMatchingAxiomRule": true,
+  "onlineIndexSha256": "4f86250e55b483a293fbe2d31ea8976b262945f1ae22b21d5aeefd257ada3dd8",
+  "criticalCorrection": "VI-X四公理各3层；原属纪元上限仅允许前2层，第三层下一纪元开放。不可沿用旧总结每种最多2层。",
+  "captureProposals": [
+    {
+      "key": "fresh-before",
+      "era": 1,
+      "action": "初始10星尘、未购买一阶",
+      "api": "H.newState()"
+    },
+    {
+      "key": "fresh-after",
+      "era": 1,
+      "action": "买第一台一阶后运行，展示买入数与持有量",
+      "api": "H.buyEngine(s,0,false); H.tick(s,1)"
+    },
+    {
+      "key": "fold-ready",
+      "era": 1,
+      "action": "当前星尘10^25、折叠预览2",
+      "api": "s.star=H.N('1e25'); H.pendingCrease(s)"
+    },
+    {
+      "key": "fold-done",
+      "era": 2,
+      "action": "完成折叠，星尘回10、折痕2、空生产链",
+      "api": "H.fold(s)"
+    },
+    {
+      "key": "ascend-ready",
+      "era": 2,
+      "action": "2^1024升幂门槛、结晶30秒预览",
+      "api": "s.star=H.E308; s.rt.p=30"
+    },
+    {
+      "key": "ascend-done",
+      "era": 3,
+      "action": "首次升幂，星图幂之源入口",
+      "api": "H.ascend(s)"
+    },
+    {
+      "key": "tower-ready",
+      "era": 3,
+      "action": "10↑↑5塔化门槛、结晶60秒预览",
+      "api": "s.star=H.T5; s.rt.b=60"
+    },
+    {
+      "key": "tower-done",
+      "era": 4,
+      "action": "首次塔化后迭幂库存与尖塔第一层",
+      "api": "H.tower(s)"
+    },
+    {
+      "key": "transcend-ready",
+      "era": 4,
+      "action": "10↑↑↑3超越门槛、结晶60秒",
+      "api": "s.star=H.P3; s.rt.a=60"
+    },
+    {
+      "key": "transcend-done",
+      "era": 5,
+      "action": "首次超越后箭能与↑³库存",
+      "api": "H.transcend(s)"
+    },
+    {
+      "key": "trial-third-locked",
+      "era": 6,
+      "action": "孤塔完成2层，第三层目标4超过VI上限3",
+      "api": "s.meta.clears[0]=2; H.Meta.trialGoal(s,0)"
+    },
+    {
+      "key": "trial-third-open",
+      "era": 7,
+      "action": "VII已开，孤塔第三层可进入",
+      "api": "s.era=7; H.Meta.enterTrial(s,0)"
+    }
+  ],
+  "introFigureReferences": [
+    1,
+    2,
+    3,
+    5,
+    4,
+    6,
+    8,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    24,
+    23,
+    25,
+    27,
+    26,
+    28,
+    29,
+    31,
+    30,
+    32,
+    33,
+    35,
+    38,
+    36,
+    37
+  ],
+  "captureMarkers": [
+    "fresh-before",
+    "fresh-after",
+    "fold-ready",
+    "fold-done",
+    "ascend-ready",
+    "ascend-done",
+    "tower-ready",
+    "tower-done",
+    "transcend-ready",
+    "transcend-done",
+    "trial-third-locked",
+    "trial-third-open"
+  ],
+  "markdownSha256": "c77aaebda3611444af8b4197eea2ce4fd29343c98c2a9dc364e66c185c134945"
+}

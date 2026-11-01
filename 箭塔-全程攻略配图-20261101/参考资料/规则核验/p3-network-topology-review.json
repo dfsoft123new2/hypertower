@@ -1,0 +1,13 @@
+{
+  "characters": 30305,
+  "h2": 2,
+  "h3": 50,
+  "sha256": "4c6a785690b837e62223e8e073d5c8c57319c7b601dfe6fc4d33affa9be0ca54",
+  "keyNumericAssertions": "passed",
+  "sensitiveFindings": [],
+  "evidenceFiles": [
+    "p3-network-topology-evidence.json",
+    "p3-braid-equivalences.json",
+    "p3-300-loop-family.json"
+  ]
+}

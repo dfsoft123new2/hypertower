@@ -1,0 +1,34 @@
+{
+  "nativeWholeDaySteps": 1506980,
+  "discreteAndStringMismatchCount": 0,
+  "hardMismatchCount": 3,
+  "hardMismatches": [
+    {
+      "path": "state.eras.17.study",
+      "type": "numeric",
+      "error": 0.000052547343123876544,
+      "limit": 0.000010061745276290233
+    },
+    {
+      "path": "state.ord.coord",
+      "type": "numeric",
+      "error": 0.00005254734312210019,
+      "limit": 0.000010015745276290232
+    },
+    {
+      "path": "state.ord.h.$O.1.0",
+      "type": "numeric",
+      "error": 5980072.803477377,
+      "limit": 0.05730877921519542
+    }
+  ],
+  "floatingValuesWithinTolerance": 72,
+  "maxAbsoluteFloatingDifference": 0.0000012163736826664717,
+  "numericTolerance": "1e-5 absolute + 2e-9 relative; wall-clock last excluded; all structure/string/discrete counters must match",
+  "roundsExactlyEqual": true,
+  "pointsExactlyEqual": true,
+  "eraExactlyEqual": true,
+  "archiveExactlyEqual": true,
+  "blueprintIDsExactlyEqual": true,
+  "workshopExactlyEqual": true
+}

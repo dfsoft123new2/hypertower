@@ -1,0 +1,743 @@
+{
+  "baseline": "首个XX终点、归一0、太一0、720星、代表蓝图已备；先原生事件实跑XI→XX并封存MA+natural+fixed，然后开始未来1天/1周。720星与各题设计知识预先提供，解题的现实操作时间不计入。",
+  "firstRoute": {
+    "seconds": 97567.39566605247,
+    "stageSumSeconds": 97567.39566605247,
+    "stages": [
+      {
+        "era": 11,
+        "seconds": 7462.613379122127,
+        "hours": 2.0729481608672575,
+        "quality": 1.4,
+        "stars": 72,
+        "upgrades": [
+          8,
+          8,
+          6,
+          3,
+          1,
+          8
+        ],
+        "choice": null
+      },
+      {
+        "era": 12,
+        "seconds": 9866.892297988232,
+        "hours": 2.740803416107842,
+        "quality": 1.2,
+        "stars": 72,
+        "upgrades": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "choice": null
+      },
+      {
+        "era": 13,
+        "seconds": 9866.892036288464,
+        "hours": 2.740803343413462,
+        "quality": 1.2,
+        "stars": 72,
+        "upgrades": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "choice": null
+      },
+      {
+        "era": 14,
+        "seconds": 11177.389543119876,
+        "hours": 3.10483042864441,
+        "quality": 1.2,
+        "stars": 72,
+        "upgrades": [
+          6,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "choice": null
+      },
+      {
+        "era": 15,
+        "seconds": 8548.472648898489,
+        "hours": 2.3745757358051356,
+        "quality": 1.2,
+        "stars": 72,
+        "upgrades": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "choice": null
+      },
+      {
+        "era": 16,
+        "seconds": 9866.873645771419,
+        "hours": 2.740798234936505,
+        "quality": 1.2,
+        "stars": 72,
+        "upgrades": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "choice": null
+      },
+      {
+        "era": 17,
+        "seconds": 11177.389543119913,
+        "hours": 3.10483042864442,
+        "quality": 1.2,
+        "stars": 72,
+        "upgrades": [
+          6,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "choice": null
+      },
+      {
+        "era": 18,
+        "seconds": 9866.89203628841,
+        "hours": 2.740803343413447,
+        "quality": 1.2,
+        "stars": 72,
+        "upgrades": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "choice": null
+      },
+      {
+        "era": 19,
+        "seconds": 11177.34325507663,
+        "hours": 3.1048175708546193,
+        "quality": 1.2,
+        "stars": 72,
+        "upgrades": [
+          6,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "choice": false
+      },
+      {
+        "era": 20,
+        "seconds": 8556.637280378913,
+        "hours": 2.3768436889941422,
+        "quality": 1.2,
+        "stars": 72,
+        "upgrades": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "choice": null
+      }
+    ],
+    "nativeSteps": 2015,
+    "firstNormalizeEarned": "1",
+    "wallSeconds": 1.4439445
+  },
+  "rows": [
+    {
+      "label": "1day",
+      "seconds": 86400,
+      "round": "2",
+      "points": "2",
+      "era": 17,
+      "axiom": 2,
+      "multiplier": 1.9571067811865475,
+      "nativeSteps": 2044,
+      "wallSeconds": 0.17048090000000007,
+      "file": "low-checkpoint-1day.ht5",
+      "sha256": "1fb526b1f9801f290d42b47d334cbc0a8fed8223913be263ad83ccc4c8eb2e1f",
+      "currentRoundSeconds": 33473.72535552597,
+      "legalNativeImport": true
+    },
+    {
+      "label": "1week",
+      "seconds": 604800,
+      "round": "16",
+      "points": "22",
+      "era": 19,
+      "axiom": 1,
+      "multiplier": 4.2297286679028865,
+      "nativeSteps": 15891,
+      "wallSeconds": 1.1187689,
+      "file": "low-checkpoint-1week.ht5",
+      "sha256": "1bc5b40c8e9442b0ee284c768215eee49fa4f80ef373326a4538c05d3202a535",
+      "currentRoundSeconds": 22824.792213152396,
+      "legalNativeImport": true
+    }
+  ],
+  "existingBalance": {
+    "xi-balance-results.json": {
+      "sha256": "83ebae934f8ff35cd39f0cd58dc153915d06d89cbbbcc3de91df7ff1d68e4807",
+      "data": {
+        "passed": true,
+        "results": [
+          {
+            "profile": "auto",
+            "hours": 4.995833333333334,
+            "quality": 0.8,
+            "stars": 0,
+            "upgrades": [
+              8,
+              8,
+              6,
+              3,
+              1,
+              8
+            ],
+            "maxEventGapMinutes": 5.5,
+            "stages": [
+              {
+                "index": 1,
+                "time": 3105
+              },
+              {
+                "index": 2,
+                "time": 6075
+              },
+              {
+                "index": 3,
+                "time": 9060
+              },
+              {
+                "index": 4,
+                "time": 12030
+              },
+              {
+                "index": 5,
+                "time": 15015
+              },
+              {
+                "index": 6,
+                "time": 17985
+              }
+            ]
+          },
+          {
+            "profile": "medium",
+            "hours": 2.8541666666666665,
+            "quality": 1.2666666666666666,
+            "stars": 12,
+            "upgrades": [
+              8,
+              8,
+              6,
+              3,
+              1,
+              8
+            ],
+            "maxEventGapMinutes": 3.25,
+            "stages": [
+              {
+                "index": 1,
+                "time": 1920
+              },
+              {
+                "index": 2,
+                "time": 3585
+              },
+              {
+                "index": 3,
+                "time": 5265
+              },
+              {
+                "index": 4,
+                "time": 6930
+              },
+              {
+                "index": 5,
+                "time": 8610
+              },
+              {
+                "index": 6,
+                "time": 10275
+              }
+            ]
+          },
+          {
+            "profile": "expert",
+            "hours": 1.5666666666666667,
+            "quality": 3,
+            "stars": 24,
+            "upgrades": [
+              8,
+              8,
+              6,
+              3,
+              1,
+              8
+            ],
+            "maxEventGapMinutes": 2,
+            "stages": [
+              {
+                "index": 1,
+                "time": 1080
+              },
+              {
+                "index": 2,
+                "time": 1995
+              },
+              {
+                "index": 3,
+                "time": 2910
+              },
+              {
+                "index": 4,
+                "time": 3810
+              },
+              {
+                "index": 5,
+                "time": 4725
+              },
+              {
+                "index": 6,
+                "time": 5640
+              }
+            ]
+          }
+        ]
+      },
+      "provenance": "现有测试元数据，未把它重新标为本次实测；测试策略见对应.cjs文件。"
+    },
+    "late-balance-results.json": {
+      "sha256": "c12d5a9fa39911a56faf28239e4139cde7db94eb294a7bc46a6bc101a3a14c5e",
+      "data": {
+        "passed": true,
+        "results": [
+          {
+            "profile": "auto",
+            "totalHours": 56.97083333333334,
+            "eras": [
+              {
+                "era": 12,
+                "hours": 6.079166666666667,
+                "quality": 0.8,
+                "maxEventGapMinutes": 8.25,
+                "upgrades": [
+                  6,
+                  6,
+                  6,
+                  6,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 13,
+                "hours": 6.079166666666667,
+                "quality": 0.8,
+                "maxEventGapMinutes": 10.25,
+                "upgrades": [
+                  6,
+                  6,
+                  6,
+                  6,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 14,
+                "hours": 6.7625,
+                "quality": 0.8,
+                "maxEventGapMinutes": 11.25,
+                "upgrades": [
+                  6,
+                  6,
+                  6,
+                  6,
+                  6,
+                  5
+                ]
+              },
+              {
+                "era": 15,
+                "hours": 5.266666666666667,
+                "quality": 0.8,
+                "maxEventGapMinutes": 8.5,
+                "upgrades": [
+                  6,
+                  6,
+                  6,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 16,
+                "hours": 6.079166666666667,
+                "quality": 0.8,
+                "maxEventGapMinutes": 6.75,
+                "upgrades": [
+                  6,
+                  6,
+                  6,
+                  6,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 17,
+                "hours": 6.8875,
+                "quality": 0.8,
+                "maxEventGapMinutes": 11.75,
+                "upgrades": [
+                  6,
+                  6,
+                  6,
+                  6,
+                  6,
+                  5
+                ]
+              },
+              {
+                "era": 18,
+                "hours": 6.079166666666667,
+                "quality": 0.8,
+                "maxEventGapMinutes": 10.25,
+                "upgrades": [
+                  6,
+                  6,
+                  6,
+                  6,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 19,
+                "hours": 6.8875,
+                "quality": 0.8,
+                "maxEventGapMinutes": 3.75,
+                "upgrades": [
+                  6,
+                  6,
+                  6,
+                  6,
+                  6,
+                  5
+                ]
+              },
+              {
+                "era": 20,
+                "hours": 6.85,
+                "quality": 0.8,
+                "maxEventGapMinutes": 11.5,
+                "upgrades": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "profile": "medium",
+            "totalHours": 33.34583333333334,
+            "eras": [
+              {
+                "era": 12,
+                "hours": 3.566666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 4.75,
+                "upgrades": [
+                  6,
+                  6,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 13,
+                "hours": 3.566666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 5.75,
+                "upgrades": [
+                  6,
+                  6,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 14,
+                "hours": 3.966666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 6.25,
+                "upgrades": [
+                  6,
+                  6,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 15,
+                "hours": 3.0875,
+                "quality": 1.2,
+                "maxEventGapMinutes": 4.75,
+                "upgrades": [
+                  6,
+                  5,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 16,
+                "hours": 3.566666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 4,
+                "upgrades": [
+                  6,
+                  6,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 17,
+                "hours": 4.041666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 6.5,
+                "upgrades": [
+                  6,
+                  6,
+                  6,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 18,
+                "hours": 3.566666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 5.75,
+                "upgrades": [
+                  6,
+                  6,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 19,
+                "hours": 4.041666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 2.25,
+                "upgrades": [
+                  6,
+                  6,
+                  6,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 20,
+                "hours": 3.941666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 6.75,
+                "upgrades": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "profile": "expert",
+            "totalHours": 25.587500000000002,
+            "eras": [
+              {
+                "era": 12,
+                "hours": 2.7416666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 3.5,
+                "upgrades": [
+                  5,
+                  5,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 13,
+                "hours": 2.7416666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 4.5,
+                "upgrades": [
+                  5,
+                  5,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 14,
+                "hours": 3.05,
+                "quality": 1.2,
+                "maxEventGapMinutes": 4.75,
+                "upgrades": [
+                  6,
+                  5,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 15,
+                "hours": 2.375,
+                "quality": 1.2,
+                "maxEventGapMinutes": 3.75,
+                "upgrades": [
+                  5,
+                  5,
+                  5,
+                  5,
+                  5,
+                  4
+                ]
+              },
+              {
+                "era": 16,
+                "hours": 2.7416666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 3.25,
+                "upgrades": [
+                  5,
+                  5,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 17,
+                "hours": 3.1083333333333334,
+                "quality": 1.2,
+                "maxEventGapMinutes": 5,
+                "upgrades": [
+                  6,
+                  5,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 18,
+                "hours": 2.7416666666666667,
+                "quality": 1.2,
+                "maxEventGapMinutes": 4.5,
+                "upgrades": [
+                  5,
+                  5,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 19,
+                "hours": 3.1083333333333334,
+                "quality": 1.2,
+                "maxEventGapMinutes": 1.75,
+                "upgrades": [
+                  6,
+                  5,
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              {
+                "era": 20,
+                "hours": 2.9791666666666665,
+                "quality": 1.2,
+                "maxEventGapMinutes": 5,
+                "upgrades": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "provenance": "现有测试元数据，未把它重新标为本次实测；测试策略见对应.cjs文件。"
+    }
+  }
+}
