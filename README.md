@@ -12,4 +12,4 @@
 | --- | --- |
 | [dfsoft123new2](https://github.com/dfsoft123new2) | 游戏创意与玩法方向、开发统筹、测试反馈与发布。 |
 | **Codex（OpenAI）** | 代码实现与修复、回归验证、全纪元介绍与配图、网站整理和发布。 |
-| **Claude（Anthropic）** | 群星纪 DLC 设计文档、玩法补全、前端开发协作。 |
+| **Claude（Anthropic）** | 前 10 个纪元（I–X）的全部代码、群星纪 DLC 设计文档、玩法补全、前端开发协作。 |
